@@ -1,0 +1,129 @@
+"","Subject","trial","dog_ID","sex","birthdate","test_date","age","breed","transparent_screen","tunnel_right_side","looking_direction","start_experience_phase","manipulation_check_times","Approach_transparent_screen_first","Help_introduction","notes","transparent_side","looking_condition","duration_opaque","duration_transparent","gaze_congruent_look","total_looking_time","prop_duration_congruent_look"
+"1","Anthony",1,"23","M","17/09/2013","14/01/2022",99,"English Setter","blue","yellow","L","R",1,1,"no help","","left","transparent",4.8,2.216666667,2.216666667,7.016666667,0.315914489343662
+"2","Anthony",2,"23","M","17/09/2013","14/01/2022",99,"English Setter","blue","yellow","R","R",1,1,"no help","","left","opaque",0,4.683333334,0,4.683333334,0
+"3","Anthony",3,"23","M","17/09/2013","14/01/2022",99,"English Setter","blue","yellow","L","R",1,1,"no help","","left","transparent",0,9.25,9.25,9.25,1
+"4","Anthony",4,"23","M","17/09/2013","14/01/2022",99,"English Setter","blue","yellow","R","R",1,1,"no help","","left","opaque",3.633333334,0,3.633333334,3.633333334,1
+"5","Crash",1,"24","M","05/03/2018","14/01/2022",46,"Australian Shepherd","yellow","yellow","L","L",1,1,"help","","right","opaque",0.133333333,0.516666667,0.133333333,0.65,0.205128204615385
+"6","Crash",2,"24","M","05/03/2018","14/01/2022",46,"Australian Shepherd","yellow","yellow","R","L",1,1,"help","","right","transparent",0,1.1,1.1,1.1,1
+"7","Crash",3,"24","M","05/03/2018","14/01/2022",46,"Australian Shepherd","yellow","yellow","L","L",1,1,"help","","right","opaque",0.4,2.4,0.4,2.8,0.142857142857143
+"8","Crash",4,"24","M","05/03/2018","14/01/2022",46,"Australian Shepherd","yellow","yellow","R","L",1,1,"help","","right","transparent",0,0.616666667,0.616666667,0.616666667,1
+"9","Daytona",1,"26/33","F","08/05/2019","18/01/2022",32,"Australian Shepherd","yellow","blue","R","L",1,1,"help","owner pushes dog forward when released during 4th trial ","left","opaque",2.833333333,1.716666667,2.833333333,4.55,0.622710622637363
+"10","Daytona",2,"26/33","F","08/05/2019","18/01/2022",32,"Australian Shepherd","yellow","blue","L","L",1,1,"help","","left","transparent",2.35,2.883333333,2.883333333,5.233333333,0.550955413984137
+"11","Daytona",3,"26/33","F","08/05/2019","18/01/2022",32,"Australian Shepherd","yellow","blue","L","L",1,1,"help","","left","transparent",0.883333333,1.133333333,1.133333333,2.016666666,0.561983471094871
+"12","Daytona",4,"26/33","F","08/05/2019","18/01/2022",32,"Australian Shepherd","yellow","blue","R","L",1,1,"help","","left","opaque",1.733333333,1.266666667,1.733333333,3,0.577777777666667
+"13","Dunni",1,"16","F","21/02/2021","25/11/2021",9,"Miniature Pinscher ","yellow","yellow","L","R",1,1,"no help ","","right","opaque",8.3,0.633333333,8.3,8.933333333,0.929104477646608
+"14","Dunni",2,"16","F","21/02/2021","25/11/2021",9,"Miniature Pinscher ","yellow","yellow","R","R",1,1,"no help ","","right","transparent",4.05,8.266666666,8.266666666,12.316666666,0.671177266558656
+"15","Dunni",3,"16","F","21/02/2021","25/11/2021",9,"Miniature Pinscher ","yellow","yellow","R","R",1,1,"no help ","","right","transparent",4.816666666,1.283333334,1.283333334,6.1,0.210382513770492
+"16","Dunni",4,"16","F","21/02/2021","25/11/2021",9,"Miniature Pinscher ","yellow","yellow","L","R",1,1,"no help ","","right","opaque",5.333333333,2.116666666,5.333333333,7.449999999,0.715883668955152
+"17","Elvis3",1,"15","M","05/09/2020","21/11/2021",14,"Labrador Retriever","blue","yellow","L","L",2,1,"help","","left","transparent",0.35,9.233333333,9.233333333,9.583333333,0.963478260868295
+"18","Elvis3",2,"15","M","05/09/2020","21/11/2021",14,"Labrador Retriever","blue","yellow","R","L",2,1,"help","","left","opaque",0.45,4.65,0.45,5.1,0.0882352941176471
+"19","Elvis3",3,"15","M","05/09/2020","21/11/2021",14,"Labrador Retriever","blue","yellow","R","L",2,1,"help","","left","opaque",4.5,2.1,4.5,6.6,0.681818181818182
+"20","Elvis3",4,"15","M","05/09/2020","21/11/2021",14,"Labrador Retriever","blue","yellow","L","L",2,1,"help","","left","transparent",0.233333333,9.016666667,9.016666667,9.25,0.974774774810811
+"21","Flamme",1,"27","M","09/05/2008","25/11/2021",162,"Pyrenean Sheepdog - smooth faced","blue","yellow","R","R",1,1,"no help","","left","opaque",5.933333333,0.333333333,5.933333333,6.266666666,0.946808510685831
+"22","Flamme",2,"27","M","09/05/2008","25/11/2021",162,"Pyrenean Sheepdog - smooth faced","blue","yellow","L","R",1,1,"no help","","left","transparent",3.716666667,5.9,5.9,9.616666667,0.613518197552391
+"23","Flamme",3,"27","M","09/05/2008","25/11/2021",162,"Pyrenean Sheepdog - smooth faced","blue","yellow","L","R",1,1,"no help","","left","transparent",2.533333333,1.466666667,1.466666667,4,0.36666666675
+"24","Flamme",4,"27","M","09/05/2008","25/11/2021",162,"Pyrenean Sheepdog - smooth faced","blue","yellow","R","R",1,1,"no help","","left","opaque",5.533333333,0,5.533333333,5.533333333,1
+"25","Flecki",1,"29","F","19/11/2007","02/12/2021",168,"Mix (Staffordshire Bullterrier, American Pitbull Terrier)","blue","blue","L","R",1,1,"help","Special food. Deaf ","right","opaque",2.95,4.133333334,2.95,7.083333334,0.416470588196097
+"26","Flecki",2,"29","F","19/11/2007","02/12/2021",168,"Mix (Staffordshire Bullterrier, American Pitbull Terrier)","blue","blue","R","R",1,1,"help","","right","transparent",2.25,0,0,2.25,0
+"27","Flecki",3,"29","F","19/11/2007","02/12/2021",168,"Mix (Staffordshire Bullterrier, American Pitbull Terrier)","blue","blue","R","R",1,1,"help","","right","transparent",0,9.616666667,9.616666667,9.616666667,1
+"28","Flecki",4,"29","F","19/11/2007","02/12/2021",168,"Mix (Staffordshire Bullterrier, American Pitbull Terrier)","blue","blue","L","R",1,1,"help","","right","opaque",4.8,2.166666667,4.8,6.966666667,0.688995215278038
+"29","Io",1,"9","F","21/06/2020","19/11/2021",16,"Whippet","blue","blue","R","L",1,1,"no help ","Tried to escape from the owner during the second trial ","right","transparent",0.8,4.699999999,4.699999999,5.499999999,0.854545454519008
+"30","Io",2,"9","F","21/06/2020","19/11/2021",16,"Whippet","blue","blue","L","L",1,1,"no help ","","right","opaque",4.366666667,4.1,4.366666667,8.466666667,0.515748031515128
+"31","Io",3,"9","F","21/06/2020","19/11/2021",16,"Whippet","blue","blue","L","L",1,1,"no help ","","right","opaque",3.516666667,3.483333333,3.516666667,7,0.502380952428571
+"32","Io",4,"9","F","21/06/2020","19/11/2021",16,"Whippet","blue","blue","R","L",1,1,"no help ","","right","transparent",2.683333333,2.716666667,2.716666667,5.4,0.503086419814815
+"33","Jasper",1,"18","M","25/02/2010","24/11/2021",140,"Labradoodle","yellow","blue","R","R",1,0,"help","Sounds in the room next door during trial 3","left","opaque",5.683333333,3.583333333,5.683333333,9.266666666,0.613309352526137
+"34","Jasper",2,"18","M","25/02/2010","24/11/2021",140,"Labradoodle","yellow","blue","L","R",1,0,"help","","left","transparent",1.283333333,0.85,0.85,2.133333333,0.398437500062256
+"35","Jasper",3,"18","M","25/02/2010","24/11/2021",140,"Labradoodle","yellow","blue","R","R",1,0,"help","","left","opaque",3.416666667,0,3.416666667,3.416666667,1
+"36","Jasper",4,"18","M","25/02/2010","24/11/2021",140,"Labradoodle","yellow","blue","L","R",1,0,"help","","left","transparent",0,0.783333333,0.783333333,0.783333333,1
+"37","JellyBean",1,"14","F","17/08/2013","17/12/2021",100,"Airedale Terrier","yellow","blue","L","R",2,1,"no help ","Tipped over the fence during the second manipulation check. ","left","transparent",0.316666667,0,0,0.316666667,0
+"38","JellyBean",2,"14","F","17/08/2013","17/12/2021",100,"Airedale Terrier","yellow","blue","R","R",2,1,"no help","","left","opaque",0.433333333,0,0.433333333,0.433333333,1
+"39","JellyBean",3,"14","F","17/08/2013","17/12/2021",100,"Airedale Terrier","yellow","blue","R","R",2,1,"no help","","left","opaque",0.65,0,0.65,0.65,1
+"40","JellyBean",4,"14","F","17/08/2013","17/12/2021",100,"Airedale Terrier","yellow","blue","L","R",2,1,"no help","","left","transparent",0.566666667,0,0,0.566666667,0
+"41","Jessy9",1,"30","F","11/01/2009","02/12/2021",154,"chihuahua","yellow","blue","L","L",1,0,"help","special food. Too small to get the food out of the buckets standing upp. Had to lay them down. ","left","transparent",6.45,3.9,3.9,10.35,0.376811594202899
+"42","Jessy9",2,"30","F","11/01/2009","02/12/2021",154,"chihuahua","yellow","blue","R","L",1,0,"help","","left","opaque",0.416666667,6.966666667,0.416666667,7.383333334,0.0564334086179293
+"43","Jessy9",3,"30","F","11/01/2009","02/12/2021",154,"chihuahua","yellow","blue","R","L",1,0,"help","","left","opaque",0.216666667,0.316666667,0.216666667,0.533333334,0.406250000117187
+"44","Jessy9",4,"30","F","11/01/2009","02/12/2021",154,"chihuahua","yellow","blue","L","L",1,0,"help","","left","transparent",0,0.233333333,0.233333333,0.233333333,1
+"45","Joline",1,"32","F","02/05/2017","01/12/2021",54,"Whippet","yellow","yellow","L","L",1,1,"no help","bag fell and made a sound during the manipulation check","right","opaque",2.416666666,2.9,2.416666666,5.316666666,0.454545454477059
+"46","Joline",2,"32","F","02/05/2017","01/12/2021",54,"Whippet","yellow","yellow","R","L",1,1,"no help","","right","transparent",3.466666667,4.333333334,4.333333334,7.800000001,0.555555555569801
+"47","Joline",3,"32","F","02/05/2017","01/12/2021",54,"Whippet","yellow","yellow","R","L",1,1,"no help","","right","transparent",6,0.55,0.55,6.55,0.083969465648855
+"48","Joline",4,"32","F","02/05/2017","01/12/2021",54,"Whippet","yellow","yellow","L","L",1,1,"no help","","right","opaque",0,0,0,0,NA
+"49","Joseph",1,"17","M","10/02/2018","29/11/2021",45,"Mix (Puli)","blue","blue","R","L",2,1,"help","","right","transparent",4.433333333,4.483333334,4.483333334,8.916666667,0.502803738373727
+"50","Joseph",2,"17","M","10/02/2018","29/11/2021",45,"Mix (Puli)","blue","blue","L","L",2,1,"help","","right","opaque",5.699999999,3.333333333,5.699999999,9.033333332,0.630996309945535
+"51","Joseph",3,"17","M","10/02/2018","29/11/2021",45,"Mix (Puli)","blue","blue","R","L",2,1,"help","","right","transparent",2.433333333,3.783333334,3.783333334,6.216666667,0.608579088546457
+"52","Joseph",4,"17","M","10/02/2018","29/11/2021",45,"Mix (Puli)","blue","blue","L","L",2,1,"help","","right","opaque",7.516666667,0.3,7.516666667,7.816666667,0.961620469084792
+"53","Josephine",1,"19","F","22/03/2017","29/11/2021",56,"Mix (Pumi)","blue","yellow","R","L",1,1,"no help ","","left","opaque",2.783333333,2.333333333,2.783333333,5.116666666,0.543973941373808
+"54","Josephine",2,"19","F","22/03/2017","29/11/2021",56,"Mix (Pumi)","blue","yellow","L","L",1,1,"no help ","","left","transparent",2.066666666,3.316666667,3.316666667,5.383333333,0.616099071307498
+"55","Josephine",3,"19","F","22/03/2017","29/11/2021",56,"Mix (Pumi)","blue","yellow","R","L",1,1,"no help ","","left","opaque",3.983333332,1.916666667,3.983333332,5.899999999,0.675141242826295
+"56","Josephine",4,"19","F","22/03/2017","29/11/2021",56,"Mix (Pumi)","blue","yellow","L","L",1,1,"no help ","","left","transparent",2.566666666,2.55,2.55,5.116666666,0.49837133556982
+"57","Keres",1,"28","F","03/10/2017","30/11/2021",49,"Hungarian short-haired Pointer (Vizsla)","yellow","yellow","R","R",1,1,"help","start experience phase on the right should have been left ","right","transparent",0,0.566666667,0.566666667,0.566666667,1
+"58","Keres",2,"28","F","03/10/2017","30/11/2021",49,"Hungarian short-haired Pointer (Vizsla)","yellow","yellow","L","R",1,1,"help","","right","opaque",0,0.45,0,0.45,0
+"59","Keres",3,"28","F","03/10/2017","30/11/2021",49,"Hungarian short-haired Pointer (Vizsla)","yellow","yellow","L","R",1,1,"help","","right","opaque",0,0.466666667,0,0.466666667,0
+"60","Keres",4,"28","F","03/10/2017","30/11/2021",49,"Hungarian short-haired Pointer (Vizsla)","yellow","yellow","R","R",1,1,"help","","right","transparent",0,0.433333333,0.433333333,0.433333333,1
+"61","Kyra3",1,"4","F","10/09/2016","19/11/2021",62,"Mix (Dachshund)","yellow","yellow","R","L",1,1,"no help ","","right","transparent",0.983333333,6.566666666,6.566666666,7.549999999,0.869757174419835
+"62","Kyra3",2,"4","F","10/09/2016","19/11/2021",62,"Mix (Dachshund)","yellow","yellow","L","L",1,1,"no help ","","right","opaque",3.116666666,5.55,3.116666666,8.666666666,0.359615384566124
+"63","Kyra3",3,"4","F","10/09/2016","19/11/2021",62,"Mix (Dachshund)","yellow","yellow","R","L",1,1,"no help ","","right","transparent",1.05,2.533333333,2.533333333,3.583333333,0.706976744158789
+"64","Kyra3",4,"4","F","10/09/2016","19/11/2021",62,"Mix (Dachshund)","yellow","yellow","L","L",1,1,"no help ","","right","opaque",1.366666667,1.216666667,1.366666667,2.583333334,0.529032258057024
+"65","Leia",1,"21","F","24/10/2011","29/11/2021",121,"Beagle","blue","blue","L","L",1,1,"help","Owner was not present in the room during the introduction and experience phase ","right","opaque",5.483333333,3.916666667,5.483333333,9.4,0.583333333297872
+"66","Leia",2,"21","F","24/10/2011","29/11/2021",121,"Beagle","blue","blue","R","L",1,1,"help","","right","transparent",3.633333333,6.466666666,6.466666666,10.099999999,0.640264026400026
+"67","Leia",3,"21","F","24/10/2011","29/11/2021",121,"Beagle","blue","blue","L","L",1,1,"help","","right","opaque",2.55,7.083333333,2.55,9.633333333,0.264705882362101
+"68","Leia",4,"21","F","24/10/2011","29/11/2021",121,"Beagle","blue","blue","R","L",1,1,"help","","right","transparent",3.266666666,3.1,3.1,6.366666666,0.486910994815383
+"69","Luna28",1,"20","F","20/05/2013","29/11/2021",102,"Mix (Jack Russell, Malinois)","yellow","yellow","R","R",1,1,"help","","right","transparent",0,2.883333333,2.883333333,2.883333333,1
+"70","Luna28",2,"20","F","20/05/2013","29/11/2021",102,"Mix (Jack Russell, Malinois)","yellow","yellow","L","R",1,1,"help","","right","opaque",0,1,0,1,0
+"71","Luna28",3,"20","F","20/05/2013","29/11/2021",102,"Mix (Jack Russell, Malinois)","yellow","yellow","R","R",1,1,"help","","right","transparent",0.333333333,3.683333333,3.683333333,4.016666666,0.917012448201994
+"72","Luna28",4,"20","F","20/05/2013","29/11/2021",102,"Mix (Jack Russell, Malinois)","yellow","yellow","L","R",1,1,"help","","right","opaque",0.816666667,0,0.816666667,0.816666667,1
+"73","Manni2",1,"22","M","31/05/2016","25/11/2021",65,"Pyrenäen Sheep dog-smooth faced","yellow","blue","L","R",1,1,"help","","left","transparent",3.566666667,2.65,2.65,6.216666667,0.426273458422184
+"74","Manni2",2,"22","M","31/05/2016","25/11/2021",65,"Pyrenäen Sheep dog-smooth faced","yellow","blue","R","R",1,1,"help","","left","opaque",4.083333334,2.75,4.083333334,6.833333334,0.597560975649018
+"75","Manni2",3,"22","M","31/05/2016","25/11/2021",65,"Pyrenäen Sheep dog-smooth faced","yellow","blue","L","R",1,1,"help","","left","transparent",9.966666667,1.533333333,1.533333333,11.5,0.133333333304348
+"76","Manni2",4,"22","M","31/05/2016","25/11/2021",65,"Pyrenäen Sheep dog-smooth faced","yellow","blue","R","R",1,1,"help","","left","opaque",6.05,0,6.05,6.05,1
+"77","Mika2",1,"6","F","07/01/2014","19/11/2021",94,"Whippet","yellow","blue","L","L",1,1,"help","","left","transparent",1.283333333,4.983333333,4.983333333,6.266666666,0.795212765988852
+"78","Mika2",2,"6","F","07/01/2014","19/11/2021",94,"Whippet","yellow","blue","R","L",1,1,"help","","left","opaque",6.4,5.366666667,6.4,11.766666667,0.543909348426518
+"79","Mika2",3,"6","F","07/01/2014","19/11/2021",94,"Whippet","yellow","blue","L","L",1,1,"help","","left","transparent",2.733333334,4.783333334,4.783333334,7.516666668,0.636363636339448
+"80","Mika2",4,"6","F","07/01/2014","19/11/2021",94,"Whippet","yellow","blue","R","L",1,1,"help","","left","opaque",3.9,5.766666667,3.9,9.666666667,0.403448275848157
+"81","Nemo1",1,"12","M","03/11/2014","23/11/2021",84,"Collie Smooth","yellow","yellow","R","R",1,0,"no help ","Sould have looked RLLR but looked RLRL.","right","transparent",0,0.45,0.45,0.45,1
+"82","Nemo1",2,"12","M","03/11/2014","23/11/2021",84,"Collie Smooth","yellow","yellow","L","R",1,0,"no help ","","right","opaque",0.183333333,0,0.183333333,0.183333333,1
+"83","Nemo1",3,"12","M","03/11/2014","23/11/2021",84,"Collie Smooth","yellow","yellow","R","R",1,0,"no help ","","right","transparent",1.15,0.45,0.45,1.6,0.28125
+"84","Nemo1",4,"12","M","03/11/2014","23/11/2021",84,"Collie Smooth","yellow","yellow","L","R",1,0,"no help ","","right","opaque",0.783333333,0.4,0.783333333,1.183333333,0.661971830890696
+"85","Queenofhearts(queeny)",1,"31","F","19/05/2019","17/12/2021",30,"Airedale Terrier","blue","yellow","L","R",1,1,"help","Chewing the buckets so stopped the trial faster to take the bucket away","left","transparent",0.516666667,0.566666667,0.566666667,1.083333334,0.523076923062722
+"86","Queenofhearts(queeny)",2,"31","F","19/05/2019","17/12/2021",30,"Airedale Terrier","blue","yellow","R","R",1,1,"help","","left","opaque",0.85,1,0.85,1.85,0.459459459459459
+"87","Queenofhearts(queeny)",3,"31","F","19/05/2019","17/12/2021",30,"Airedale Terrier","blue","yellow","R","R",1,1,"help","","left","opaque",1.15,0.783333333,1.15,1.933333333,0.594827586309453
+"88","Queenofhearts(queeny)",4,"31","F","19/05/2019","17/12/2021",30,"Airedale Terrier","blue","yellow","L","R",1,1,"help","","left","transparent",1.083333334,0.666666667,0.666666667,1.750000001,0.38095238092517
+"89","Riu",1,"3","F","28/03/2018","18/11/2021",43,"Australian Shepherd","blue","yellow","R","R",1,1,"help","","left","opaque",1.566666666,0,1.566666666,1.566666666,1
+"90","Riu",2,"3","F","28/03/2018","18/11/2021",43,"Australian Shepherd","blue","yellow","L","R",1,1,"help","","left","transparent",0,0,0,0,NA
+"91","Riu",3,"3","F","28/03/2018","18/11/2021",43,"Australian Shepherd","blue","yellow","R","R",1,1,"help","","left","opaque",0,0,0,0,NA
+"92","Riu",4,"3","F","28/03/2018","18/11/2021",43,"Australian Shepherd","blue","yellow","L","R",1,1,"help","","left","transparent",3.9,0,0,3.9,0
+"93","Ronja7",1,"1","F","28/03/2015","17/11/2021",79,"Riesenschnauzer","blue","blue","R","R",1,0,"help","Escapade through the fence the first manipulation check so had to start over ","right","transparent",0,0,0,0,NA
+"94","Ronja7",2,"1","F","28/03/2015","17/11/2021",79,"Riesenschnauzer","blue","blue","L","R",1,0,"help","","right","opaque",0,0,0,0,NA
+"95","Ronja7",3,"1","F","28/03/2015","17/11/2021",79,"Riesenschnauzer","blue","blue","R","R",1,0,"help","","right","transparent",0,6.066666667,6.066666667,6.066666667,1
+"96","Ronja7",4,"1","F","28/03/2015","17/11/2021",79,"Riesenschnauzer","blue","blue","L","R",1,0,"help","","right","opaque",0,2.733333333,0,2.733333333,0
+"97","Samira",1,"10","F","04/05/2014","22/11/2021",90,"Yorkshire Terrier","yellow","blue","R","R",2,1,"no help ","","left","opaque",2.7,1.083333333,2.7,3.783333333,0.713656387728075
+"98","Samira",2,"10","F","04/05/2014","22/11/2021",90,"Yorkshire Terrier","yellow","blue","L","R",2,1,"no help ","","left","transparent",1.633333334,0,0,1.633333334,0
+"99","Samira",3,"10","F","04/05/2014","22/11/2021",90,"Yorkshire Terrier","yellow","blue","L","R",2,1,"no help ","","left","transparent",0,2.016666667,2.016666667,2.016666667,1
+"100","Samira",4,"10","F","04/05/2014","22/11/2021",90,"Yorkshire Terrier","yellow","blue","R","R",2,1,"no help ","","left","opaque",0.7,0.55,0.7,1.25,0.56
+"101","Stella4",1,"13","F","01/06/2014","23/11/2021",89,"Mix (Austrian Pinscher)","blue","blue","L","L",1,1,"no help ","","right","opaque",2.666666667,3.783333333,2.666666667,6.45,0.41343669255814
+"102","Stella4",2,"13","F","01/06/2014","23/11/2021",89,"Mix (Austrian Pinscher)","blue","blue","R","L",1,1,"no help ","","right","transparent",0,5.116666666,5.116666666,5.116666666,1
+"103","Stella4",3,"13","F","01/06/2014","23/11/2021",89,"Mix (Austrian Pinscher)","blue","blue","R","L",1,1,"no help ","","right","transparent",4.249999999,0.9,0.9,5.149999999,0.174757281587332
+"104","Stella4",4,"13","F","01/06/2014","23/11/2021",89,"Mix (Austrian Pinscher)","blue","blue","L","L",1,1,"no help ","","right","opaque",1.766666667,1.9,1.766666667,3.666666667,0.481818181865289
+"105","Sunny10",1,"2","F","25/02/2017","17/11/2021",56,"Poodle (Miniature)","yellow","blue","R","L",1,1,"help","","left","opaque",0.633333333,0,0.633333333,0.633333333,1
+"106","Sunny10",2,"2","F","25/02/2017","17/11/2021",56,"Poodle (Miniature)","yellow","blue","L","L",1,1,"help","","left","transparent",0.55,0,0,0.55,0
+"107","Sunny10",3,"2","F","25/02/2017","17/11/2021",56,"Poodle (Miniature)","yellow","blue","R","L",1,1,"help","","left","opaque",5.983333333,0,5.983333333,5.983333333,1
+"108","Sunny10",4,"F","F","25/02/2017","17/11/2021",56,"Poodle (Miniature)","yellow","blue","L","L",1,1,"help","","left","transparent",6.266666667,0,0,6.266666667,0
+"109","Suri3",1,"8","F","06/04/2013","21/11/2021",103,"Labrador Retriever","yellow","yellow","L","R",1,1,"help","","right","opaque",0,0.2,0,0.2,0
+"110","Suri3",2,"8","F","06/04/2013","21/11/2021",103,"Labrador Retriever","yellow","yellow","R","R",1,1,"help","","right","transparent",0,0.216666667,0.216666667,0.216666667,1
+"111","Suri3",3,"8","F","06/04/2013","21/11/2021",103,"Labrador Retriever","yellow","yellow","L","R",1,1,"help","","right","opaque",1.266666667,1.133333333,1.266666667,2.4,0.527777777916667
+"112","Suri3",4,"8","F","06/04/2013","21/11/2021",103,"Labrador Retriever","yellow","yellow","R","R",1,1,"help","","right","transparent",0,0.1,0.1,0.1,1
+"113","Tenya",1,"7","F","13/03/2016","16/11/2021",68,"Collie rough","blue","yellow","L","L",1,1,"no help ","Did the experience phase on the ""dogs side"" first ","left","transparent",1.816666667,0,0,1.816666667,0
+"114","Tenya",2,"7","F","13/03/2016","16/11/2021",68,"Collie rough","blue","yellow","R","L",1,1,"no help ","","left","opaque",1.983333333,0,1.983333333,1.983333333,1
+"115","Tenya",3,"7","F","13/03/2016","16/11/2021",68,"Collie rough","blue","yellow","L","L",1,1,"no help ","","left","transparent",1.366666667,0.416666667,0.416666667,1.783333334,0.233644859912656
+"116","Tenya",4,"7","F","13/03/2016","16/11/2021",68,"Collie rough","blue","yellow","R","L",1,1,"no help ","","left","opaque",1.433333333,0,1.433333333,1.433333333,1
+"117","Thaya",1,"11","F","17/12/2010","19/11/2021",131,"Whippet","blue","yellow","R","L",1,1,"no help ","","left","opaque",0.416666667,0,0.416666667,0.416666667,1
+"118","Thaya",2,"11","F","17/12/2010","19/11/2021",131,"Whippet","blue","yellow","L","L",1,1,"no help ","","left","transparent",3.283333333,0.166666667,0.166666667,3.45,0.0483091788405797
+"119","Thaya",3,"11","F","17/12/2010","19/11/2021",131,"Whippet","blue","yellow","L","L",1,1,"no help ","","left","transparent",0,4.816666667,4.816666667,4.816666667,1
+"120","Thaya",4,"11","F","17/12/2010","19/11/2021",131,"Whippet","blue","yellow","R","L",1,1,"no help ","","left","opaque",5.5,0.733333333,5.5,6.233333333,0.882352941223655
+"121","Toulouse",1,"5","M","04/07/2019","16/11/2021",28,"Mix","blue","blue","L","R",2,1,"help","","right","opaque",2.35,0.933333333,2.35,3.283333333,0.715736040681801
+"122","Toulouse",2,"5","M","04/07/2019","16/11/2021",28,"Mix","blue","blue","R","R",2,1,"help","","right","transparent",2.450000001,2,2,4.450000001,0.449438202146194
+"123","Toulouse",3,"5","M","04/07/2019","16/11/2021",28,"Mix","blue","blue","L","R",2,1,"help","","right","opaque",0.583333333,1.183333333,0.583333333,1.766666666,0.330188679181203
+"124","Toulouse",4,"5","M","04/07/2019","16/11/2021",28,"Mix","blue","blue","R","R",2,1,"help","","right","transparent",0.85,1.55,1.55,2.4,0.645833333333333
+"125","Yuna",1,"25","F","27/09/2015","29/11/2021",74,"Flat coated retriever ","blue","blue","R","R",1,1,"no help","Special food, Noise from outside window trial 3. Reapeted trial 3.","right","transparent",3.483333333,0.083333333,0.083333333,3.566666666,0.0233644858922177
+"126","Yuna",2,"25","F","27/09/2015","29/11/2021",74,"Flat coated retriever ","blue","blue","L","R",1,1,"no help","","right","opaque",3.1,0,3.1,3.1,1
+"127","Yuna",3,"25","F","27/09/2015","29/11/2021",74,"Flat coated retriever ","blue","blue","L","R",1,1,"no help","","right","opaque",0,0,0,0,NA
+"128","Yuna",4,"25","F","27/09/2015","29/11/2021",74,"Flat coated retriever ","blue","blue","R","R",1,1,"no help","","right","transparent",4.366666667,0,0,4.366666667,0

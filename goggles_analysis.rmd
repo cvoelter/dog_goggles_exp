@@ -1,0 +1,1358 @@
+---
+title: "Goggles experiment - analysis"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+library(tidyverse)
+
+source("./functions/diagnostic_fcns.r")
+source("./functions/glmm_stability.r")
+source("./functions/boot_glmm2.r")
+source("./functions/glmmTMB_stability.r")
+source("./functions/drop1_para_glmmtmb.r")
+source("./functions/extract_ranef_gmmTMB.r")
+
+
+#load(file="goggles_workspace.RData")
+```
+
+Yuna: trial 3 repeated due to a noise outside --> trial repeated
+Alou: to be excluded (exceeds planned sample size)
+
+## Read in data
+
+```{r}
+remove<-c("Lakota", 	"Minos",	"Cully",	"Eowyn",	"Amarie",	"Ambiano",	"Winnie2",	 "Alou")#dogs that did not meet inclusion criteria
+
+demo.data<-read.csv(file = "data/Goggles_Counterbalance_ filled.csv")%>%
+  rename(Subject="dog_name")%>%
+  filter(!Subject %in% remove)%>%
+  filter(!Subject %in% c("Jolie",	"Jaimie",	"Leaf"))%>%
+  mutate(transparent_side=ifelse(tunnel_right_side==transparent_screen, "right", "left"))%>%
+  mutate(looking_condition=ifelse(tunnel_right_side=="blue"& transparent_screen=="blue"& looking_direction=="R", "transparent",
+                                  ifelse(tunnel_right_side=="yellow"& transparent_screen=="yellow"& looking_direction=="R", "transparent",
+                                         ifelse(tunnel_right_side=="blue"& transparent_screen=="yellow"& looking_direction=="L", "transparent",
+                                  ifelse(tunnel_right_side=="yellow"& transparent_screen=="blue"& looking_direction=="L", "transparent","opaque"
+                                  )))))
+  
+
+raw.data<-read.csv(file="data/scoringproject_50_Goggles_experiment.csv")%>%
+  filter(!Subject %in% remove)
+
+
+levels(as.factor(raw.data$Subject))
+levels(as.factor(demo.data$Subject))
+table(raw.data$Subject, raw.data$trial)
+
+raw.data%>%filter(is.na(trial))
+
+```
+
+
+## Aggregating data per trial
+
+### First look
+```{r}
+first_look_data<-raw.data%>%
+  filter(Behaviour=="First look")%>%
+  filter(!is.na(trial))%>%
+  group_by(Subject, trial, Behaviour, Value)%>%
+  summarise(first_look_transparent=sum(Value=="First look transparent"))%>%
+  ungroup()%>%
+  inner_join(demo.data)%>%
+  mutate(first_look_cong=as.numeric(ifelse(first_look_transparent==1 & looking_condition=="transparent", 1, 
+                                           ifelse(first_look_transparent==0 & looking_condition=="opaque", 1, 0))))%>%
+  mutate(looking_score=as.numeric(ifelse(first_look_cong==0, -1, first_look_cong)))
+
+table(first_look_data$Subject, first_look_data$trial)
+```
+
+
+
+```{r}
+looking_score_data<-first_look_data%>%
+  group_by(Subject, looking_condition)%>%
+  summarise(looking_score=sum(looking_score), first_look_cong=mean(first_look_cong), first_look_transparent=mean(first_look_transparent) )%>%
+  ungroup()%>%
+  complete(Subject, looking_condition, fill=list(looking_score=0)) #fill in 0s
+
+table(looking_score_data$Subject, looking_score_data$looking_condition)
+
+looking_score_data_agg<-looking_score_data%>%
+  group_by(looking_condition)%>%
+  summarise(mean_ls=mean(looking_score), se_ls=sd(looking_score)/sqrt(length(looking_score)), mean_fl_con=mean(first_look_cong, na.rm=TRUE), se_fl_con=sd(first_look_cong, na.rm=TRUE)/sqrt(length(first_look_cong)), mean_fl_trans=mean(first_look_transparent, na.rm=TRUE), se_fl_trans=sd(first_look_transparent, na.rm=TRUE)/sqrt(length(first_look_transparent)))
+
+p_looking_score<-ggplot(data=looking_score_data_agg, aes(x=looking_condition, y=mean_ls))+
+  geom_bar(stat="identity")+
+  geom_errorbar(aes(ymin=mean_ls-se_ls, ymax=mean_ls+se_ls), width=0.5)+
+  ylim(-2, 2)+
+  xlab("Experimenter gaze cue")+
+  ylab("Gaze congruent looking score")+
+  theme_classic()
+
+ ggsave(p_looking_score, filename = "graphics/looking_score.png", width=6, height=5, scale=0.7)
+ 
+ 
+```
+
+first look transparent plot
+```{r}
+p_flt<-ggplot(data=looking_score_data_agg, aes(x=looking_condition, y=mean_fl_trans))+
+  geom_bar(stat="identity")+
+  geom_hline(yintercept = 0.5, lty=3, lwd=1, color="grey")+
+  geom_errorbar(aes(ymin=mean_fl_trans-se_fl_trans, ymax=mean_fl_trans+se_fl_trans), width=0.5)+
+  xlab("Experimenter gaze cue")+
+  ylab("First look to transparent tunnel")+
+  theme_classic()+
+  ylim(0, 0.8)
+
+p_flt
+```
+
+
+### First choice
+```{r}
+first_choice_data<-raw.data%>%
+  filter(Behaviour=="First target choice")%>%
+  filter(!is.na(trial))%>%
+  group_by(Subject, trial, Behaviour, Value)%>%
+  summarise(first_choice_transparent=sum(Value=="First choice transparent"))%>%
+  ungroup()%>%
+  inner_join(demo.data)%>%
+  mutate(first_choice_cong=as.numeric(ifelse(first_choice_transparent==1 & looking_condition=="transparent", 1, 
+                                           ifelse(first_choice_transparent==0 & looking_condition=="opaque", 1, 0))))
+  
+```
+
+Aggregate first choice by subject and condition
+```{r}
+first_choice_agg<-first_choice_data%>%
+  group_by(Subject, looking_condition)%>%
+  summarise(mean_choice=mean(first_choice_cong))
+
+first_choice_agg2<-first_choice_agg%>%
+  group_by(looking_condition)%>%
+  summarise(mean=mean(mean_choice), se=sd(mean_choice)/sqrt(length(mean_choice)))
+```
+
+
+
+```{r}
+p_choice<-ggplot(data=first_choice_agg2, aes(x=looking_condition, y=mean))+
+  geom_bar(stat="identity")+
+  geom_errorbar(aes(ymin=mean-se, ymax=mean+se), width=0.5)+
+  #geom_hline(yintercept = 0.5, lty=2, color="red")+
+  xlab("Experimenter gaze cue")+
+  ylab("Gaze congruent choice (mean)")+
+  theme_classic()
+
+p_choice
+
+
+ggsave(p_choice, filename = "graphics/gaze_congruent_choice.png", width=6, height=5, scale=0.7)
+```
+
+### Inspection behind screen
+```{r}
+inspection_data<-raw.data%>%
+  filter(Behaviour=="Inspection behind screen")%>%
+  filter(!is.na(trial))%>%
+  group_by(Subject, trial, Behaviour, Value)%>%
+  summarise(inspection_transparent=sum(Value=="Inspection behind transparent"), inspection_opaque=sum(Value=="Inspection behind opaque"))%>%
+  ungroup()%>%
+  inner_join(demo.data)%>%
+  mutate(inspection_cong=as.numeric(ifelse(inspection_transparent==1 & looking_condition=="transparent", 1, 
+                                           ifelse(inspection_transparent==0 & looking_condition=="opaque", 1, 0))))
+
+
+inspection_data_complete<-raw.data%>%
+  filter(Behaviour=="Inspection behind screen")%>%
+  filter(!is.na(trial))%>%
+  group_by(Subject, trial)%>%
+  summarise(inspection_opaque=sum(Value=="Inspection behind opaque"))%>%
+  ungroup()%>%
+  full_join(demo.data)%>%
+  complete(Subject, trial,  fill=list(inspection_opaque=0)) #fill in 0s
+
+
+length(unique(inspection_data_complete$Subject))  
+```
+Aggregate inspection by subject and condition
+```{r}
+inspection_agg<-inspection_data%>%
+  group_by(Subject, looking_condition)%>%
+  summarise(mean_inspection=mean(inspection_opaque))
+
+inspection_agg2<-inspection_agg%>%
+  group_by(looking_condition)%>%
+  summarise(mean=mean(mean_inspection), se=sd(mean_inspection)/sqrt(length(mean_inspection)))
+
+
+inspection_agg_complete<-inspection_data_complete%>%
+  group_by(Subject, looking_condition)%>%
+  summarise(mean_inspection=mean(inspection_opaque))
+
+inspection_agg_complete2<-inspection_agg_complete%>%
+  group_by(looking_condition)%>%
+  summarise(mean=mean(mean_inspection), se=sd(mean_inspection)/sqrt(length(mean_inspection)))
+```
+
+### Plot of inspection behind barrier (did myself)
+```{r}
+p_inspection_complete<-ggplot(data=inspection_agg_complete2, aes(x=looking_condition, y=mean))+
+  geom_bar(stat="identity")+
+  geom_errorbar(aes(ymin=mean-se, ymax=mean+se), width=0.5)+
+  xlab("Screens")+
+  ylab("Inspection behind screen (mean)")+
+  theme_classic()
+
+p_inspection_complete
+ #write right code to save 
+ggsave(p_inspection_complete, filename = "graphics/inspection_opaque_with_zero.png", width=6, height=5, scale=0.7)
+
+
+p_inspection<-ggplot(data=inspection_agg2, aes(x=looking_condition, y=mean))+
+  geom_bar(stat="identity")+
+  geom_errorbar(aes(ymin=mean-se, ymax=mean+se), width=0.5)+
+  xlab("Experimenter gaze cue")+
+  ylab("Inspection behind opaque screen (mean)")+
+  theme_classic()
+
+p_inspection
+ #write right code to save 
+ggsave(p_inspection, filename = "graphics/inspection_opaque_without_zero.png", width=6, height=5, scale=0.7)
+
+
+
+```
+
+### Looking times
+```{r}
+levels(as.factor(raw.data$Value))
+levels(as.factor(raw.data$Subject))
+duration.data<-raw.data %>%
+  droplevels()%>%
+  filter(!is.na(trial))%>%
+  filter(Value=="Duration looking opaque" | Value=="Duration looking transparent")%>%
+  group_by(Subject, trial, Behaviour, Value)%>%
+  summarise(sum_duration=sum(duration))%>%
+  ungroup()%>%
+  droplevels()%>%
+  select(-Behaviour)%>%
+  complete(Subject, trial, Value, fill=list(sum_duration=0))%>% #fill in 0s
+  inner_join(demo.data)%>%
+  replace_na(list(sum_duration=0))%>%
+  pivot_wider(names_from = Value, values_from=sum_duration)%>%
+  rename(duration_transparent="Duration looking transparent", duration_opaque="Duration looking opaque")%>%
+  mutate(gaze_congruent_look=as.numeric(ifelse(looking_condition=="transparent", duration_transparent, duration_opaque )), total_looking_time=duration_transparent+duration_opaque, prop_duration_congruent_look=gaze_congruent_look/total_looking_time)
+
+levels(as.factor(duration.data$Subject))
+
+write.csv(duration.data, file = "data/goggles_looking_time_data.csv")
+```
+### Plot of gaze congruent looking times
+
+```{r}
+p_congruent<-ggplot(data=duration.data, aes(x=looking_condition, y=prop_duration_congruent_look))+
+  geom_boxplot()+
+  xlab("Experimenter gaze cue")+
+  ylab("Gaze congruent look")+
+  theme_classic()
+
+p_congruent
+
+ggsave(p_congruent, filename = "graphics/gaze_congruent_look.png", width=6, height=5, scale=0.7)
+
+# Added myself becuase first graf shows absolute
+p_congruent<-ggplot(data=duration.data, aes(x=looking_condition, y=gaze_congruent_look))+
+  geom_boxplot()+
+  xlab("Experimenter gaze cue")+
+  ylab("Porportion of duration of congruent looking time")+
+  theme_classic()
+
+#should i add error bars? dont know how. geom_errorbar(aes(ymin=mean-se, ymax=mean+se), width=0.5)+
+
+
+ggsave(p_choice, filename = "graphics/gaze_congruent_choice.png", width=6, height=5, scale=0.7)
+
+
+```
+### Looking times to opaque and clear tunnels
+```{r}
+
+duration.data2<-raw.data %>%
+  droplevels()%>%
+  filter(!is.na(trial))%>%
+  filter(Value=="Duration looking opaque" | Value=="Duration looking transparent")%>%
+  group_by(Subject, trial, Behaviour, Value)%>%
+  summarise(sum_duration=sum(duration))%>%
+  ungroup()%>%
+  droplevels()%>%
+  select(-Behaviour)%>%
+  complete(Subject, trial, Value, fill=list(sum_duration=0))%>% #fill in 0s
+  inner_join(demo.data)%>%
+  replace_na(list(sum_duration=0))
+
+#did myself 
+p_duration<-ggplot(data=duration.data2, aes(x=Value, y=sum_duration))+
+  geom_boxplot()+
+  xlab("Duration looking")+
+  ylab("Sum duration looking")+
+  theme_classic()
+    
+  p_duration
+  
+  ggsave(p_duration, filename = "graphics/sum_duration_look.png", width=6, height=5, scale=0.7)
+
+
+# add multiple plots 
+library(cowplot)
+
+pd<-plot_grid(p_duration, p_congruent, labels=c("A", "B"), ncol=2)
+
+ggsave(pd, filename = "graphics/pd.png", width = 10, height=5, scale=0.7)
+
+```
+#PLOT OF FIRST LOOK 
+```{r}
+agg.first.look<-first_look_data%>%
+  group_by(looking_condition)%>%
+  summarise(mean_first_transparent_look=mean(first_look_transparent), mean_first_look_congr=mean(first_look_cong), se_cong=sd(first_look_cong)/sqrt(length(first_look_cong)) )
+```
+```{r}
+p_fl<-ggplot(data=agg.first.look, aes(x=looking_condition, y=mean_first_look_congr))+
+  geom_bar(stat="identity")+
+  geom_errorbar(aes(ymin=mean_first_look_congr-se_cong, ymax=mean_first_look_congr+se_cong), width=0.5)+
+  xlab("Experimenter gaze cue")+
+   ylab("Gaze congruent first look (mean)")+
+  theme_classic()
+
+```
+## combine multiple plots into one
+```{r}
+library(cowplot)
+
+combine<-plot_grid(p_choice, p_fl, labels=c("A", "B"), ncol=2)
+
+ggsave(combine, filename = "graphics/combine.png", width = 10, height=5, scale=0.7)
+
+
+
+```
+
+
+
+
+# Analysis of looking times
+scale covariates
+```{r}
+# Analysis of looking times
+duration.data$z.trial<-scale(duration.data$trial)
+duration.data$z.age<-scale(duration.data$age)
+```
+
+
+```{r}
+xx.fe.re=fe.re.tab(fe.model="prop_duration_congruent_look~looking_condition+ transparent_screen+trial+age+sex",
+re="(1|Subject)", data=duration.data)
+
+duration.data2<-xx.fe.re$data
+
+#duration.data2$z.trial<-as.vector(scale(duration.data2$trial))
+duration.data2$z.trial<-(duration.data2$trial-mean(duration.data2$trial))/sd(duration.data2$trial)
+#duration.data2$z.age<-as.vector(scale(duration.data2$age))
+duration.data2$z.age<-(duration.data2$age-mean(duration.data2$age))/sd(duration.data2$age)
+duration.data2$looking_condition.transparent.c<-duration.data2$looking_condition.transparent-mean(duration.data2$looking_condition.transparent)
+duration.data2$transparent_screen.yellow.c<-duration.data2$transparent_screen.yellow-mean(duration.data2$transparent_screen.yellow)
+```
+
+
+
+code to remove 1 and 0 from the distribution of the response variable
+
+```{r}
+duration.data2$resp <- (duration.data2$prop_duration_congruent_look*(length(duration.data2$prop_duration_congruent_look) - 1) + 0.5)/length(duration.data2$prop_duration_congruent_look) 
+
+#duration.data2<-duration.data2%>%drop_na(resp)
+
+hist(duration.data2$prop_duration_congruent_look)
+hist(duration.data2$resp)
+
+min(duration.data2$resp)
+max(duration.data2$resp)
+```
+
+
+```{r}
+library(glmmTMB)
+contr<-glmmTMBControl(optCtrl=list(iter.max=100000000, eval.max=100000000))
+mm1_duration=glmmTMB(resp~looking_condition+ transparent_screen+
+            z.trial+z.age+sex+ (1|Subject) + 
+            (0+z.trial|Subject)+(0+looking_condition.transparent.c|Subject), family=beta_family, data=duration.data2,
+      control=glmmTMBControl(optCtrl=list(iter.max=100000000, eval.max=100000000)))
+
+summary(mm1_duration)
+```
+
+```{r}
+overdisp.test(mm1_duration)
+```
+
+
+```{r}
+mm1_duration.drop1<-as.data.frame(drop1(mm1_duration, test="Chisq", control=contr))
+###tail.mm3.drop1<-tail.mm3.drop1%>%filter(!is.na(Df))%>%add_row(Df = rep(NA,3),  .before = 1)
+mm1_duration.drop1
+```
+
+confidence interval + DOESNT WORK 
+
+
+```{r}
+duration.data2<-as.data.frame(duration.data2)
+source("./functions/boot_glmm.r")
+boot.res.duration=boot.glmmtmb(mm1_duration,data=duration.data2, nboots=1000, para=T, level=0.95, n.cores = "all-1")
+```
+
+### output table
+
+```{r}
+###model_tail_cis=grepl(x=rownames(mm3_tail.ci$ci.estimates$fe), pattern="@cond")
+
+model_table_1<- bind_cols(as.data.frame(summary(mm1_duration)$coefficients$cond),
+                             mm1_duration.drop1)%>%
+                            # mm3_tail.ci$ci.estimates$fe[1:7,]) %>%
+  select(Estimate, SE = `Std. Error`, Chi2 = LRT, df = Df, p = `Pr(>Chi)`,LowerCI = X2.5., UpperCI = X97.5.,) %>%
+  mutate(across(.cols = c(p), ~ format(round(.x, 3), nsmall=3))) %>% 
+  mutate(across(.cols = c(Estimate:Chi2), ~ format(round(.x, 2), nsmall=2))) %>% 
+  mutate(across(Chi2:p, ~replace_na(.x, "")))%>%
+mutate(p=replace(p, p==0, "<0.001"))
+
+write.csv(model_table_1, file = "saves/mm1_duration_output_table_CI.csv")
+
+```
+
+
+## Analysis of first look
+scale covariates
+```{r}
+# Analysis of first look
+first_look_data$z.trial<-scale(first_look_data$trial)
+first_look_data$z.age<-scale(first_look_data$age)
+```
+
+```{r}
+library(lme4)
+#
+mm1_fl<-glmer(first_look_cong ~ looking_condition+ transparent_screen+
+            z.trial+z.age+sex+
+            (1+z.trial+looking_condition|Subject), family=binomial, data=first_look_data, control=glmerControl(optimizer="bobyqa",optCtrl=list(maxfun=2e5)))
+
+```
+```{R echo=FALSE, error=FALSE, warning=FALSE}
+library(car)
+col.full.fl <- lm(first_look_cong ~ looking_condition+ transparent_screen+ z.trial+z.age+sex, data = first_look_data)
+vif(col.full.fl)
+#no problem
+```
+Check model stability
+```{r eval=FALSE, echo=FALSE}
+m.stab.fl <- glmm.model.stab(model.res = mm1_fl)
+m.stab.fl$detailed$warnings
+xx <- as.data.frame(round(m.stab.fl$summary[, -1], 3))
+xx
+m.stab.plot(round(m.stab.fl$summary[, -1], 3))
+
+```
+
+####Model output
+  + Coefficients
+```{r}
+round(summary(mm1_fl)$coefficients, 3)
+```
+  + Individual predictors: likelihood ratio tests  
+Drop1: P values for the individual effects were based on likelihood ratio tests comparing the full with respective reduced models (Barr et al., 2013; R function drop1 with argument 'test' set to "Chisq"). 
+
+```{r}
+drop1.mm1_fl=drop1(mm1_fl, test="Chisq")
+round(drop1.mm1_fl,3)
+```
+
+ + confidence intervals
+
+```{r}
+boot.res.mm1_fl=boot.glmm.pred(model.res=mm1_fl, excl.warnings=T,	nboots=1000, para=F)
+ci.res.mm1_fl<-round(boot.res.mm1_fl$ci.estimates, 3)
+ci.res.mm1_fl
+```
+
+```{r}
+save.image(file="goggles_workspace.RData")
+```
+
+
+### output table
+
+```{r}
+#model_tail_cis=grepl(x=rownames(mm3_tail.ci$ci.estimates$fe), pattern="@cond")
+
+model_table_fl<- bind_cols(as.data.frame(summary(mm1_fl)$coefficients),
+                             drop1.mm1_fl)%>%
+                            # ci.res.mm1_fl$ci.estimates$fe[1:6,]) %>%
+  select(Estimate, SE = `Std. Error`, Chi2 = LRT, df = npar, p = `Pr(Chi)`) %>% #LowerCI = X2.5., UpperCI = X97.5., 
+  mutate(across(.cols = c(p), ~ format(round(.x, 3), nsmall=3))) %>% 
+  mutate(across(.cols = c(Estimate:Chi2), ~ format(round(.x, 2), nsmall=2))) %>% 
+  mutate(across(Chi2:p, ~replace_na(.x, "")))%>%
+mutate(p=replace(p, p==0, "<0.001"))
+
+write.csv(model_table_fl, file = "saves/mm1_first_look_output_table.csv")
+```
+
+
+
+#Analysis of first choice (did myself)
+scale covariates
+```{r}
+# Analysis of first choice
+first_choice_data$z.trial<-scale(first_choice_data$trial)
+first_choice_data$z.age<-scale(first_choice_data$age)
+```
+
+```{r}
+library(lme4)
+#
+mm1_fc<-glmer(first_choice_cong ~ looking_condition+ transparent_screen+
+            z.trial+z.age+sex+
+            (1+z.trial+looking_condition|Subject), family=binomial, data=first_choice_data, control=glmerControl(optimizer="bobyqa",optCtrl=list(maxfun=2e5)))
+
+```
+```{R echo=FALSE, error=FALSE, warning=FALSE}
+library(car)
+col.full.fc <- lm(first_choice_cong ~ looking_condition+ transparent_screen+ z.trial+z.age+sex, data = first_choice_data)
+vif(col.full.fc)
+#no problem
+```
+Check model stability
+```{r eval=FALSE, echo=FALSE}
+m.stab.fc <- glmm.model.stab(model.res = mm1_fc)
+m.stab.fc$detailed$warnings
+xx <- as.data.frame(round(m.stab.fc$summary[, -1], 3))
+xx
+m.stab.plot(round(m.stab.fc$summary[, -1], 3))
+
+```
+
+####Model output
+  + Coefficients
+```{r}
+round(summary(mm1_fc)$coefficients, 3)
+```
+  + Individual predictors: likelihood ratio tests  
+Drop1: P values for the individual effects were based on likelihood ratio tests comparing the full with respective reduced models (Barr et al., 2013; R function drop1 with argument 'test' set to "Chisq"). 
+
+```{r}
+drop1.mm1_fc=drop1(mm1_fc, test="Chisq")
+round(drop1.mm1_fc,3)
+```
+
+ + confidence intervals
+
+```{r}
+boot.res.mm1_fc=boot.glmm.pred(model.res=mm1_fc, excl.warnings=T,	nboots=1000, para=F)
+ci.res.mm1_fc<-round(boot.res.mm1_fc$ci.estimates, 3)
+ci.res.mm1_fc
+```
+
+```{r}
+save.image(file="goggles_workspace.RData")
+```
+
+
+### output table
+
+```{r}
+#model_tail_cis=grepl(x=rownames(mm3_tail.ci$ci.estimates$fe), pattern="@cond")
+
+model_table_fc<- bind_cols(as.data.frame(summary(mm1_fc)$coefficients),
+                             drop1.mm1_fc)%>%
+                            # ci.res.mm1_fc$ci.estimates$fe[1:7,]) %>%
+  select(Estimate, SE = `Std. Error`, Chi2 = LRT, df = npar, p = `Pr(Chi)`) %>%  #LowerCI = X2.5., UpperCI = X97.5. %>%
+  mutate(across(.cols = c(p), ~ format(round(.x, 3), nsmall=3))) %>% 
+  mutate(across(.cols = c(Estimate:Chi2), ~ format(round(.x, 2), nsmall=2))) %>% 
+  mutate(across(Chi2:p, ~replace_na(.x, "")))%>%
+mutate(p=replace(p, p==0, "<0.001"))
+
+write.csv(model_table_fc, file = "saves/mm1_first_choice_output_table.csv")
+```
+
+
+
+## Analysis of inspection behind barrier without the zeros 
+scale covariates
+```{r}
+inspection_data$z.trial<-scale(inspection_data$trial)
+inspection_data$z.age<-scale(inspection_data$age)
+```
+
+```{r}
+library(lme4)
+#
+mm1_inspection<-glmer(inspection_opaque ~ looking_condition+ transparent_screen+
+            z.trial+z.age+sex+
+            (1+z.trial+looking_condition|Subject), family=binomial, data=inspection_data, control=glmerControl(optimizer="bobyqa",optCtrl=list(maxfun=2e5)))
+
+```
+```{R echo=FALSE, error=FALSE, warning=FALSE}
+library(car)
+col.insp <- lm(inspection_opaque ~ looking_condition+ transparent_screen+ z.trial+ z.age+ sex, data = inspection_data)
+vif(col.insp)
+#no problem
+```
+Check model stability
+```{r eval=FALSE, echo=FALSE}
+m.stab.insp <- glmm.model.stab(model.res = mm1_inspection)
+m.stab.insp$detailed$warnings
+xx <- as.data.frame(round(m.stab.insp$summary[, -1], 3))
+xx
+m.stab.plot(round(m.stab.insp$summary[, -1], 3))
+
+```
+
+####Model output
+  + Coefficients
+```{r}
+round(summary(mm1_inspection)$coefficients, 3)
+```
+  + Individual predictors: likelihood ratio tests  
+Drop1: P values for the individual effects were based on likelihood ratio tests comparing the full with respective reduced models (Barr et al., 2013; R function drop1 with argument 'test' set to "Chisq"). 
+
+```{r}
+drop1.insp=drop1(mm1_inspection, test="Chisq")
+round(drop1.insp,3)
+```
+
+ + confidence intervals
+
+```{r}
+boot.res=boot.glmm.pred(model.res=mm1_inspection, excl.warnings=T,	nboots=1000, para=F)
+res.insp<-round(boot.res$ci.estimates, 3)
+res.insp
+```
+
+```{r}
+save.image(file="goggles_workspace.RData")
+```
+
+
+
+### output table
+
+```{r}
+#model_tail_cis=grepl(x=rownames(mm3_tail.ci$ci.estimates$fe), pattern="@cond")
+
+model_table_insp<- bind_cols(as.data.frame(summary(mm1_inspection)$coefficients),
+                             drop1.insp)%>%
+                            # mm3_tail.ci$ci.estimates$fe[1:7,]) %>%
+  select(Estimate, SE = `Std. Error`, Chi2 = LRT, df = npar, p = `Pr(Chi)`) %>% #LowerCI = X2.5., UpperCI = X97.5., 
+  mutate(across(.cols = c(p), ~ format(round(.x, 3), nsmall=3))) %>% 
+  mutate(across(.cols = c(Estimate:Chi2), ~ format(round(.x, 2), nsmall=2))) %>% 
+  mutate(across(Chi2:p, ~replace_na(.x, "")))%>%
+mutate(p=replace(p, p==0, "<0.001"))
+
+write.csv(model_table_insp, file = "saves/mm1_inspection_without_zero_output_table.csv")
+```
+
+
+
+
+## Analysis of inspection behind barrier with the zeros 
+scale covariates
+```{r}
+inspection_data_complete$z.trial<-scale(inspection_data_complete$trial)
+inspection_data_complete$z.age<-scale(inspection_data_complete$age)
+```
+
+```{r}
+library(lme4)
+#
+mm1_inspection<-glmer(inspection_opaque ~ looking_condition+ transparent_screen+
+            z.trial+z.age+sex+
+            (1+z.trial+looking_condition|Subject), family=binomial, data=inspection_data_complete, control=glmerControl(optimizer="bobyqa",optCtrl=list(maxfun=2e5)))
+
+```
+
+```{R echo=FALSE, error=FALSE, warning=FALSE}
+library(car)
+col.insp.1 <- lm(inspection_opaque ~ looking_condition+ transparent_screen+ z.trial+ z.age+ sex, data = inspection_data)
+vif(col.insp.1)
+#no problem
+```
+Check model stability
+```{r eval=FALSE, echo=FALSE}
+m.stab.insp <- glmm.model.stab(model.res = mm1_inspection)
+m.stab.insp$detailed$warnings
+xx <- as.data.frame(round(m.stab.insp$summary[, -1], 3))
+xx
+m.stab.plot(round(m.stab.insp$summary[, -1], 3))
+
+```
+
+####Model output
+  + Coefficients
+```{r}
+round(summary(mm1_inspection)$coefficients, 3)
+```
+  + Individual predictors: likelihood ratio tests  
+Drop1: P values for the individual effects were based on likelihood ratio tests comparing the full with respective reduced models (Barr et al., 2013; R function drop1 with argument 'test' set to "Chisq"). 
+
+```{r}
+drop1.insp=drop1(mm1_inspection, test="Chisq")
+round(drop1.insp,3)
+```
+
+ + confidence intervals
+
+```{r}
+boot.res=boot.glmm.pred(model.res=mm1_inspection, excl.warnings=T,	nboots=1000, para=F)
+res.insp<-round(boot.res$ci.estimates, 3)
+res.insp
+```
+
+
+```{r}
+save.image(file="goggles_workspace.RData")
+```
+
+
+
+### output table
+
+```{r}
+#model_tail_cis=grepl(x=rownames(mm3_tail.ci$ci.estimates$fe), pattern="@cond")
+
+model_table_insp<- bind_cols(as.data.frame(summary(mm1_inspection)$coefficients),
+                             drop1.insp)%>%
+                            # mm3_tail.ci$ci.estimates$fe[1:7,]) %>%
+  select(Estimate, SE = `Std. Error`, Chi2 = LRT, df = npar, p = `Pr(Chi)`) %>% #LowerCI = X2.5., UpperCI = X97.5., 
+  mutate(across(.cols = c(p), ~ format(round(.x, 3), nsmall=3))) %>% 
+  mutate(across(.cols = c(Estimate:Chi2), ~ format(round(.x, 2), nsmall=2))) %>% 
+  mutate(across(Chi2:p, ~replace_na(.x, "")))%>%
+mutate(p=replace(p, p==0, "<0.001"))
+
+write.csv(model_table_insp, file = "saves/mm1_inspection_with_zero_output_table.csv")
+```
+
+
+
+
+## Absolute looking time to transparent barrier
+```{r}
+
+transparent.duration.data<-raw.data %>%
+  droplevels()%>%
+  filter(!is.na(trial))%>%
+  filter(Value=="Duration looking opaque" | Value=="Duration looking transparent")%>%
+  group_by(Subject, trial, Behaviour, Value)%>%
+  summarise(sum_duration=sum(duration))%>%
+  ungroup()%>%
+  droplevels()%>%
+  select(-Behaviour)%>%
+  complete(Subject, trial, Value, fill=list(sum_duration=0))%>% #fill in 0s
+  inner_join(demo.data)%>%
+  replace_na(list(sum_duration=0))%>%
+  filter(Value=="Duration looking transparent")
+
+ggplot(data=transparent.duration.data, aes(x=looking_condition, y=sum_duration))+
+  geom_boxplot()
+
+#added myself to save the plot 
+p_trans_dur<-ggplot(data=transparent.duration.data, aes(x=looking_condition, y=sum_duration))+
+  geom_boxplot()+
+  xlab("Experimenter gaze cue")+
+  ylab("Duration looking transparent")+
+  theme_classic()
+
+p_trans_dur
+
+ggsave(p_trans_dur, filename = "graphics/duration_transparent.png", width=6, height=5, scale=0.7)
+
+
+hist(sqrt(transparent.duration.data$sum_duration))
+
+``` 
+
+## combine multiple plots into one added myself 
+```{r}
+
+library(cowplot)
+
+fl_dur<-plot_grid(p_trans_dur, p_opaque_dur, labels=c("A", "B"), ncol=2)
+
+ggsave(fl_dur, filename = "graphics/fl_dur.png", width = 10, height=5, scale=0.7)
+
+```
+
+scale covariates
+```{r}
+transparent.duration.data$z.trial<-scale(transparent.duration.data$trial)
+transparent.duration.data$z.age<-scale(transparent.duration.data$age)
+
+#manual dummy coding
+transparent.duration.data$looking_condition_dummy=as.numeric(transparent.duration.data$looking_condition==levels(as.factor(transparent.duration.data$looking_condition))[2])
+```
+
+### fitting LMM 
+```{r}
+#library(lmerTest)
+library(lme4)
+
+mm1_transparent<-lmer(sqrt(sum_duration) ~ looking_condition+ transparent_screen+
+            z.trial+z.age+sex+
+            (1+z.trial+looking_condition_dummy||Subject), REML=FALSE, data=transparent.duration.data)
+```
+
+Assumptions and stability
+```{r}
+diagnostics.plot(mm1_transparent)
+ranef.diagn.plot(mm1_transparent)
+full.stab.transp=glmm.model.stab(model.res=mm1_transparent, contr=NULL, para=F, data=transparent.duration.data)
+m.stab.plot(full.stab.transp$summary[, -1])
+full.stab.transp$summary
+```
+
+Model output
+```{r}
+summary(mm1_transparent)
+drop1.trans<-drop1(mm1_transparent, test="Chisq")
+
+```
+
+
+ + confidence intervals
+
+```{r}
+boot.res.trans=boot.glmm.pred(model.res=mm1_transparent, excl.warnings=T,	nboots=1000, para=F)
+res.trans<-round(boot.res.trans$ci.estimates, 3)
+res.trans
+```
+
+
+```{r}
+#model_tail_cis=grepl(x=rownames(mm3_tail.ci$ci.estimates$fe), pattern="@cond")
+
+model_table_transp<- bind_cols(as.data.frame(summary(mm1_transparent)$coefficients),
+                             drop1.trans)%>%
+                            # mm3_tail.ci$ci.estimates$fe[1:7,]) %>%
+  select(Estimate, SE = `Std. Error`, Chi2 = LRT, df = npar, p = `Pr(Chi)`) %>% #LowerCI = X2.5., UpperCI = X97.5., 
+  mutate(across(.cols = c(p), ~ format(round(.x, 3), nsmall=3))) %>% 
+  mutate(across(.cols = c(Estimate:Chi2), ~ format(round(.x, 2), nsmall=2))) %>% 
+  mutate(across(Chi2:p, ~replace_na(.x, "")))%>%
+mutate(p=replace(p, p==0, "<0.001"))
+
+write.csv(model_table_transp, file = "saves/mm1_transp_output_table.csv")
+```
+
+## Looking time to opaque barrier
+
+```{r}
+
+opaque.duration.data<-raw.data %>%
+  droplevels()%>%
+  filter(!is.na(trial))%>%
+  filter(Value=="Duration looking opaque" | Value=="Duration looking transparent")%>%
+  group_by(Subject, trial, Behaviour, Value)%>%
+  summarise(sum_duration=sum(duration))%>%
+  ungroup()%>%
+  droplevels()%>%
+  select(-Behaviour)%>%
+  complete(Subject, trial, Value, fill=list(sum_duration=0))%>% #fill in 0s
+  inner_join(demo.data)%>%
+  replace_na(list(sum_duration=0))%>%
+  filter(Value=="Duration looking opaque")
+
+p_opaque_dur<-ggplot(data=opaque.duration.data, aes(x=looking_condition, y=sum_duration))+
+  geom_boxplot()
+
+#added myself to save the plot 
+p_opaque_dur<-ggplot(data=opaque.duration.data, aes(x=looking_condition, y=sum_duration))+
+  geom_boxplot()+
+  xlab("Experimenter gaze cue")+
+  ylab("Duration looking opaque")+
+  theme_classic()
+
+p_opaque_dur
+
+ggsave(p_opaque_dur, filename = "graphics/duration_opaque.png", width=6, height=5, scale=0.7)
+
+
+hist(sqrt(opaque.duration.data$sum_duration))
+```
+scale covariates
+```{r}
+opaque.duration.data$z.trial<-scale(opaque.duration.data$trial)
+opaque.duration.data$z.age<-scale(opaque.duration.data$age)
+
+#manual dummy coding
+opaque.duration.data$looking_condition_dummy=as.numeric(opaque.duration.data$looking_condition==levels(as.factor(opaque.duration.data$looking_condition))[2])
+```
+
+### fitting LMM 
+```{r}
+#library(lmerTest)
+library(lme4)
+
+mm1_opaque<-lmer(sqrt(sum_duration) ~ looking_condition+ transparent_screen+
+            z.trial+z.age+sex+
+            (1+z.trial+looking_condition_dummy||Subject), REML=FALSE, data=opaque.duration.data)
+```
+
+Assumptions and stability
+```{r}
+diagnostics.plot(mm1_opaque)
+ranef.diagn.plot(mm1_opaque)
+full.stab.transp=glmm.model.stab(model.res=mm1_opaque, contr=NULL, para=F, data=opaque.duration.data)
+m.stab.plot(full.stab.transp$summary[, -1])
+full.stab.transp$summary
+```
+
+Model output
+```{r}
+summary(mm1_opaque)
+drop1(mm1_opaque, test="Chisq")
+
+```
+ + confidence intervals
+
+```{r}
+boot.res.opa=boot.glmm.pred(model.res=mm1_opaque, excl.warnings=T,	nboots=1000, para=F)
+res.opa<-round(boot.res.opa$ci.estimates, 3)
+res.opa
+```
+
+
+```{r}
+#added myself but doesnt work 
+#model_tail_cis=grepl(x=rownames(mm3_tail.ci$ci.estimates$fe), pattern="@cond")
+
+model_table_opaque<- bind_cols(as.data.frame(summary(mm1_opaque)$coefficients),
+                             drop1.trans)%>%
+                            # mm3_tail.ci$ci.estimates$fe[1:7,]) %>%
+  select(Estimate, SE = `Std. Error`, Chi2 = LRT, df = npar, p = `Pr(Chi)`) %>% #LowerCI = X2.5., UpperCI = X97.5., 
+  mutate(across(.cols = c(p), ~ format(round(.x, 3), nsmall=3))) %>% 
+  mutate(across(.cols = c(Estimate:Chi2), ~ format(round(.x, 2), nsmall=2))) %>% 
+  mutate(across(Chi2:p, ~replace_na(.x, "")))%>%
+mutate(p=replace(p, p==0, "<0.001"))
+
+write.csv(model_table_opaque, file = "saves/mm1_opaque_output_table.csv")
+```
+
+# First look to transparent barrier
+
+```{r}
+first_look_trans_data<-raw.data%>%
+  filter(Behaviour=="First look")%>%
+  filter(!is.na(trial))%>%
+  group_by(Subject, trial)%>%
+  summarise(first_look_transparent=sum(Value=="First look transparent"))%>%
+  ungroup()%>%
+  full_join(demo.data)%>%
+  complete(Subject, trial,  fill=list(first_look_transparent=0))#fill in 0s
+```
+
+CV: Add binomial glmm (DV: first_look_transparent, data= first_look_trans_data)
+
+Next steps: do the same for first choice analysis (new DV: first_choice_transparent)
+Modify from here:
+
+
+## Analysis of first look transparent
+scale covariates
+```{r}
+# Analysis of first look
+first_look_trans_data$z.trial<-scale(first_look_trans_data$trial)
+first_look_trans_data$z.age<-scale(first_look_trans_data$age)
+```
+
+```{r}
+library(lme4)
+#
+mm1_flt<-glmer(first_look_transparent ~ looking_condition+ transparent_screen+
+            z.trial+z.age+sex+
+            (1+z.trial+looking_condition|Subject), family=binomial, data=first_look_trans_data, control=glmerControl(optimizer="bobyqa",optCtrl=list(maxfun=2e5)))
+
+```
+```{R echo=FALSE, error=FALSE, warning=FALSE}
+library(car)
+col.full.flt <- lm(first_look_transparent ~ looking_condition+ transparent_screen+ z.trial+z.age+sex, data = first_look_trans_data)
+vif(col.full.flt)
+#no problem
+```
+Check model stability
+```{r eval=FALSE, echo=FALSE}
+m.stab.flt <- glmm.model.stab(model.res = mm1_flt)
+m.stab.flt$detailed$warnings
+xx <- as.data.frame(round(m.stab.flt$summary[, -1], 3))
+xx
+m.stab.plot(round(m.stab.flt$summary[, -1], 3))
+
+```
+
+####Model output
+  + Coefficients
+```{r}
+round(summary(mm1_flt)$coefficients, 3)
+```
+  + Individual predictors: likelihood ratio tests  
+Drop1: P values for the individual effects were based on likelihood ratio tests comparing the full with respective reduced models (Barr et al., 2013; R function drop1 with argument 'test' set to "Chisq"). 
+
+```{r}
+drop1.flt=drop1(mm1_flt, test="Chisq")
+round(drop1.flt,3)
+```
+
+ + confidence intervals
+
+```{r}
+boot.res.flt=boot.glmm.pred(model.res=mm1_flt, excl.warnings=T,	nboots=1000, para=F)
+res.flt<-round(boot.res.flt$ci.estimates, 3)
+res.flt
+```
+
+```{r}
+save.image(file="goggles_workspace.RData")
+```
+
+
+
+### output table
+
+```{r}
+#model_tail_cis=grepl(x=rownames(mm3_tail.ci$ci.estimates$fe), pattern="@cond")
+
+model_table_flt<- bind_cols(as.data.frame(summary(mm1_flt)$coefficients),
+                             drop1.flt)%>%
+                            # mm3_tail.ci$ci.estimates$fe[1:7,]) %>%
+  select(Estimate, SE = `Std. Error`, Chi2 = LRT, df = npar, p = `Pr(Chi)`) %>% #LowerCI = X2.5., UpperCI = X97.5., 
+  mutate(across(.cols = c(p), ~ format(round(.x, 3), nsmall=3))) %>% 
+  mutate(across(.cols = c(Estimate:Chi2), ~ format(round(.x, 2), nsmall=2))) %>% 
+  mutate(across(Chi2:p, ~replace_na(.x, "")))%>%
+mutate(p=replace(p, p==0, "<0.001"))
+
+write.csv(model_table_flt, file = "saves/mm1_first_look_trans_output_table.csv")
+```
+
+### first look transparent: chance level comparison
+```{r}
+first_look_trans_agg_data<- first_look_trans_data%>%
+  group_by(Subject, looking_condition) %>%
+  summarise(mean_trans_fl = mean(first_look_transparent)) 
+
+t.test(first_look_trans_agg_data$mean_trans_fl[first_look_trans_agg_data$looking_condition=="transparent"], mu=0.5)
+
+t.test(first_look_trans_agg_data$mean_trans_fl[first_look_trans_agg_data$looking_condition=="opaque"], mu=0.5)
+
+
+```
+
+## Analysis of first look opaque
+```{r}
+first_look_opaque_data<-raw.data%>%
+  filter(Behaviour=="First look")%>%
+  filter(!is.na(trial))%>%
+  group_by(Subject, trial)%>%
+  summarise(first_look_opaque=sum(Value=="First look opaque"))%>%
+  ungroup()%>%
+  full_join(demo.data)%>%
+  complete(Subject, trial,  fill=list(first_look_opaque=0))#fill in 0s
+```
+
+scale covariates
+```{r}
+# Analysis of first look opaque
+first_look_opaque_data$z.trial<-(first_look_opaque_data$trial-mean(first_look_opaque_data$trial))/sd(first_look_opaque_data$trial)
+first_look_opaque_data$z.age<-(first_look_opaque_data$age-mean(first_look_opaque_data$age))/sd(first_look_opaque_data$age)
+```
+
+```{r}
+library(lme4)
+
+mm1_flo<-glmer(first_look_opaque ~ looking_condition+ transparent_screen+
+            z.trial+z.age+sex+
+            (1+z.trial+looking_condition|Subject), family=binomial, data=first_look_opaque_data, control=glmerControl(optimizer="bobyqa",optCtrl=list(maxfun=2e5)))
+
+```
+```{R echo=FALSE, error=FALSE, warning=FALSE}
+library(car)
+col.full.flo <- lm(first_look_opaque ~ looking_condition+ transparent_screen+ z.trial+z.age+sex, data = first_look_opaque_data)
+vif(col.full.flo)
+#no problem
+```
+Check model stability
+```{r eval=FALSE, echo=FALSE}
+m.stab.flo <- glmm.model.stab(model.res = mm1_flo)
+m.stab.flo$detailed$warnings
+xx <- as.data.frame(round(m.stab.flo$summary[, -1], 3))
+xx
+m.stab.plot(round(m.stab.flo$summary[, -1], 3))
+
+```
+
+####Model output
+  + Coefficients
+```{r}
+round(summary(mm1_flo)$coefficients, 3)
+```
+  + Individual predictors: likelihood ratio tests  
+Drop1: P values for the individual effects were based on likelihood ratio tests comparing the full with respective reduced models (Barr et al., 2013; R function drop1 with argument 'test' set to "Chisq"). 
+
+```{r}
+drop1.flo=drop1(mm1_flo, test="Chisq")
+round(drop1.flo,3)
+```
+
+ + confidence intervals
+
+```{r}
+boot.res.flo=boot.glmm.pred(model.res=mm1_flo, excl.warnings=T,	nboots=1000, para=F)
+res.flo<-round(boot.res.flo$ci.estimates, 3)
+res.flo
+```
+
+```{r}
+save.image(file="goggles_workspace.RData")
+```
+
+
+
+### output table
+
+```{r}
+#model_tail_cis=grepl(x=rownames(mm3_tail.ci$ci.estimates$fe), pattern="@cond")
+
+model_table_flo<- bind_cols(as.data.frame(summary(mm1_flo)$coefficients),
+                             drop1.flo)%>%
+                            # mm3_tail.ci$ci.estimates$fe[1:7,]) %>%
+  select(Estimate, SE = `Std. Error`, Chi2 = LRT, df = npar, p = `Pr(Chi)`) %>% #LowerCI = X2.5., UpperCI = X97.5., 
+  mutate(across(.cols = c(p), ~ format(round(.x, 3), nsmall=3))) %>% 
+  mutate(across(.cols = c(Estimate:Chi2), ~ format(round(.x, 2), nsmall=2))) %>% 
+  mutate(across(Chi2:p, ~replace_na(.x, "")))%>%
+mutate(p=replace(p, p==0, "<0.001"))
+
+write.csv(model_table_flo, file = "saves/mm1_first_look_opaque_output_table.csv")
+```
+
+### first look opaque: chance level comparison
+```{r}
+first_look_opaque_agg_data<- first_look_opaque_data%>%
+  group_by(Subject, looking_condition) %>%
+  summarise(mean_opaque_fl = mean(first_look_opaque)) 
+
+t.test(first_look_opaque_agg_data$mean_opaque_fl[first_look_opaque_agg_data$looking_condition=="transparent"], mu=0.5)
+
+t.test(first_look_opaque_agg_data$mean_opaque_fl[first_look_opaque_agg_data$looking_condition=="opaque"], mu=0.5)
+
+#comparing gaze incongruent looks
+t.test(first_look_trans_agg_data$mean_trans_fl[first_look_trans_agg_data$looking_condition=="opaque"], first_look_opaque_agg_data$mean_opaque_fl[first_look_opaque_agg_data$looking_condition=="transparent"], paired=TRUE)
+
+t.test(first_look_trans_agg_data$mean_trans_fl[first_look_trans_agg_data$looking_condition=="opaque"], first_look_opaque_agg_data$mean_opaque_fl[first_look_opaque_agg_data$looking_condition=="opaque"], paired=TRUE)
+
+t.test(first_look_trans_agg_data$mean_trans_fl[first_look_trans_agg_data$looking_condition=="transparent"], first_look_opaque_agg_data$mean_opaque_fl[first_look_opaque_agg_data$looking_condition=="transparent"], paired=TRUE)
+
+```
+
+
+
+
+
+
+
+
+
+
+#Analysis of first choice transparent 
+CV: Add binomial glmm (DV: first_look_transparent, data= first_look_trans_data)
+
+Next steps: do the same for first choice analysis (new DV: first_choice_transparent)
+Modify from here:
+
+DV: first_choice_transparent, data= first_choice_trans_data
+
+
+```{r}
+first_choice_trans_data<-raw.data%>%
+  filter(Behaviour=="First target choice")%>%
+  filter(!is.na(trial))%>%
+  group_by(Subject, trial)%>%
+  summarise(first_choice_transparent=sum(Value=="First choice transparent"))%>%
+  ungroup()%>%
+  full_join(demo.data)%>%
+  complete(Subject, trial,  fill=list(first_choice_transparent=0))#fill in 0s
+```
+
+
+scale covariates
+```{r}
+# Analysis of first choice
+first_choice_trans_data$z.trial<-scale(first_choice_trans_data$trial)
+first_choice_trans_data$z.age<-scale(first_choice_trans_data$age)
+```
+
+```{r}
+library(lme4)
+max(first_choice_trans_data$first_choice_transparent)
+mm1_fct<-glmer(first_choice_transparent ~ looking_condition+ transparent_screen+
+            z.trial+z.age+sex+
+            (1+z.trial+looking_condition|Subject), family=binomial, data=first_choice_trans_data, control=glmerControl(optimizer="bobyqa",optCtrl=list(maxfun=2e5)))
+
+```
+
+
+
+
+
+```{R echo=FALSE, error=FALSE, warning=FALSE}
+library(car)
+col.full.fct <- lm(first_choice_transparent ~ looking_condition+ transparent_screen+ z.trial+z.age+sex, data = first_choice_trans_data)
+vif(col.full.fct)
+#no problem
+```
+Check model stability
+```{r eval=FALSE, echo=FALSE}
+m.stab.fct <- glmm.model.stab(model.res = mm1_fct)
+m.stab.fct$detailed$warnings
+xx <- as.data.frame(round(m.stab.fct$summary[, -1], 3))
+xx
+m.stab.plot(round(m.stab.fct$summary[, -1], 3))
+
+```
+
+####Model output
+  + Coefficients
+```{r}
+round(summary(mm1_fct)$coefficients, 3)
+```
+  + Individual predictors: likelihood ratio tests  
+Drop1: P values for the individual effects were based on likelihood ratio tests comparing the full with respective reduced models (Barr et al., 2013; R function drop1 with argument 'test' set to "Chisq"). 
+
+```{r}
+drop1.mm1_fct=drop1(mm1_fct, test="Chisq")
+round(drop1.mm1_fct,3)
+```
+
+ + confidence intervals
+
+```{r}
+boot.res.mm1_fct=boot.glmm.pred(model.res=mm1_fct, excl.warnings=T,	nboots=1000, para=F)
+ci.res.mm1_fct<-round(boot.res.mm1_fct$ci.estimates, 3)
+ci.res.mm1_fct
+```
+
+```{r}
+save.image(file="goggles_workspace.RData")
+```
+
+
+### output table
+
+```{r}
+#model_tail_cis=grepl(x=rownames(mm3_tail.ci$ci.estimates$fe), pattern="@cond")
+
+model_table_fct<- bind_cols(as.data.frame(summary(mm1_fct)$coefficients),
+                             drop1.mm1_fct)%>%
+                            # ci.res.mm1_fc$ci.estimates$fe[1:7,]) %>%
+  select(Estimate, SE = `Std. Error`, Chi2 = LRT, df = npar, p = `Pr(Chi)`) %>%  #LowerCI = X2.5., UpperCI = X97.5. %>%
+  mutate(across(.cols = c(p), ~ format(round(.x, 3), nsmall=3))) %>% 
+  mutate(across(.cols = c(Estimate:Chi2), ~ format(round(.x, 2), nsmall=2))) %>% 
+  mutate(across(Chi2:p, ~replace_na(.x, "")))%>%
+mutate(p=replace(p, p==0, "<0.001"))
+
+write.csv(model_table_fc, file = "saves/mm1_first_choice_transparent_output_table.csv")
+```
+
+
+
+## First trial analysis
+
+### First look congruent
+only first trial
+```{r}
+first_look_data_trial1<-first_look_data%>%
+  filter(trial==1)
+```
+
+
+scale covariates
+```{r}
+# Analysis of first look
+first_look_data_trial1$z.age<-scale(first_look_data_trial1$age)
+```
+
+```{r}
+library(lme4)
+mm1_fl_trial1<-glm(first_look_cong ~ looking_condition+ transparent_screen+
+            z.age+sex, family=binomial, data=first_look_data_trial1)
+
+```
+
+
+```{R echo=FALSE, error=FALSE, warning=FALSE}
+library(car)
+col.mm1_fl_trial1 <- lm(first_look_cong ~ looking_condition+ transparent_screen+ z.age+sex, data = first_look_data_trial1)
+vif(col.mm1_fl_trial1)
+#no problem
+```
+Check model stability
+```{r eval=FALSE, echo=FALSE}
+summary(mm1_fl_trial1)
+
+#dfBeta values
+cbind(coef(mm1_fl_trial1),
+coef(mm1_fl_trial1)+t(apply(dfbeta(mm1_fl_trial1), 2, range)))
+
+```
+
+####Model output
+  + Coefficients
+```{r}
+round(summary(col.mm1_fl_trial1)$coefficients, 3)
+```
+  + Individual predictors: likelihood ratio tests  
+Drop1: P values for the individual effects were based on likelihood ratio tests comparing the full with respective reduced models (Barr et al., 2013; R function drop1 with argument 'test' set to "Chisq"). 
+
+```{r}
+drop1.mm1_fl_trial1=drop1(mm1_fl_trial1, test="Chisq")
+round(drop1.mm1_fl_trial1,3)
+```
+
+ + confidence intervals
+
+```{r}
+boot.res.mm1_fl_trial1=boot.glmm.pred(model.res=mm1_fl_trial1, excl.warnings=T,	nboots=1000, para=F)
+ci.res.mm1_fl_trial1<-round(boot.res.mm1_fl_trial1$ci.estimates, 3)
+ci.res.mm1_fl_trial1
+```
+
+```{r}
+save.image(file="goggles_workspace.RData")
+```
+
+
+### output table
+```{r}
+#model_tail_cis=grepl(x=rownames(mm3_tail.ci$ci.estimates$fe), pattern="@cond")
+
+model_table_fl_trial1<- bind_cols(as.data.frame(summary(mm1_fl_trial1)$coefficients),
+                             drop1.mm1_fl_trial1)%>%
+                            # ci.res.mm1_fl$ci.estimates$fe[1:6,]) %>%
+  select(Estimate, SE = `Std. Error`, Chi2 = LRT, df = npar, p = `Pr(Chi)`) %>% #LowerCI = X2.5., UpperCI = X97.5., 
+  mutate(across(.cols = c(p), ~ format(round(.x, 3), nsmall=3))) %>% 
+  mutate(across(.cols = c(Estimate:Chi2), ~ format(round(.x, 2), nsmall=2))) %>% 
+  mutate(across(Chi2:p, ~replace_na(.x, "")))%>%
+mutate(p=replace(p, p==0, "<0.001"))
+
+write.csv(model_table_fl_trial1, file = "saves/mm1_first_look_trial1_output_table.csv")
+```
+

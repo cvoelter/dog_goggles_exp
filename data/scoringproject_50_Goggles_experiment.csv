@@ -1,0 +1,1127 @@
+row.id,Scoring,Start,Start_Frame,Stop,Stop_Frame,duration,Subject,Behaviour,Value,trial
+0,goggle_MaP_Tenya_2021-11-16 11-02-45,1051.583333,63095,1052.616667,63157,1.033333333,Tenya,Manipulation check ,Manipulation check transparent,
+1,goggle_MaP_Tenya_2021-11-16 11-02-45,1053.4,63204,1098.866667,65932,45.46666667,Tenya,Manipulation check ,Manipulation check transparent,
+2,goggle_MaP_Tenya_2021-11-16 11-02-45,1102.3,66138,1144.183333,68651,41.88333333,Tenya,Manipulation check ,Manipulation check transparent,
+3,goggle_MaP_Tenya_2021-11-16 11-02-45,1260.25,75615,1313.75,78825,53.5,Tenya,Trial ,1,1
+4,goggle_MaP_Tenya_2021-11-16 11-02-45,1268.216667,76093,,,,Tenya,First look,First look opaque,1
+5,goggle_MaP_Tenya_2021-11-16 11-02-45,1268.216667,76093,1269.683333,76181,1.466666667,Tenya,Looking target,Duration looking opaque,1
+6,goggle_MaP_Tenya_2021-11-16 11-02-45,1283.483333,77009,1283.833333,77030,0.35,Tenya,Looking target,Duration looking opaque,1
+7,goggle_MaP_Tenya_2021-11-16 11-02-45,1284.683333,77081,,,,Tenya,First target choice,First choice opaque,1
+8,goggle_MaP_Tenya_2021-11-16 11-02-45,1294.666667,77680,,,,Tenya,Inspection behind screen,Inspection behind opaque,1
+9,goggle_MaP_Tenya_2021-11-16 11-02-45,1404.983333,84299,1453.783333,87227,48.8,Tenya,Trial ,2,2
+10,goggle_MaP_Tenya_2021-11-16 11-02-45,1406.516667,84391,,,,Tenya,First look,First look opaque,2
+11,goggle_MaP_Tenya_2021-11-16 11-02-45,1406.516667,84391,1408,84480,1.483333333,Tenya,Looking target,Duration looking opaque,2
+12,goggle_MaP_Tenya_2021-11-16 11-02-45,1423.483333,85409,1423.983333,85439,0.5,Tenya,Looking target,Duration looking opaque,2
+13,goggle_MaP_Tenya_2021-11-16 11-02-45,1425.233333,85514,,,,Tenya,First target choice,First choice opaque,2
+14,goggle_MaP_Tenya_2021-11-16 11-02-45,1435.966667,86158,,,,Tenya,Inspection behind screen,Inspection behind opaque,2
+15,goggle_MaP_Tenya_2021-11-16 11-02-45,1536.666667,92200,1583.2,94992,46.53333333,Tenya,Trial ,3,3
+16,goggle_MaP_Tenya_2021-11-16 11-02-45,1547.933333,92876,,,,Tenya,First look,First look opaque,3
+17,goggle_MaP_Tenya_2021-11-16 11-02-45,1547.933333,92876,1549.3,92958,1.366666667,Tenya,Looking target,Duration looking opaque,3
+18,goggle_MaP_Tenya_2021-11-16 11-02-45,1551.816667,93109,1552.233333,93134,0.416666667,Tenya,Looking target,Duration looking transparent,3
+19,goggle_MaP_Tenya_2021-11-16 11-02-45,1553.166667,93190,,,,Tenya,First target choice,First choice transparent,3
+20,goggle_MaP_Tenya_2021-11-16 11-02-45,1572.4,94344,,,,Tenya,Inspection behind screen,Inspection behind opaque,3
+21,goggle_MaP_Tenya_2021-11-16 11-02-45,1651.966667,99118,1697.4,101844,45.43333333,Tenya,Trial ,4,4
+22,goggle_MaP_Tenya_2021-11-16 11-02-45,1657.233333,99434,,,,Tenya,First look,First look opaque,4
+23,goggle_MaP_Tenya_2021-11-16 11-02-45,1657.233333,99434,1658.383333,99503,1.15,Tenya,Looking target,Duration looking opaque,4
+24,goggle_MaP_Tenya_2021-11-16 11-02-45,1667.166667,100030,1667.45,100047,0.283333333,Tenya,Looking target,Duration looking opaque,4
+25,goggle_MaP_Tenya_2021-11-16 11-02-45,1668.533333,100112,,,,Tenya,First target choice,First choice opaque,4
+26,goggle_MaP_Toulouse_2021-11-16 11-49-10,740.2166667,44413,748.9166667,44935,8.7,Toulouse,Manipulation check ,Manipulation check transparent,
+27,goggle_MaP_Toulouse_2021-11-16 11-49-10,873.4666667,52408,916.5,54990,43.03333333,Toulouse,Trial ,1,1
+28,goggle_MaP_Toulouse_2021-11-16 11-49-10,875.55,52533,,,,Toulouse,First look,First look transparent,1
+29,goggle_MaP_Toulouse_2021-11-16 11-49-10,875.55,52533,876.4833333,52589,0.933333333,Toulouse,Looking target,Duration looking transparent,1
+30,goggle_MaP_Toulouse_2021-11-16 11-49-10,879.8,52788,882.15,52929,2.35,Toulouse,Looking target,Duration looking opaque,1
+31,goggle_MaP_Toulouse_2021-11-16 11-49-10,889.0833333,53345,,,,Toulouse,First target choice,First choice transparent,1
+32,goggle_MaP_Toulouse_2021-11-16 11-49-10,902.2166667,54133,,,,Toulouse,Inspection behind screen,Inspection behind opaque,1
+33,goggle_MaP_Toulouse_2021-11-16 11-49-10,1000.2,60012,1045.583333,62735,45.38333333,Toulouse,Trial ,2,2
+34,goggle_MaP_Toulouse_2021-11-16 11-49-10,1000.583333,60035,1001.016667,60061,0.433333333,Toulouse,Looking target,Duration looking transparent,2
+35,goggle_MaP_Toulouse_2021-11-16 11-49-10,1000.65,60039,,,,Toulouse,First look,First look transparent,2
+36,goggle_MaP_Toulouse_2021-11-16 11-49-10,1001.566667,60094,1002.183333,60131,0.616666667,Toulouse,Looking target,Duration looking opaque,2
+37,goggle_MaP_Toulouse_2021-11-16 11-49-10,1004.1,60246,1005.016667,60301,0.916666667,Toulouse,Looking target,Duration looking transparent,2
+38,goggle_MaP_Toulouse_2021-11-16 11-49-10,1008.933333,60536,1010.1,60606,1.166666667,Toulouse,Looking target,Duration looking opaque,2
+39,goggle_MaP_Toulouse_2021-11-16 11-49-10,1011.133333,60668,1011.566667,60694,0.433333333,Toulouse,Looking target,Duration looking transparent,2
+40,goggle_MaP_Toulouse_2021-11-16 11-49-10,1012.283333,60737,1012.95,60777,0.666666667,Toulouse,Looking target,Duration looking opaque,2
+41,goggle_MaP_Toulouse_2021-11-16 11-49-10,1014.2,60852,1014.416667,60865,0.216666667,Toulouse,Looking target,Duration looking transparent,2
+42,goggle_MaP_Toulouse_2021-11-16 11-49-10,1015.65,60939,,,,Toulouse,First target choice,First choice transparent,2
+43,goggle_MaP_Toulouse_2021-11-16 11-49-10,1020.866667,61252,,,,Toulouse,Inspection behind screen,Inspection behind transparent,2
+44,goggle_MaP_Toulouse_2021-11-16 11-49-10,1121.55,67293,1169.4,70164,47.85,Toulouse,Trial ,3,3
+45,goggle_MaP_Toulouse_2021-11-16 11-49-10,1121.6,67296,,,,Toulouse,First look,First look transparent,3
+46,goggle_MaP_Toulouse_2021-11-16 11-49-10,1121.6,67296,1121.85,67311,0.25,Toulouse,Looking target,Duration looking transparent,3
+47,goggle_MaP_Toulouse_2021-11-16 11-49-10,1122.233333,67334,1122.816667,67369,0.583333333,Toulouse,Looking target,Duration looking opaque,3
+48,goggle_MaP_Toulouse_2021-11-16 11-49-10,1136.033333,68162,1136.816667,68209,0.783333333,Toulouse,Looking target,Duration looking transparent,3
+49,goggle_MaP_Toulouse_2021-11-16 11-49-10,1137.033333,68222,1137.183333,68231,0.15,Toulouse,Looking target,Duration looking transparent,3
+50,goggle_MaP_Toulouse_2021-11-16 11-49-10,1137.883333,68273,,,,Toulouse,First target choice,First choice transparent,3
+51,goggle_MaP_Toulouse_2021-11-16 11-49-10,1144.383333,68663,,,,Toulouse,Inspection behind screen,Inspection behind transparent,3
+52,goggle_MaP_Toulouse_2021-11-16 11-49-10,1251.283333,75077,1297.066667,77824,45.78333333,Toulouse,Trial ,4,4
+53,goggle_MaP_Toulouse_2021-11-16 11-49-10,1251.533333,75092,,,,Toulouse,First look,First look transparent,4
+54,goggle_MaP_Toulouse_2021-11-16 11-49-10,1251.533333,75092,1251.833333,75110,0.3,Toulouse,Looking target,Duration looking transparent,4
+55,goggle_MaP_Toulouse_2021-11-16 11-49-10,1258.733333,75524,1259.583333,75575,0.85,Toulouse,Looking target,Duration looking opaque,4
+56,goggle_MaP_Toulouse_2021-11-16 11-49-10,1262.016667,75721,1263.266667,75796,1.25,Toulouse,Looking target,Duration looking transparent,4
+57,goggle_MaP_Toulouse_2021-11-16 11-49-10,1267.233333,76034,,,,Toulouse,First target choice,First choice transparent,4
+58,goggle_MaP_Toulouse_2021-11-16 11-49-10,1273.55,76413,,,,Toulouse,Inspection behind screen,Inspection behind transparent,4
+59,goggle_MaP_Ronja7_2021-11-17 12-23-39,663.9166667,39835,666.1666667,39970,2.25,Ronja7,Manipulation check ,Manipulation check opaque,
+60,goggle_MaP_Ronja7_2021-11-17 12-23-39,686.7666667,41206,692.35,41541,5.583333333,Ronja7,Manipulation check ,Manipulation check opaque,
+61,goggle_MaP_Ronja7_2021-11-17 12-23-39,693.7833333,41627,714.75,42885,20.96666667,Ronja7,Manipulation check ,Manipulation check transparent,
+62,goggle_MaP_Ronja7_2021-11-17 12-23-39,914.1333333,54848,957.2833333,57437,43.15,Ronja7,Trial ,1,1
+63,goggle_MaP_Ronja7_2021-11-17 12-23-39,930.9,55854,,,,Ronja7,Inspection behind screen,Inspection behind transparent,1
+64,goggle_MaP_Ronja7_2021-11-17 12-23-39,944.6,56676,,,,Ronja7,First target choice,First choice transparent,1
+65,goggle_MaP_Ronja7_2021-11-17 12-23-39,1043.666667,62620,1091.783333,65507,48.11666667,Ronja7,Trial ,2,2
+66,goggle_MaP_Ronja7_2021-11-17 12-23-39,1069.95,64197,,,,Ronja7,Inspection behind screen,Inspection behind opaque,2
+67,goggle_MaP_Ronja7_2021-11-17 12-23-39,1086.65,65199,,,,Ronja7,First target choice,First choice transparent,2
+68,goggle_MaP_Ronja7_2021-11-17 12-23-39,1193.133333,71588,1238.366667,74302,45.23333333,Ronja7,Trial ,3,3
+69,goggle_MaP_Ronja7_2021-11-17 12-23-39,1200.033333,72002,,,,Ronja7,First look,First look transparent,3
+70,goggle_MaP_Ronja7_2021-11-17 12-23-39,1200.033333,72002,1205.9,72354,5.866666667,Ronja7,Looking target,Duration looking transparent,3
+71,goggle_MaP_Ronja7_2021-11-17 12-23-39,1208.55,72513,1208.75,72525,0.2,Ronja7,Looking target,Duration looking transparent,3
+72,goggle_MaP_Ronja7_2021-11-17 12-23-39,1209.733333,72584,,,,Ronja7,First target choice,First choice transparent,3
+73,goggle_MaP_Ronja7_2021-11-17 12-23-39,1222.016667,73321,,,,Ronja7,Inspection behind screen,Inspection behind opaque,3
+74,goggle_MaP_Ronja7_2021-11-17 12-23-39,1300.5,78030,1344.166667,80650,43.66666667,Ronja7,Trial ,4,4
+75,goggle_MaP_Ronja7_2021-11-17 12-23-39,1305.516667,78331,,,,Ronja7,First look,First look transparent,4
+76,goggle_MaP_Ronja7_2021-11-17 12-23-39,1305.516667,78331,1308.25,78495,2.733333333,Ronja7,Looking target,Duration looking transparent,4
+77,goggle_MaP_Ronja7_2021-11-17 12-23-39,1316.6,78996,,,,Ronja7,First target choice,First choice transparent,4
+78,goggle_MaP_Ronja7_2021-11-17 12-23-39,1324.266667,79456,,,,Ronja7,Inspection behind screen,Inspection behind opaque,4
+79,goggle_MaP_Sunny10_2021-11-17 16-37-05,678.5833333,40715,684.0833333,41045,5.5,Sunny10,Manipulation check ,Manipulation check transparent,
+80,goggle_MaP_Sunny10_2021-11-17 16-37-05,689.4,41364,690.0833333,41405,0.683333333,Sunny10,Manipulation check ,Manipulation check opaque,
+81,goggle_MaP_Sunny10_2021-11-17 16-37-05,696.75,41805,705.2166667,42313,8.466666667,Sunny10,Manipulation check ,Manipulation check transparent,
+82,goggle_MaP_Sunny10_2021-11-17 16-37-05,733.5333333,44012,748.2833333,44897,14.75,Sunny10,Manipulation check ,Manipulation check transparent,
+83,goggle_MaP_Sunny10_2021-11-17 16-37-05,750.5333333,45032,753.8666667,45232,3.333333333,Sunny10,Manipulation check ,Manipulation check transparent,
+84,goggle_MaP_Sunny10_2021-11-17 16-37-05,885.7,53142,931.3333333,55880,45.63333333,Sunny10,Trial ,1,1
+85,goggle_MaP_Sunny10_2021-11-17 16-37-05,901.7166667,54103,,,,Sunny10,First look,First look opaque,1
+86,goggle_MaP_Sunny10_2021-11-17 16-37-05,901.7166667,54103,902.35,54141,0.633333333,Sunny10,Looking target,Duration looking opaque,1
+87,goggle_MaP_Sunny10_2021-11-17 16-37-05,903.9666667,54238,,,,Sunny10,First target choice,First choice opaque,1
+88,goggle_MaP_Sunny10_2021-11-17 16-37-05,912.3666667,54742,,,,Sunny10,Inspection behind screen,Inspection behind transparent,1
+89,goggle_MaP_Sunny10_2021-11-17 16-37-05,1011.083333,60665,1065.7,63942,54.61666667,Sunny10,Trial ,2,2
+90,goggle_MaP_Sunny10_2021-11-17 16-37-05,1026.966667,61618,,,,Sunny10,First look,First look opaque,2
+91,goggle_MaP_Sunny10_2021-11-17 16-37-05,1026.966667,61618,1027.516667,61651,0.55,Sunny10,Looking target,Duration looking opaque,2
+92,goggle_MaP_Sunny10_2021-11-17 16-37-05,1029.316667,61759,,,,Sunny10,First target choice,First choice opaque,2
+93,goggle_MaP_Sunny10_2021-11-17 16-37-05,1035.7,62142,,,,Sunny10,Inspection behind screen,Inspection behind transparent,2
+94,goggle_MaP_Sunny10_2021-11-17 16-37-05,1140.783333,68447,1184.683333,71081,43.9,Sunny10,Trial ,3,3
+95,goggle_MaP_Sunny10_2021-11-17 16-37-05,1148.733333,68924,,,,Sunny10,First look,First look opaque,3
+96,goggle_MaP_Sunny10_2021-11-17 16-37-05,1148.733333,68924,1153.933333,69236,5.2,Sunny10,Looking target,Duration looking opaque,3
+97,goggle_MaP_Sunny10_2021-11-17 16-37-05,1155.833333,69350,1156.616667,69397,0.783333333,Sunny10,Looking target,Duration looking opaque,3
+98,goggle_MaP_Sunny10_2021-11-17 16-37-05,1157.766667,69466,,,,Sunny10,First target choice,First choice opaque,3
+99,goggle_MaP_Sunny10_2021-11-17 16-37-05,1165.45,69927,,,,Sunny10,Inspection behind screen,Inspection behind transparent,3
+100,goggle_MaP_Sunny10_2021-11-17 16-37-05,1254.416667,75265,1299.8,77988,45.38333333,Sunny10,Trial ,4,4
+101,goggle_MaP_Sunny10_2021-11-17 16-37-05,1261.033333,75662,,,,Sunny10,First look,First look opaque,4
+102,goggle_MaP_Sunny10_2021-11-17 16-37-05,1261.033333,75662,1267.1,76026,6.066666667,Sunny10,Looking target,Duration looking opaque,4
+103,goggle_MaP_Sunny10_2021-11-17 16-37-05,1269.566667,76174,1269.766667,76186,0.2,Sunny10,Looking target,Duration looking opaque,4
+104,goggle_MaP_Sunny10_2021-11-17 16-37-05,1271.366667,76282,,,,Sunny10,First target choice,First choice opaque,4
+105,goggle_MaP_Riu_2021-11-18 16-06-53,571.4666667,34288,594.15,35649,22.68333333,Riu,Manipulation check ,Manipulation check transparent,
+106,goggle_MaP_Riu_2021-11-18 16-06-53,594.8833333,35693,642.3833333,38543,47.5,Riu,Manipulation check ,Manipulation check transparent,
+107,goggle_MaP_Riu_2021-11-18 16-06-53,850.75,51045,895.25,53715,44.5,Riu,Trial ,1,1
+108,goggle_MaP_Riu_2021-11-18 16-06-53,856.8166667,51409,,,,Riu,First look,First look opaque,1
+109,goggle_MaP_Riu_2021-11-18 16-06-53,856.8166667,51409,858.05,51483,1.233333333,Riu,Looking target,Duration looking opaque,1
+110,goggle_MaP_Riu_2021-11-18 16-06-53,866.2833333,51977,866.6166667,51997,0.333333333,Riu,Looking target,Duration looking opaque,1
+111,goggle_MaP_Riu_2021-11-18 16-06-53,867.3666667,52042,,,,Riu,First target choice,First choice opaque,1
+112,goggle_MaP_Riu_2021-11-18 16-06-53,871.2833333,52277,,,,Riu,Inspection behind screen,Inspection behind transparent,1
+113,goggle_MaP_Riu_2021-11-18 16-06-53,972.4333333,58346,1017.216667,61033,44.78333333,Riu,Trial ,2,2
+114,goggle_MaP_Riu_2021-11-18 16-06-53,989.7,59382,,,,Riu,First target choice,First choice opaque,2
+115,goggle_MaP_Riu_2021-11-18 16-06-53,992.5333333,59552,,,,Riu,Inspection behind screen,Inspection behind opaque,2
+116,goggle_MaP_Riu_2021-11-18 16-06-53,1090.15,65409,1137.616667,68257,47.46666667,Riu,Trial ,3,3
+117,goggle_MaP_Riu_2021-11-18 16-06-53,1109.883333,66593,,,,Riu,Inspection behind screen,Inspection behind opaque,3
+118,goggle_MaP_Riu_2021-11-18 16-06-53,1214.683333,72881,1261.683333,75701,47,Riu,Trial ,4,4
+119,goggle_MaP_Riu_2021-11-18 16-06-53,1219.583333,73175,,,,Riu,First look,First look opaque,4
+120,goggle_MaP_Riu_2021-11-18 16-06-53,1219.583333,73175,1220.716667,73243,1.133333333,Riu,Looking target,Duration looking opaque,4
+121,goggle_MaP_Riu_2021-11-18 16-06-53,1224.366667,73462,1227.133333,73628,2.766666667,Riu,Looking target,Duration looking opaque,4
+122,goggle_MaP_Riu_2021-11-18 16-06-53,1230.416667,73825,,,,Riu,First target choice,First choice opaque,4
+123,goggle_MaP_Kyra3_2021-11-19 15-09-43,491.9833333,29519,495.15,29709,3.166666667,Kyra3,Manipulation check ,Manipulation check transparent,
+124,goggle_MaP_Kyra3_2021-11-19 15-09-43,501.7833333,30107,502.6,30156,0.816666667,Kyra3,Manipulation check ,Manipulation check opaque,
+125,goggle_MaP_Kyra3_2021-11-19 15-09-43,546.05,32763,572.55,34353,26.5,Kyra3,Manipulation check ,Manipulation check transparent,
+126,goggle_MaP_Kyra3_2021-11-19 15-09-43,699.2333333,41954,745.8333333,44750,46.6,Kyra3,Trial ,1,1
+127,goggle_MaP_Kyra3_2021-11-19 15-09-43,699.3,41958,,,,Kyra3,First look,First look transparent,1
+128,goggle_MaP_Kyra3_2021-11-19 15-09-43,699.3,41958,702.1,42126,2.8,Kyra3,Looking target,Duration looking transparent,1
+129,goggle_MaP_Kyra3_2021-11-19 15-09-43,703.2166667,42193,704,42240,0.783333333,Kyra3,Looking target,Duration looking opaque,1
+130,goggle_MaP_Kyra3_2021-11-19 15-09-43,704.4166667,42265,704.6166667,42277,0.2,Kyra3,Looking target,Duration looking opaque,1
+131,goggle_MaP_Kyra3_2021-11-19 15-09-43,705.35,42321,708.9833333,42539,3.633333333,Kyra3,Looking target,Duration looking transparent,1
+132,goggle_MaP_Kyra3_2021-11-19 15-09-43,713.75,42825,713.8833333,42833,0.133333333,Kyra3,Looking target,Duration looking transparent,1
+133,goggle_MaP_Kyra3_2021-11-19 15-09-43,714.6666667,42880,,,,Kyra3,First target choice,First choice transparent,1
+134,goggle_MaP_Kyra3_2021-11-19 15-09-43,731.6833333,43901,,,,Kyra3,Inspection behind screen,Inspection behind transparent,1
+135,goggle_MaP_Kyra3_2021-11-19 15-09-43,838.95,50337,883.5166667,53011,44.56666667,Kyra3,Trial ,2,2
+136,goggle_MaP_Kyra3_2021-11-19 15-09-43,839.5666667,50374,,,,Kyra3,First look,First look opaque,2
+137,goggle_MaP_Kyra3_2021-11-19 15-09-43,839.5666667,50374,840.75,50445,1.183333333,Kyra3,Looking target,Duration looking opaque,2
+138,goggle_MaP_Kyra3_2021-11-19 15-09-43,844.3666667,50662,846.0166667,50761,1.65,Kyra3,Looking target,Duration looking transparent,2
+139,goggle_MaP_Kyra3_2021-11-19 15-09-43,846.2833333,50777,848.2166667,50893,1.933333333,Kyra3,Looking target,Duration looking opaque,2
+140,goggle_MaP_Kyra3_2021-11-19 15-09-43,848.5833333,50915,852.1166667,51127,3.533333333,Kyra3,Looking target,Duration looking transparent,2
+141,goggle_MaP_Kyra3_2021-11-19 15-09-43,853.6833333,51221,854.05,51243,0.366666667,Kyra3,Looking target,Duration looking transparent,2
+142,goggle_MaP_Kyra3_2021-11-19 15-09-43,854.7833333,51287,,,,Kyra3,First target choice,First choice transparent,2
+143,goggle_MaP_Kyra3_2021-11-19 15-09-43,881.75,52905,,,,Kyra3,Inspection behind screen,Inspection behind transparent,2
+144,goggle_MaP_Kyra3_2021-11-19 15-09-43,963.0333333,57782,1003.516667,60211,40.48333333,Kyra3,Trial ,3,3
+145,goggle_MaP_Kyra3_2021-11-19 15-09-43,968.85,58131,,,,Kyra3,First look,First look transparent,3
+146,goggle_MaP_Kyra3_2021-11-19 15-09-43,968.85,58131,970.4333333,58226,1.583333333,Kyra3,Looking target,Duration looking transparent,3
+147,goggle_MaP_Kyra3_2021-11-19 15-09-43,971.2833333,58277,972.2333333,58334,0.95,Kyra3,Looking target,Duration looking transparent,3
+148,goggle_MaP_Kyra3_2021-11-19 15-09-43,973.1333333,58388,974.1833333,58451,1.05,Kyra3,Looking target,Duration looking opaque,3
+149,goggle_MaP_Kyra3_2021-11-19 15-09-43,978.85,58731,,,,Kyra3,First target choice,First choice transparent,3
+150,goggle_MaP_Kyra3_2021-11-19 15-09-43,992,59520,,,,Kyra3,Inspection behind screen,Inspection behind opaque,3
+151,goggle_MaP_Kyra3_2021-11-19 15-09-43,1074.016667,64441,1119.083333,67145,45.06666667,Kyra3,Trial ,4,4
+152,goggle_MaP_Kyra3_2021-11-19 15-09-43,1078.4,64704,,,,Kyra3,First look,First look transparent,4
+153,goggle_MaP_Kyra3_2021-11-19 15-09-43,1078.4,64704,1079.616667,64777,1.216666667,Kyra3,Looking target,Duration looking transparent,4
+154,goggle_MaP_Kyra3_2021-11-19 15-09-43,1080.116667,64807,1081.483333,64889,1.366666667,Kyra3,Looking target,Duration looking opaque,4
+155,goggle_MaP_Kyra3_2021-11-19 15-09-43,1090.016667,65401,,,,Kyra3,First target choice,First choice opaque,4
+156,goggle_MaP_Kyra3_2021-11-19 15-09-43,1103.45,66207,,,,Kyra3,Inspection behind screen,Inspection behind opaque,4
+157,goggle_MaP_Mika2_2021-11-19 15-33-16,524.7166667,31483,526.75,31605,2.033333333,Mika2,Manipulation check ,Manipulation check transparent,
+158,goggle_MaP_Mika2_2021-11-19 15-33-16,708.3333333,42500,753.35,45201,45.01666667,Mika2,Trial ,1,1
+159,goggle_MaP_Mika2_2021-11-19 15-33-16,714.3333333,42860,,,,Mika2,First look,First look transparent,1
+160,goggle_MaP_Mika2_2021-11-19 15-33-16,714.3333333,42860,719.3166667,43159,4.983333333,Mika2,Looking target,Duration looking transparent,1
+161,goggle_MaP_Mika2_2021-11-19 15-33-16,720.15,43209,721.4333333,43286,1.283333333,Mika2,Looking target,Duration looking opaque,1
+162,goggle_MaP_Mika2_2021-11-19 15-33-16,725.45,43527,,,,Mika2,Inspection behind screen,Inspection behind opaque,1
+163,goggle_MaP_Mika2_2021-11-19 15-33-16,726.9,43614,,,,Mika2,First target choice,First choice opaque,1
+164,goggle_MaP_Mika2_2021-11-19 15-33-16,835.25,50115,881.6,52896,46.35,Mika2,Trial ,2,2
+165,goggle_MaP_Mika2_2021-11-19 15-33-16,835.7666667,50146,,,,Mika2,First look,First look opaque,2
+166,goggle_MaP_Mika2_2021-11-19 15-33-16,835.7666667,50146,838,50280,2.233333333,Mika2,Looking target,Duration looking opaque,2
+167,goggle_MaP_Mika2_2021-11-19 15-33-16,838.9833333,50339,844.35,50661,5.366666667,Mika2,Looking target,Duration looking transparent,2
+168,goggle_MaP_Mika2_2021-11-19 15-33-16,845.1666667,50710,849.3333333,50960,4.166666667,Mika2,Looking target,Duration looking opaque,2
+169,goggle_MaP_Mika2_2021-11-19 15-33-16,852.5166667,51151,,,,Mika2,First target choice,First choice opaque,2
+170,goggle_MaP_Mika2_2021-11-19 15-33-16,864.7166667,51883,,,,Mika2,Inspection behind screen,Inspection behind transparent,2
+171,goggle_MaP_Mika2_2021-11-19 15-33-16,951.6666667,57100,995.5166667,59731,43.85,Mika2,Trial ,3,3
+172,goggle_MaP_Mika2_2021-11-19 15-33-16,954.4833333,57269,,,,Mika2,First look,First look transparent,3
+173,goggle_MaP_Mika2_2021-11-19 15-33-16,954.4833333,57269,955.4,57324,0.916666667,Mika2,Looking target,Duration looking transparent,3
+174,goggle_MaP_Mika2_2021-11-19 15-33-16,955.95,57357,958.5666667,57514,2.616666667,Mika2,Looking target,Duration looking opaque,3
+175,goggle_MaP_Mika2_2021-11-19 15-33-16,959.2166667,57553,960.3333333,57620,1.116666667,Mika2,Looking target,Duration looking transparent,3
+176,goggle_MaP_Mika2_2021-11-19 15-33-16,961.65,57699,964.4,57864,2.75,Mika2,Looking target,Duration looking transparent,3
+177,goggle_MaP_Mika2_2021-11-19 15-33-16,966.05,57963,966.1666667,57970,0.116666667,Mika2,Looking target,Duration looking opaque,3
+178,goggle_MaP_Mika2_2021-11-19 15-33-16,967.2333333,58034,,,,Mika2,First target choice,First choice opaque,3
+179,goggle_MaP_Mika2_2021-11-19 15-33-16,991.6666667,59500,,,,Mika2,Inspection behind screen,Inspection behind opaque,3
+180,goggle_MaP_Mika2_2021-11-19 15-33-16,1039.533333,62372,1084.566667,65074,45.03333333,Mika2,Trial ,4,4
+181,goggle_MaP_Mika2_2021-11-19 15-33-16,1040.166667,62410,,,,Mika2,First look,First look transparent,4
+182,goggle_MaP_Mika2_2021-11-19 15-33-16,1040.166667,62410,1042.383333,62543,2.216666667,Mika2,Looking target,Duration looking transparent,4
+183,goggle_MaP_Mika2_2021-11-19 15-33-16,1043.116667,62587,1047.016667,62821,3.9,Mika2,Looking target,Duration looking opaque,4
+184,goggle_MaP_Mika2_2021-11-19 15-33-16,1047.883333,62873,1051.433333,63086,3.55,Mika2,Looking target,Duration looking transparent,4
+185,goggle_MaP_Mika2_2021-11-19 15-33-16,1054.4,63264,,,,Mika2,First target choice,First choice opaque,4
+186,goggle_MaP_Mika2_2021-11-19 15-33-16,1072.95,64377,,,,Mika2,Inspection behind screen,Inspection behind transparent,4
+187,goggle_MaP_Suri3_2021-11-21 10-08-30,492.7,29562,493.4,29604,0.7,Suri3,Manipulation check ,Manipulation check transparent,
+188,goggle_MaP_Suri3_2021-11-21 10-08-30,510.3,30618,514.6333333,30878,4.333333333,Suri3,Manipulation check ,Manipulation check transparent,
+189,goggle_MaP_Suri3_2021-11-21 10-08-30,518.9,31134,519.3833333,31163,0.483333333,Suri3,Manipulation check ,Manipulation check opaque,
+190,goggle_MaP_Suri3_2021-11-21 10-08-30,689.8666667,41392,736.6833333,44201,46.81666667,Suri3,Trial ,1,1
+191,goggle_MaP_Suri3_2021-11-21 10-08-30,704.3666667,42262,,,,Suri3,First look,First look transparent,1
+192,goggle_MaP_Suri3_2021-11-21 10-08-30,704.3666667,42262,704.5666667,42274,0.2,Suri3,Looking target,Duration looking transparent,1
+193,goggle_MaP_Suri3_2021-11-21 10-08-30,705.3666667,42322,,,,Suri3,First target choice,First choice transparent,1
+194,goggle_MaP_Suri3_2021-11-21 10-08-30,710.6166667,42637,,,,Suri3,Inspection behind screen,Inspection behind opaque,1
+195,goggle_MaP_Suri3_2021-11-21 10-08-30,792.5166667,47551,835.9833333,50159,43.46666667,Suri3,Trial ,2,2
+196,goggle_MaP_Suri3_2021-11-21 10-08-30,807.1666667,48430,,,,Suri3,First look,First look transparent,2
+197,goggle_MaP_Suri3_2021-11-21 10-08-30,807.1666667,48430,807.3833333,48443,0.216666667,Suri3,Looking target,Duration looking transparent,2
+198,goggle_MaP_Suri3_2021-11-21 10-08-30,808.2666667,48496,,,,Suri3,First target choice,First choice transparent,2
+199,goggle_MaP_Suri3_2021-11-21 10-08-30,815.6166667,48937,,,,Suri3,Inspection behind screen,Inspection behind transparent,2
+200,goggle_MaP_Suri3_2021-11-21 10-08-30,890.7166667,53443,934.9,56094,44.18333333,Suri3,Trial ,3,3
+201,goggle_MaP_Suri3_2021-11-21 10-08-30,900.3166667,54019,,,,Suri3,First look,First look transparent,3
+202,goggle_MaP_Suri3_2021-11-21 10-08-30,900.3166667,54019,901.45,54087,1.133333333,Suri3,Looking target,Duration looking transparent,3
+203,goggle_MaP_Suri3_2021-11-21 10-08-30,901.95,54117,903.2166667,54193,1.266666667,Suri3,Looking target,Duration looking opaque,3
+204,goggle_MaP_Suri3_2021-11-21 10-08-30,906.1333333,54368,,,,Suri3,First target choice,First choice transparent,3
+205,goggle_MaP_Suri3_2021-11-21 10-08-30,915.7,54942,,,,Suri3,Inspection behind screen,Inspection behind transparent,3
+206,goggle_MaP_Suri3_2021-11-21 10-08-30,988.65,59319,1033.316667,61999,44.66666667,Suri3,Trial ,4,4
+207,goggle_MaP_Suri3_2021-11-21 10-08-30,1003.116667,60187,,,,Suri3,First look,First look transparent,4
+208,goggle_MaP_Suri3_2021-11-21 10-08-30,1003.116667,60187,1003.216667,60193,0.1,Suri3,Looking target,Duration looking transparent,4
+209,goggle_MaP_Suri3_2021-11-21 10-08-30,1003.9,60234,,,,Suri3,First target choice,First choice transparent,4
+210,goggle_MaP_Suri3_2021-11-21 10-08-30,1011.55,60693,,,,Suri3,Inspection behind screen,Inspection behind transparent,4
+211,goggle_MaP_Io_2021-11-19 15-53-29,367.0333333,22022,370.4166667,22225,3.383333333,Io,Manipulation check ,Manipulation check transparent,
+212,goggle_MaP_Io_2021-11-19 15-53-29,410.6833333,24641,411.3833333,24683,0.7,Io,Manipulation check ,Manipulation check transparent,
+213,goggle_MaP_Io_2021-11-19 15-53-29,537.9,32274,582.8833333,34973,44.98333333,Io,Trial ,1,1
+214,goggle_MaP_Io_2021-11-19 15-53-29,542.4666667,32548,,,,Io,First look,First look opaque,1
+215,goggle_MaP_Io_2021-11-19 15-53-29,542.4666667,32548,543.2666667,32596,0.8,Io,Looking target,Duration looking opaque,1
+216,goggle_MaP_Io_2021-11-19 15-53-29,543.65,32619,544.15,32649,0.5,Io,Looking target,Duration looking transparent,1
+217,goggle_MaP_Io_2021-11-19 15-53-29,545.7333333,32744,548.3666667,32902,2.633333333,Io,Looking target,Duration looking transparent,1
+218,goggle_MaP_Io_2021-11-19 15-53-29,549.4666667,32968,550.55,33033,1.083333333,Io,Looking target,Duration looking transparent,1
+219,goggle_MaP_Io_2021-11-19 15-53-29,552.2666667,33136,552.75,33165,0.483333333,Io,Looking target,Duration looking transparent,1
+220,goggle_MaP_Io_2021-11-19 15-53-29,553.85,33231,,,,Io,First target choice,First choice transparent,1
+221,goggle_MaP_Io_2021-11-19 15-53-29,561.7333333,33704,,,,Io,Inspection behind screen,Inspection behind transparent,1
+222,goggle_MaP_Io_2021-11-19 15-53-29,658.35,39501,702.6833333,42161,44.33333333,Io,Trial ,2,2
+223,goggle_MaP_Io_2021-11-19 15-53-29,659.3,39558,,,,Io,First look,First look transparent,2
+224,goggle_MaP_Io_2021-11-19 15-53-29,659.3,39558,660.0166667,39601,0.716666667,Io,Looking target,Duration looking transparent,2
+225,goggle_MaP_Io_2021-11-19 15-53-29,660.6166667,39637,661.1166667,39667,0.5,Io,Looking target,Duration looking opaque,2
+226,goggle_MaP_Io_2021-11-19 15-53-29,661.7666667,39706,662.6666667,39760,0.9,Io,Looking target,Duration looking transparent,2
+227,goggle_MaP_Io_2021-11-19 15-53-29,662.9666667,39778,665.1333333,39908,2.166666667,Io,Looking target,Duration looking opaque,2
+228,goggle_MaP_Io_2021-11-19 15-53-29,665.9333333,39956,666.9666667,40018,1.033333333,Io,Looking target,Duration looking transparent,2
+229,goggle_MaP_Io_2021-11-19 15-53-29,667.45,40047,668.35,40101,0.9,Io,Looking target,Duration looking opaque,2
+230,goggle_MaP_Io_2021-11-19 15-53-29,669.15,40149,669.95,40197,0.8,Io,Looking target,Duration looking transparent,2
+231,goggle_MaP_Io_2021-11-19 15-53-29,670.7833333,40247,671.2666667,40276,0.483333333,Io,Looking target,Duration looking transparent,2
+232,goggle_MaP_Io_2021-11-19 15-53-29,671.7333333,40304,672.5333333,40352,0.8,Io,Looking target,Duration looking opaque,2
+233,goggle_MaP_Io_2021-11-19 15-53-29,673.3166667,40399,673.4833333,40409,0.166666667,Io,Looking target,Duration looking transparent,2
+234,goggle_MaP_Io_2021-11-19 15-53-29,674.35,40461,,,,Io,First target choice,First choice transparent,2
+235,goggle_MaP_Io_2021-11-19 15-53-29,696.2166667,41773,,,,Io,Inspection behind screen,Inspection behind opaque,2
+236,goggle_MaP_Io_2021-11-19 15-53-29,750.1333333,45008,796.9333333,47816,46.8,Io,Trial ,3,3
+237,goggle_MaP_Io_2021-11-19 15-53-29,752.75,45165,,,,Io,First look,First look opaque,3
+238,goggle_MaP_Io_2021-11-19 15-53-29,752.75,45165,753.4,45204,0.65,Io,Looking target,Duration looking opaque,3
+239,goggle_MaP_Io_2021-11-19 15-53-29,753.7833333,45227,754.9833333,45299,1.2,Io,Looking target,Duration looking transparent,3
+240,goggle_MaP_Io_2021-11-19 15-53-29,755.6166667,45337,757.5666667,45454,1.95,Io,Looking target,Duration looking opaque,3
+241,goggle_MaP_Io_2021-11-19 15-53-29,758.0166667,45481,760.3,45618,2.283333333,Io,Looking target,Duration looking transparent,3
+242,goggle_MaP_Io_2021-11-19 15-53-29,761.9166667,45715,762.6166667,45757,0.7,Io,Looking target,Duration looking opaque,3
+243,goggle_MaP_Io_2021-11-19 15-53-29,764.2833333,45857,764.5,45870,0.216666667,Io,Looking target,Duration looking opaque,3
+244,goggle_MaP_Io_2021-11-19 15-53-29,765.4833333,45929,,,,Io,First target choice,First choice opaque,3
+245,goggle_MaP_Io_2021-11-19 15-53-29,796.2666667,47776,,,,Io,Inspection behind screen,Inspection behind opaque,3
+246,goggle_MaP_Io_2021-11-19 15-53-29,855.75,51345,900.9,54054,45.15,Io,Trial ,4,4
+247,goggle_MaP_Io_2021-11-19 15-53-29,860.1833333,51611,,,,Io,First look,First look opaque,4
+248,goggle_MaP_Io_2021-11-19 15-53-29,860.1833333,51611,861.0166667,51661,0.833333333,Io,Looking target,Duration looking opaque,4
+249,goggle_MaP_Io_2021-11-19 15-53-29,861.3833333,51683,862.75,51765,1.366666667,Io,Looking target,Duration looking transparent,4
+250,goggle_MaP_Io_2021-11-19 15-53-29,863.45,51807,864.6333333,51878,1.183333333,Io,Looking target,Duration looking opaque,4
+251,goggle_MaP_Io_2021-11-19 15-53-29,866.3833333,51983,867.05,52023,0.666666667,Io,Looking target,Duration looking opaque,4
+252,goggle_MaP_Io_2021-11-19 15-53-29,867.4666667,52048,868.55,52113,1.083333333,Io,Looking target,Duration looking transparent,4
+253,goggle_MaP_Io_2021-11-19 15-53-29,870.3,52218,870.5666667,52234,0.266666667,Io,Looking target,Duration looking transparent,4
+254,goggle_MaP_Io_2021-11-19 15-53-29,871.4,52284,,,,Io,First target choice,First choice transparent,4
+255,goggle_MaP_Samira_2021-11-22 12-04-26,812.3833333,48743,825.3,49518,12.91666667,Samira,Manipulation check ,Manipulation check transparent,
+256,goggle_MaP_Samira_2021-11-22 12-04-26,1029.333333,61760,1074.1,64446,44.76666667,Samira,Trial ,1,1
+257,goggle_MaP_Samira_2021-11-22 12-04-26,1031.933333,61916,,,,Samira,First look,First look opaque,1
+258,goggle_MaP_Samira_2021-11-22 12-04-26,1031.933333,61916,1034.283333,62057,2.35,Samira,Looking target,Duration looking opaque,1
+259,goggle_MaP_Samira_2021-11-22 12-04-26,1040.4,62424,1041.483333,62489,1.083333333,Samira,Looking target,Duration looking transparent,1
+260,goggle_MaP_Samira_2021-11-22 12-04-26,1044.016667,62641,1044.366667,62662,0.35,Samira,Looking target,Duration looking opaque,1
+261,goggle_MaP_Samira_2021-11-22 12-04-26,1045.35,62721,,,,Samira,First target choice,First choice opaque,1
+262,goggle_MaP_Samira_2021-11-22 12-04-26,1053,63180,,,,Samira,Inspection behind screen,Inspection behind transparent,1
+263,goggle_MaP_Samira_2021-11-22 12-04-26,1150.916667,69055,1197.1,71826,46.18333333,Samira,Trial ,2,2
+264,goggle_MaP_Samira_2021-11-22 12-04-26,1155.683333,69341,,,,Samira,First look,First look opaque,2
+265,goggle_MaP_Samira_2021-11-22 12-04-26,1155.683333,69341,1157.05,69423,1.366666667,Samira,Looking target,Duration looking opaque,2
+266,goggle_MaP_Samira_2021-11-22 12-04-26,1165.433333,69926,1165.7,69942,0.266666667,Samira,Looking target,Duration looking opaque,2
+267,goggle_MaP_Samira_2021-11-22 12-04-26,1166.733333,70004,,,,Samira,First target choice,First choice opaque,2
+268,goggle_MaP_Samira_2021-11-22 12-04-26,1276.983333,76619,1321.883333,79313,44.9,Samira,Trial ,3,3
+269,goggle_MaP_Samira_2021-11-22 12-04-26,1282.083333,76925,,,,Samira,First look,First look transparent,3
+270,goggle_MaP_Samira_2021-11-22 12-04-26,1282.083333,76925,1283.15,76989,1.066666667,Samira,Looking target,Duration looking transparent,3
+271,goggle_MaP_Samira_2021-11-22 12-04-26,1288.833333,77330,1289.783333,77387,0.95,Samira,Looking target,Duration looking transparent,3
+272,goggle_MaP_Samira_2021-11-22 12-04-26,1292.483333,77549,,,,Samira,First target choice,First choice opaque,3
+273,goggle_MaP_Samira_2021-11-22 12-04-26,1307.85,78471,,,,Samira,Inspection behind screen,Inspection behind transparent,3
+274,goggle_MaP_Samira_2021-11-22 12-04-26,1465.35,87921,1509.616667,90577,44.26666667,Samira,Trial ,4,4
+275,goggle_MaP_Samira_2021-11-22 12-04-26,1465.45,87927,,,,Samira,First look,First look opaque,4
+276,goggle_MaP_Samira_2021-11-22 12-04-26,1465.45,87927,1465.916667,87955,0.466666667,Samira,Looking target,Duration looking opaque,4
+277,goggle_MaP_Samira_2021-11-22 12-04-26,1471.816667,88309,1472.366667,88342,0.55,Samira,Looking target,Duration looking transparent,4
+278,goggle_MaP_Samira_2021-11-22 12-04-26,1478.733333,88724,1478.966667,88738,0.233333333,Samira,Looking target,Duration looking opaque,4
+279,goggle_MaP_Samira_2021-11-22 12-04-26,1479.7,88782,,,,Samira,First target choice,First choice opaque,4
+280,goggle_MaP_Samira_2021-11-22 12-04-26,1492.25,89535,,,,Samira,Inspection behind screen,Inspection behind opaque,4
+281,goggle_MaP_Thaya_2021-11-19 16-10-27,488.6,29316,498.7333333,29924,10.13333333,Thaya,Manipulation check ,Manipulation check transparent,
+282,goggle_MaP_Thaya_2021-11-19 16-10-27,632.4333333,37946,676.8,40608,44.36666667,Thaya,Trial ,1,1
+283,goggle_MaP_Thaya_2021-11-19 16-10-27,647.7333333,38864,,,,Thaya,First look,First look opaque,1
+284,goggle_MaP_Thaya_2021-11-19 16-10-27,647.7333333,38864,648.15,38889,0.416666667,Thaya,Looking target,Duration looking opaque,1
+285,goggle_MaP_Thaya_2021-11-19 16-10-27,648.8833333,38933,,,,Thaya,First target choice,First choice opaque,1
+286,goggle_MaP_Thaya_2021-11-19 16-10-27,662.7166667,39763,,,,Thaya,Inspection behind screen,Inspection behind opaque,1
+287,goggle_MaP_Thaya_2021-11-19 16-10-27,732.8666667,43972,777.1333333,46628,44.26666667,Thaya,Trial ,2,2
+288,goggle_MaP_Thaya_2021-11-19 16-10-27,742.7166667,44563,,,,Thaya,First look,First look opaque,2
+289,goggle_MaP_Thaya_2021-11-19 16-10-27,742.7166667,44563,746,44760,3.283333333,Thaya,Looking target,Duration looking opaque,2
+290,goggle_MaP_Thaya_2021-11-19 16-10-27,747.2166667,44833,747.3833333,44843,0.166666667,Thaya,Looking target,Duration looking transparent,2
+291,goggle_MaP_Thaya_2021-11-19 16-10-27,748.2333333,44894,,,,Thaya,First target choice,First choice transparent,2
+292,goggle_MaP_Thaya_2021-11-19 16-10-27,755.0833333,45305,,,,Thaya,Inspection behind screen,Inspection behind transparent,2
+293,goggle_MaP_Thaya_2021-11-19 16-10-27,838.1,50286,882.65,52959,44.55,Thaya,Trial ,3,3
+294,goggle_MaP_Thaya_2021-11-19 16-10-27,848.05,50883,,,,Thaya,First look,First look transparent,3
+295,goggle_MaP_Thaya_2021-11-19 16-10-27,848.05,50883,852.8666667,51172,4.816666667,Thaya,Looking target,Duration looking transparent,3
+296,goggle_MaP_Thaya_2021-11-19 16-10-27,853.75,51225,,,,Thaya,First target choice,First choice transparent,3
+297,goggle_MaP_Thaya_2021-11-19 16-10-27,939.15,56349,985.1333333,59108,45.98333333,Thaya,Trial ,4,4
+298,goggle_MaP_Thaya_2021-11-19 16-10-27,945.7833333,56747,,,,Thaya,First look,First look transparent,4
+299,goggle_MaP_Thaya_2021-11-19 16-10-27,945.7833333,56747,946.2166667,56773,0.433333333,Thaya,Looking target,Duration looking transparent,4
+300,goggle_MaP_Thaya_2021-11-19 16-10-27,946.6666667,56800,952.1666667,57130,5.5,Thaya,Looking target,Duration looking opaque,4
+301,goggle_MaP_Thaya_2021-11-19 16-10-27,953.5833333,57215,953.8833333,57233,0.3,Thaya,Looking target,Duration looking transparent,4
+302,goggle_MaP_Thaya_2021-11-19 16-10-27,954.95,57297,,,,Thaya,First target choice,First choice transparent,4
+303,goggle_MaP_Thaya_2021-11-19 16-10-27,982.4666667,58948,,,,Thaya,Inspection behind screen,Inspection behind opaque,4
+304,goggle_MaP_Nemo1_2021-11-23 16-29-04,559.65,33579,559.8833333,33593,0.233333333,Nemo1,Manipulation check ,Manipulation check opaque,
+305,goggle_MaP_Nemo1_2021-11-23 16-29-04,563.9666667,33838,564.25,33855,0.283333333,Nemo1,Manipulation check ,Manipulation check opaque,
+306,goggle_MaP_Nemo1_2021-11-23 16-29-04,565.9166667,33955,580.0666667,34804,14.15,Nemo1,Manipulation check ,Manipulation check transparent,
+307,goggle_MaP_Nemo1_2021-11-23 16-29-04,590.0166667,35401,591.1,35466,1.083333333,Nemo1,Manipulation check ,Manipulation check transparent,
+308,goggle_MaP_Nemo1_2021-11-23 16-29-04,599.6333333,35978,602.7333333,36164,3.1,Nemo1,Manipulation check ,Manipulation check opaque,
+309,goggle_MaP_Nemo1_2021-11-23 16-29-04,612.0666667,36724,620.3333333,37220,8.266666667,Nemo1,Manipulation check ,Manipulation check opaque,
+310,goggle_MaP_Nemo1_2021-11-23 16-29-04,626.7833333,37607,627.55,37653,0.766666667,Nemo1,Manipulation check ,Manipulation check opaque,
+311,goggle_MaP_Nemo1_2021-11-23 16-29-04,641.1,38466,646.0666667,38764,4.966666667,Nemo1,Manipulation check ,Manipulation check transparent,
+312,goggle_MaP_Nemo1_2021-11-23 16-29-04,716.6333333,42998,760.4166667,45625,43.78333333,Nemo1,Trial ,1,1
+313,goggle_MaP_Nemo1_2021-11-23 16-29-04,730.7166667,43843,,,,Nemo1,First look,First look transparent,1
+314,goggle_MaP_Nemo1_2021-11-23 16-29-04,730.7166667,43843,731.1666667,43870,0.45,Nemo1,Looking target,Duration looking transparent,1
+315,goggle_MaP_Nemo1_2021-11-23 16-29-04,731.85,43911,,,,Nemo1,First target choice,First choice transparent,1
+316,goggle_MaP_Nemo1_2021-11-23 16-29-04,735.65,44139,,,,Nemo1,Inspection behind screen,Inspection behind opaque,1
+317,goggle_MaP_Nemo1_2021-11-23 16-29-04,813.05,48783,857.5666667,51454,44.51666667,Nemo1,Trial ,2,2
+318,goggle_MaP_Nemo1_2021-11-23 16-29-04,826.25,49575,,,,Nemo1,First look,First look opaque,2
+319,goggle_MaP_Nemo1_2021-11-23 16-29-04,826.25,49575,826.4333333,49586,0.183333333,Nemo1,Looking target,Duration looking opaque,2
+320,goggle_MaP_Nemo1_2021-11-23 16-29-04,827.2,49632,,,,Nemo1,First target choice,First choice opaque,2
+321,goggle_MaP_Nemo1_2021-11-23 16-29-04,833.1166667,49987,,,,Nemo1,Inspection behind screen,Inspection behind opaque,2
+322,goggle_MaP_Nemo1_2021-11-23 16-29-04,906.6,54396,953.6,57216,47,Nemo1,Trial ,3,3
+323,goggle_MaP_Nemo1_2021-11-23 16-29-04,917.1166667,55027,,,,Nemo1,First look,First look opaque,3
+324,goggle_MaP_Nemo1_2021-11-23 16-29-04,917.1166667,55027,918.2666667,55096,1.15,Nemo1,Looking target,Duration looking opaque,3
+325,goggle_MaP_Nemo1_2021-11-23 16-29-04,920.1666667,55210,920.6166667,55237,0.45,Nemo1,Looking target,Duration looking transparent,3
+326,goggle_MaP_Nemo1_2021-11-23 16-29-04,921.6333333,55298,,,,Nemo1,First target choice,First choice transparent,3
+327,goggle_MaP_Nemo1_2021-11-23 16-29-04,937.8,56268,,,,Nemo1,Inspection behind screen,Inspection behind transparent,3
+328,goggle_MaP_Nemo1_2021-11-23 16-29-04,1007.433333,60446,1048.883333,62933,41.45,Nemo1,Trial ,4,4
+329,goggle_MaP_Nemo1_2021-11-23 16-29-04,1014.116667,60847,,,,Nemo1,First look,First look opaque,4
+330,goggle_MaP_Nemo1_2021-11-23 16-29-04,1014.116667,60847,1014.9,60894,0.783333333,Nemo1,Looking target,Duration looking opaque,4
+331,goggle_MaP_Nemo1_2021-11-23 16-29-04,1021.266667,61276,1021.666667,61300,0.4,Nemo1,Looking target,Duration looking transparent,4
+332,goggle_MaP_Nemo1_2021-11-23 16-29-04,1022.433333,61346,,,,Nemo1,First target choice,First choice transparent,4
+333,gogge_MaP_Stella4_2021-11-23 09-58-18,465.2,27912,517.2333333,31034,52.03333333,Stella4,Manipulation check ,Manipulation check transparent,
+334,gogge_MaP_Stella4_2021-11-23 09-58-18,672.7166667,40363,717.9166667,43075,45.2,Stella4,Trial ,1,1
+335,gogge_MaP_Stella4_2021-11-23 09-58-18,677.3833333,40643,,,,Stella4,First look,First look opaque,1
+336,gogge_MaP_Stella4_2021-11-23 09-58-18,677.3833333,40643,677.95,40677,0.566666667,Stella4,Looking target,Duration looking opaque,1
+337,gogge_MaP_Stella4_2021-11-23 09-58-18,678.9166667,40735,679.6,40776,0.683333333,Stella4,Looking target,Duration looking transparent,1
+338,gogge_MaP_Stella4_2021-11-23 09-58-18,680.6666667,40840,682.2166667,40933,1.55,Stella4,Looking target,Duration looking opaque,1
+339,gogge_MaP_Stella4_2021-11-23 09-58-18,682.6833333,40961,684.3166667,41059,1.633333333,Stella4,Looking target,Duration looking transparent,1
+340,gogge_MaP_Stella4_2021-11-23 09-58-18,685.4,41124,686.8666667,41212,1.466666667,Stella4,Looking target,Duration looking transparent,1
+341,gogge_MaP_Stella4_2021-11-23 09-58-18,688.2166667,41293,688.7666667,41326,0.55,Stella4,Looking target,Duration looking opaque,1
+342,gogge_MaP_Stella4_2021-11-23 09-58-18,690.2,41412,,,,Stella4,First target choice,First choice transparent,1
+343,gogge_MaP_Stella4_2021-11-23 09-58-18,711.6,42696,,,,Stella4,Inspection behind screen,Inspection behind transparent,1
+344,gogge_MaP_Stella4_2021-11-23 09-58-18,806.5333333,48392,851.85,51111,45.31666667,Stella4,Trial ,2,2
+345,gogge_MaP_Stella4_2021-11-23 09-58-18,810.0666667,48604,,,,Stella4,First look,First look transparent,2
+346,gogge_MaP_Stella4_2021-11-23 09-58-18,810.0666667,48604,811.0833333,48665,1.016666667,Stella4,Looking target,Duration looking transparent,2
+347,gogge_MaP_Stella4_2021-11-23 09-58-18,814.4666667,48868,814.6,48876,0.133333333,Stella4,Looking target,Duration looking transparent,2
+348,gogge_MaP_Stella4_2021-11-23 09-58-18,816.0666667,48964,819.7,49182,3.633333333,Stella4,Looking target,Duration looking transparent,2
+349,gogge_MaP_Stella4_2021-11-23 09-58-18,821.45,49287,821.7833333,49307,0.333333333,Stella4,Looking target,Duration looking transparent,2
+350,gogge_MaP_Stella4_2021-11-23 09-58-18,822.75,49365,,,,Stella4,First target choice,First choice transparent,2
+351,gogge_MaP_Stella4_2021-11-23 09-58-18,824.9166667,49495,,,,Stella4,Inspection behind screen,Inspection behind opaque,2
+352,gogge_MaP_Stella4_2021-11-23 09-58-18,912.4666667,54748,956.45,57387,43.98333333,Stella4,Trial ,3,3
+353,gogge_MaP_Stella4_2021-11-23 09-58-18,913.2333333,54794,,,,Stella4,First look,First look opaque,3
+354,gogge_MaP_Stella4_2021-11-23 09-58-18,913.2333333,54794,914.0166667,54841,0.783333333,Stella4,Looking target,Duration looking opaque,3
+355,gogge_MaP_Stella4_2021-11-23 09-58-18,915.2833333,54917,915.7833333,54947,0.5,Stella4,Looking target,Duration looking transparent,3
+356,gogge_MaP_Stella4_2021-11-23 09-58-18,916.2666667,54976,917.35,55041,1.083333333,Stella4,Looking target,Duration looking opaque,3
+357,gogge_MaP_Stella4_2021-11-23 09-58-18,918.9833333,55139,919.3833333,55163,0.4,Stella4,Looking target,Duration looking transparent,3
+358,gogge_MaP_Stella4_2021-11-23 09-58-18,919.85,55191,920.4333333,55226,0.583333333,Stella4,Looking target,Duration looking opaque,3
+359,gogge_MaP_Stella4_2021-11-23 09-58-18,923.2166667,55393,925.0166667,55501,1.8,Stella4,Looking target,Duration looking opaque,3
+360,gogge_MaP_Stella4_2021-11-23 09-58-18,927.65,55659,,,,Stella4,First target choice,First choice transparent,3
+361,gogge_MaP_Stella4_2021-11-23 09-58-18,936.4833333,56189,,,,Stella4,Inspection behind screen,Inspection behind transparent,3
+362,gogge_MaP_Stella4_2021-11-23 09-58-18,1013.066667,60784,1059.833333,63590,46.76666667,Stella4,Trial ,4,4
+363,gogge_MaP_Stella4_2021-11-23 09-58-18,1020.8,61248,,,,Stella4,First look,First look transparent,4
+364,gogge_MaP_Stella4_2021-11-23 09-58-18,1020.8,61248,1022.416667,61345,1.616666667,Stella4,Looking target,Duration looking transparent,4
+365,gogge_MaP_Stella4_2021-11-23 09-58-18,1023.466667,61408,1025.233333,61514,1.766666667,Stella4,Looking target,Duration looking opaque,4
+366,gogge_MaP_Stella4_2021-11-23 09-58-18,1027.016667,61621,1027.3,61638,0.283333333,Stella4,Looking target,Duration looking transparent,4
+367,gogge_MaP_Stella4_2021-11-23 09-58-18,1028.25,61695,,,,Stella4,First target choice,First choice transparent,4
+368,gogge_MaP_Stella4_2021-11-23 09-58-18,1046.066667,62764,,,,Stella4,Inspection behind screen,Inspection behind opaque,4
+369,goggle_MaP_Lakota_2021-11-23 16-04-50,864.8333333,51890,873.8666667,52432,9.033333333,Lakota,Manipulation check ,Manipulation check transparent,
+370,goggle_MaP_Lakota_2021-11-23 16-04-50,966.7166667,58003,1011.416667,60685,44.7,Lakota,Trial ,1,1
+371,goggle_MaP_Lakota_2021-11-23 16-04-50,966.8166667,58009,,,,Lakota,First look,First look transparent,1
+372,goggle_MaP_Lakota_2021-11-23 16-04-50,966.8166667,58009,967.5,58050,0.683333333,Lakota,Looking target,Duration looking transparent,1
+373,goggle_MaP_Lakota_2021-11-23 16-04-50,981.3666667,58882,981.7833333,58907,0.416666667,Lakota,Looking target,Duration looking opaque,1
+374,goggle_MaP_Lakota_2021-11-23 16-04-50,982.2,58932,,,,Lakota,First target choice,First choice opaque,1
+375,goggle_MaP_Lakota_2021-11-23 16-04-50,987.8333333,59270,,,,Lakota,Inspection behind screen,Inspection behind transparent,1
+376,goggle_MaP_Lakota_2021-11-23 16-04-50,1074.383333,64463,1117.05,67023,42.66666667,Lakota,Trial ,2,2
+377,goggle_MaP_Lakota_2021-11-23 16-04-50,1074.616667,64477,,,,Lakota,First look,First look transparent,2
+378,goggle_MaP_Lakota_2021-11-23 16-04-50,1074.616667,64477,1077.05,64623,2.433333333,Lakota,Looking target,Duration looking transparent,2
+379,goggle_MaP_Lakota_2021-11-23 16-04-50,1087.883333,65273,1088.233333,65294,0.35,Lakota,Looking target,Duration looking opaque,2
+380,goggle_MaP_Lakota_2021-11-23 16-04-50,1089.016667,65341,,,,Lakota,First target choice,First choice opaque,2
+381,goggle_MaP_Lakota_2021-11-23 16-04-50,1096.516667,65791,,,,Lakota,Inspection behind screen,Inspection behind opaque,2
+382,goggle_MaP_Lakota_2021-11-23 16-04-50,1167.616667,70057,1211.683333,72701,44.06666667,Lakota,Trial ,3,3
+383,goggle_MaP_Lakota_2021-11-23 16-04-50,1168.466667,70108,,,,Lakota,First look,First look transparent,3
+384,goggle_MaP_Lakota_2021-11-23 16-04-50,1168.466667,70108,1170.683333,70241,2.216666667,Lakota,Looking target,Duration looking transparent,3
+385,goggle_MaP_Lakota_2021-11-23 16-04-50,1180.966667,70858,1181.216667,70873,0.25,Lakota,Looking target,Duration looking opaque,3
+386,goggle_MaP_Lakota_2021-11-23 16-04-50,1181.75,70905,,,,Lakota,First target choice,First choice opaque,3
+387,goggle_MaP_Lakota_2021-11-23 16-04-50,1265.033333,75902,1309.383333,78563,44.35,Lakota,Trial ,4,4
+388,goggle_MaP_Lakota_2021-11-23 16-04-50,1265.1,75906,,,,Lakota,First look,First look opaque,4
+389,goggle_MaP_Lakota_2021-11-23 16-04-50,1265.1,75906,1265.55,75933,0.45,Lakota,Looking target,Duration looking opaque,4
+390,goggle_MaP_Lakota_2021-11-23 16-04-50,1265.816667,75949,1266.216667,75973,0.4,Lakota,Looking target,Duration looking transparent,4
+391,goggle_MaP_Lakota_2021-11-23 16-04-50,1280.066667,76804,1280.333333,76820,0.266666667,Lakota,Looking target,Duration looking opaque,4
+392,goggle_MaP_Lakota_2021-11-23 16-04-50,1281.133333,76868,,,,Lakota,First target choice,First choice opaque,4
+393,goggle_MaP_Lakota_2021-11-23 16-04-50,1298.783333,77927,,,,Lakota,Inspection behind screen,Inspection behind transparent,4
+394,goggle_MaP_Elvis3_2021-11-21 10-31-50,641.2,38472,643.45,38607,2.25,Elvis3,Manipulation check ,Manipulation check transparent,
+395,goggle_MaP_Elvis3_2021-11-21 10-31-50,774.0833333,46445,820.6833333,49241,46.6,Elvis3,Trial ,1,1
+396,goggle_MaP_Elvis3_2021-11-21 10-31-50,778.15,46689,,,,Elvis3,First look,First look transparent,1
+397,goggle_MaP_Elvis3_2021-11-21 10-31-50,778.15,46689,787.3833333,47243,9.233333333,Elvis3,Looking target,Duration looking transparent,1
+398,goggle_MaP_Elvis3_2021-11-21 10-31-50,788.8833333,47333,789.2333333,47354,0.35,Elvis3,Looking target,Duration looking opaque,1
+399,goggle_MaP_Elvis3_2021-11-21 10-31-50,789.9833333,47399,,,,Elvis3,First target choice,First choice opaque,1
+400,goggle_MaP_Elvis3_2021-11-21 10-31-50,793.3333333,47600,,,,Elvis3,Inspection behind screen,Inspection behind transparent,1
+401,goggle_MaP_Elvis3_2021-11-21 10-31-50,890.2,53412,934.5833333,56075,44.38333333,Elvis3,Trial ,2,2
+402,goggle_MaP_Elvis3_2021-11-21 10-31-50,895.3666667,53722,,,,Elvis3,First look,First look transparent,2
+403,goggle_MaP_Elvis3_2021-11-21 10-31-50,895.3666667,53722,900.0166667,54001,4.65,Elvis3,Looking target,Duration looking transparent,2
+404,goggle_MaP_Elvis3_2021-11-21 10-31-50,904.25,54255,904.7,54282,0.45,Elvis3,Looking target,Duration looking opaque,2
+405,goggle_MaP_Elvis3_2021-11-21 10-31-50,905.7166667,54343,,,,Elvis3,First target choice,First choice opaque,2
+406,goggle_MaP_Elvis3_2021-11-21 10-31-50,908.25,54495,,,,Elvis3,Inspection behind screen,Inspection behind transparent,2
+407,goggle_MaP_Elvis3_2021-11-21 10-31-50,987.2833333,59237,1032.033333,61922,44.75,Elvis3,Trial ,3,3
+408,goggle_MaP_Elvis3_2021-11-21 10-31-50,989.4,59364,,,,Elvis3,First look,First look transparent,3
+409,goggle_MaP_Elvis3_2021-11-21 10-31-50,989.4,59364,990.6333333,59438,1.233333333,Elvis3,Looking target,Duration looking transparent,3
+410,goggle_MaP_Elvis3_2021-11-21 10-31-50,994.4833333,59669,995.35,59721,0.866666667,Elvis3,Looking target,Duration looking transparent,3
+411,goggle_MaP_Elvis3_2021-11-21 10-31-50,996.6166667,59797,1000.55,60033,3.933333333,Elvis3,Looking target,Duration looking opaque,3
+412,goggle_MaP_Elvis3_2021-11-21 10-31-50,1000.933333,60056,1001.5,60090,0.566666667,Elvis3,Looking target,Duration looking opaque,3
+413,goggle_MaP_Elvis3_2021-11-21 10-31-50,1002.333333,60140,,,,Elvis3,First target choice,First choice opaque,3
+414,goggle_MaP_Elvis3_2021-11-21 10-31-50,1005.583333,60335,,,,Elvis3,Inspection behind screen,Inspection behind transparent,3
+415,goggle_MaP_Elvis3_2021-11-21 10-31-50,1090.666667,65440,1135.966667,68158,45.3,Elvis3,Trial ,4,4
+416,goggle_MaP_Elvis3_2021-11-21 10-31-50,1092.2,65532,,,,Elvis3,First look,First look transparent,4
+417,goggle_MaP_Elvis3_2021-11-21 10-31-50,1092.2,65532,1100.216667,66013,8.016666667,Elvis3,Looking target,Duration looking transparent,4
+418,goggle_MaP_Elvis3_2021-11-21 10-31-50,1103,66180,1104,66240,1,Elvis3,Looking target,Duration looking transparent,4
+419,goggle_MaP_Elvis3_2021-11-21 10-31-50,1105.966667,66358,1106.2,66372,0.233333333,Elvis3,Looking target,Duration looking opaque,4
+420,goggle_MaP_Elvis3_2021-11-21 10-31-50,1106.9,66414,,,,Elvis3,First target choice,First choice opaque,4
+421,goggle_MaP_Elvis3_2021-11-21 10-31-50,1133.883333,68033,,,,Elvis3,Inspection behind screen,Inspection behind transparent,4
+422,goggle_MaP_Dunni_2021-11-25 15-16-11,445.3166667,26719,452.5666667,27154,7.25,Dunni,Manipulation check ,Manipulation check transparent,
+423,goggle_MaP_Dunni_2021-11-25 15-16-11,496.9666667,29818,517.9833333,31079,21.01666667,Dunni,Manipulation check ,Manipulation check transparent,
+424,goggle_MaP_Dunni_2021-11-25 15-16-11,527.4833333,31649,528.7,31722,1.216666667,Dunni,Manipulation check ,Manipulation check opaque,
+425,goggle_MaP_Dunni_2021-11-25 15-16-11,591.1333333,35468,635,38100,43.86666667,Dunni,Trial ,1,1
+426,goggle_MaP_Dunni_2021-11-25 15-16-11,591.5333333,35492,,,,Dunni,First look,First look opaque,1
+427,goggle_MaP_Dunni_2021-11-25 15-16-11,591.5333333,35492,593.0333333,35582,1.5,Dunni,Looking target,Duration looking opaque,1
+428,goggle_MaP_Dunni_2021-11-25 15-16-11,595.1833333,35711,596.2,35772,1.016666667,Dunni,Looking target,Duration looking opaque,1
+429,goggle_MaP_Dunni_2021-11-25 15-16-11,596.6,35796,598.2333333,35894,1.633333333,Dunni,Looking target,Duration looking opaque,1
+430,goggle_MaP_Dunni_2021-11-25 15-16-11,598.9,35934,599.5333333,35972,0.633333333,Dunni,Looking target,Duration looking transparent,1
+431,goggle_MaP_Dunni_2021-11-25 15-16-11,600.1,36006,603.9833333,36239,3.883333333,Dunni,Looking target,Duration looking opaque,1
+432,goggle_MaP_Dunni_2021-11-25 15-16-11,604.95,36297,605.2166667,36313,0.266666667,Dunni,Looking target,Duration looking opaque,1
+433,goggle_MaP_Dunni_2021-11-25 15-16-11,606.15,36369,,,,Dunni,First target choice,First choice opaque,1
+434,goggle_MaP_Dunni_2021-11-25 15-16-11,609.2333333,36554,,,,Dunni,Inspection behind screen,Inspection behind opaque,1
+435,goggle_MaP_Dunni_2021-11-25 15-16-11,691.4,41484,735.7166667,44143,44.31666667,Dunni,Trial ,2,2
+436,goggle_MaP_Dunni_2021-11-25 15-16-11,691.9666667,41518,,,,Dunni,First look,First look transparent,2
+437,goggle_MaP_Dunni_2021-11-25 15-16-11,691.9666667,41518,694.1,41646,2.133333333,Dunni,Looking target,Duration looking transparent,2
+438,goggle_MaP_Dunni_2021-11-25 15-16-11,694.5833333,41675,697.2666667,41836,2.683333333,Dunni,Looking target,Duration looking opaque,2
+439,goggle_MaP_Dunni_2021-11-25 15-16-11,697.35,41841,700.4333333,42026,3.083333333,Dunni,Looking target,Duration looking transparent,2
+440,goggle_MaP_Dunni_2021-11-25 15-16-11,700.55,42033,701.0666667,42064,0.516666667,Dunni,Looking target,Duration looking opaque,2
+441,goggle_MaP_Dunni_2021-11-25 15-16-11,701.2333333,42074,704.2833333,42257,3.05,Dunni,Looking target,Duration looking transparent,2
+442,goggle_MaP_Dunni_2021-11-25 15-16-11,704.65,42279,705.5,42330,0.85,Dunni,Looking target,Duration looking opaque,2
+443,goggle_MaP_Dunni_2021-11-25 15-16-11,706.3833333,42383,,,,Dunni,First target choice,First choice opaque,2
+444,goggle_MaP_Dunni_2021-11-25 15-16-11,719.35,43161,,,,Dunni,Inspection behind screen,Inspection behind opaque,2
+445,goggle_MaP_Dunni_2021-11-25 15-16-11,800.5,48030,845.9833333,50759,45.48333333,Dunni,Trial ,3,3
+446,goggle_MaP_Dunni_2021-11-25 15-16-11,801.15,48069,,,,Dunni,First look,First look opaque,3
+447,goggle_MaP_Dunni_2021-11-25 15-16-11,801.15,48069,801.9166667,48115,0.766666667,Dunni,Looking target,Duration looking opaque,3
+448,goggle_MaP_Dunni_2021-11-25 15-16-11,802.2,48132,803.1166667,48187,0.916666667,Dunni,Looking target,Duration looking transparent,3
+449,goggle_MaP_Dunni_2021-11-25 15-16-11,805.8,48348,808.4833333,48509,2.683333333,Dunni,Looking target,Duration looking opaque,3
+450,goggle_MaP_Dunni_2021-11-25 15-16-11,810.8833333,48653,811.4666667,48688,0.583333333,Dunni,Looking target,Duration looking opaque,3
+451,goggle_MaP_Dunni_2021-11-25 15-16-11,812.6333333,48758,813,48780,0.366666667,Dunni,Looking target,Duration looking transparent,3
+452,goggle_MaP_Dunni_2021-11-25 15-16-11,813.3833333,48803,814.1666667,48850,0.783333333,Dunni,Looking target,Duration looking opaque,3
+453,goggle_MaP_Dunni_2021-11-25 15-16-11,815,48900,,,,Dunni,First target choice,First choice opaque,3
+454,goggle_MaP_Dunni_2021-11-25 15-16-11,822.9,49374,,,,Dunni,Inspection behind screen,Inspection behind opaque,3
+455,goggle_MaP_Dunni_2021-11-25 15-16-11,904.9833333,54299,949.4833333,56969,44.5,Dunni,Trial ,4,4
+456,goggle_MaP_Dunni_2021-11-25 15-16-11,905.5,54330,,,,Dunni,First look,First look opaque,4
+457,goggle_MaP_Dunni_2021-11-25 15-16-11,905.5,54330,906.95,54417,1.45,Dunni,Looking target,Duration looking opaque,4
+458,goggle_MaP_Dunni_2021-11-25 15-16-11,907.6333333,54458,909.4166667,54565,1.783333333,Dunni,Looking target,Duration looking transparent,4
+459,goggle_MaP_Dunni_2021-11-25 15-16-11,909.7,54582,912.45,54747,2.75,Dunni,Looking target,Duration looking opaque,4
+460,goggle_MaP_Dunni_2021-11-25 15-16-11,914.7333333,54884,915.3833333,54923,0.65,Dunni,Looking target,Duration looking opaque,4
+461,goggle_MaP_Dunni_2021-11-25 15-16-11,917.65,55059,917.9833333,55079,0.333333333,Dunni,Looking target,Duration looking transparent,4
+462,goggle_MaP_Dunni_2021-11-25 15-16-11,918.7166667,55123,919.2,55152,0.483333333,Dunni,Looking target,Duration looking opaque,4
+463,goggle_MaP_Dunni_2021-11-25 15-16-11,919.8166667,55189,,,,Dunni,First target choice,First choice opaque,4
+464,goggle_MaP_Dunni_2021-11-25 15-16-11,937.35,56241,,,,Dunni,Inspection behind screen,Inspection behind opaque,4
+465,goggle_MaP_Joseph_2021-11-29 10-22-58,754.7166667,45283,757.1166667,45427,2.4,Joseph,Manipulation check ,Manipulation check transparent,
+466,goggle_MaP_Joseph_2021-11-29 10-22-58,759.8,45588,776.1833333,46571,16.38333333,Joseph,Manipulation check ,Manipulation check transparent,
+467,goggle_MaP_Joseph_2021-11-29 10-22-58,777.8666667,46672,778.9666667,46738,1.1,Joseph,Manipulation check ,Manipulation check transparent,
+468,goggle_MaP_Joseph_2021-11-29 10-22-58,785.75,47145,828.5666667,49714,42.81666667,Joseph,Manipulation check ,Manipulation check transparent,
+469,goggle_MaP_Joseph_2021-11-29 10-22-58,900.1333333,54008,944.9833333,56699,44.85,Joseph,Trial ,1,1
+470,goggle_MaP_Joseph_2021-11-29 10-22-58,900.1833333,54011,,,,Joseph,First look,First look transparent,1
+471,goggle_MaP_Joseph_2021-11-29 10-22-58,900.1833333,54011,900.5833333,54035,0.4,Joseph,Looking target,Duration looking transparent,1
+472,goggle_MaP_Joseph_2021-11-29 10-22-58,904.55,54273,905.2,54312,0.65,Joseph,Looking target,Duration looking opaque,1
+473,goggle_MaP_Joseph_2021-11-29 10-22-58,905.4333333,54326,906.75,54405,1.316666667,Joseph,Looking target,Duration looking transparent,1
+474,goggle_MaP_Joseph_2021-11-29 10-22-58,907.9833333,54479,908.4666667,54508,0.483333333,Joseph,Looking target,Duration looking opaque,1
+475,goggle_MaP_Joseph_2021-11-29 10-22-58,908.8166667,54529,911.5833333,54695,2.766666667,Joseph,Looking target,Duration looking transparent,1
+476,goggle_MaP_Joseph_2021-11-29 10-22-58,912.15,54729,914.8833333,54893,2.733333333,Joseph,Looking target,Duration looking opaque,1
+477,goggle_MaP_Joseph_2021-11-29 10-22-58,915.2,54912,915.7666667,54946,0.566666667,Joseph,Looking target,Duration looking opaque,1
+478,goggle_MaP_Joseph_2021-11-29 10-22-58,916.6833333,55001,,,,Joseph,First target choice,First choice opaque,1
+479,goggle_MaP_Joseph_2021-11-29 10-22-58,931.6,55896,,,,Joseph,Inspection behind screen,Inspection behind opaque,1
+480,goggle_MaP_Joseph_2021-11-29 10-22-58,1005.066667,60304,1048.983333,62939,43.91666667,Joseph,Trial ,2,2
+481,goggle_MaP_Joseph_2021-11-29 10-22-58,1006.783333,60407,,,,Joseph,First look,First look opaque,2
+482,goggle_MaP_Joseph_2021-11-29 10-22-58,1006.783333,60407,1007.416667,60445,0.633333333,Joseph,Looking target,Duration looking opaque,2
+483,goggle_MaP_Joseph_2021-11-29 10-22-58,1007.7,60462,1008.433333,60506,0.733333333,Joseph,Looking target,Duration looking transparent,2
+484,goggle_MaP_Joseph_2021-11-29 10-22-58,1009.633333,60578,1010.566667,60634,0.933333333,Joseph,Looking target,Duration looking opaque,2
+485,goggle_MaP_Joseph_2021-11-29 10-22-58,1011.366667,60682,1012.866667,60772,1.5,Joseph,Looking target,Duration looking opaque,2
+486,goggle_MaP_Joseph_2021-11-29 10-22-58,1013.466667,60808,1016.066667,60964,2.6,Joseph,Looking target,Duration looking transparent,2
+487,goggle_MaP_Joseph_2021-11-29 10-22-58,1016.283333,60977,1016.983333,61019,0.7,Joseph,Looking target,Duration looking opaque,2
+488,goggle_MaP_Joseph_2021-11-29 10-22-58,1018.466667,61108,1020.4,61224,1.933333333,Joseph,Looking target,Duration looking opaque,2
+489,goggle_MaP_Joseph_2021-11-29 10-22-58,1021.566667,61294,,,,Joseph,First target choice,First choice opaque,2
+490,goggle_MaP_Joseph_2021-11-29 10-22-58,1032.016667,61921,,,,Joseph,Inspection behind screen,Inspection behind opaque,2
+491,goggle_MaP_Joseph_2021-11-29 10-22-58,1122.783333,67367,1172.766667,70366,49.98333333,Joseph,Trial ,3,3
+492,goggle_MaP_Joseph_2021-11-29 10-22-58,1123.116667,67387,,,,Joseph,First look,First look transparent,3
+493,goggle_MaP_Joseph_2021-11-29 10-22-58,1123.116667,67387,1124.783333,67487,1.666666667,Joseph,Looking target,Duration looking transparent,3
+494,goggle_MaP_Joseph_2021-11-29 10-22-58,1127.933333,67676,1128.6,67716,0.666666667,Joseph,Looking target,Duration looking transparent,3
+495,goggle_MaP_Joseph_2021-11-29 10-22-58,1131.85,67911,1132.866667,67972,1.016666667,Joseph,Looking target,Duration looking transparent,3
+496,goggle_MaP_Joseph_2021-11-29 10-22-58,1133.1,67986,1135.533333,68132,2.433333333,Joseph,Looking target,Duration looking opaque,3
+497,goggle_MaP_Joseph_2021-11-29 10-22-58,1136.6,68196,1137.033333,68222,0.433333333,Joseph,Looking target,Duration looking transparent,3
+498,goggle_MaP_Joseph_2021-11-29 10-22-58,1140.633333,68438,,,,Joseph,First target choice,First choice opaque,3
+499,goggle_MaP_Joseph_2021-11-29 10-22-58,1256.416667,75385,1302.383333,78143,45.96666667,Joseph,Trial ,4,4
+500,goggle_MaP_Joseph_2021-11-29 10-22-58,1261.666667,75700,,,,Joseph,First look,First look opaque,4
+501,goggle_MaP_Joseph_2021-11-29 10-22-58,1261.666667,75700,1269.183333,76151,7.516666667,Joseph,Looking target,Duration looking opaque,4
+502,goggle_MaP_Joseph_2021-11-29 10-22-58,1271.533333,76292,1271.833333,76310,0.3,Joseph,Looking target,Duration looking transparent,4
+503,goggle_MaP_Joseph_2021-11-29 10-22-58,1274.433333,76466,,,,Joseph,First target choice,First choice opaque,4
+504,goggle_MaP_Jasper_2021-11-24 15-32-19,488.1,29286,491.3,29478,3.2,Jasper,Manipulation check ,Manipulation check opaque,
+505,goggle_MaP_Jasper_2021-11-24 15-32-19,498.1666667,29890,504.6,30276,6.433333333,Jasper,Manipulation check ,Manipulation check transparent,
+506,goggle_MaP_Jasper_2021-11-24 15-32-19,514.0333333,30842,557.0833333,33425,43.05,Jasper,Manipulation check ,Manipulation check transparent,
+507,goggle_MaP_Jasper_2021-11-24 15-32-19,569.9833333,34199,573.7,34422,3.716666667,Jasper,Manipulation check ,Manipulation check transparent,
+508,goggle_MaP_Jasper_2021-11-24 15-32-19,647.0333333,38822,692.2166667,41533,45.18333333,Jasper,Trial ,1,1
+509,goggle_MaP_Jasper_2021-11-24 15-32-19,649.05,38943,,,,Jasper,First look,First look opaque,1
+510,goggle_MaP_Jasper_2021-11-24 15-32-19,649.05,38943,654.7333333,39284,5.683333333,Jasper,Looking target,Duration looking opaque,1
+511,goggle_MaP_Jasper_2021-11-24 15-32-19,655.0666667,39304,658.65,39519,3.583333333,Jasper,Looking target,Duration looking transparent,1
+512,goggle_MaP_Jasper_2021-11-24 15-32-19,662.6333333,39758,,,,Jasper,First target choice,First choice opaque,1
+513,goggle_MaP_Jasper_2021-11-24 15-32-19,665.65,39939,,,,Jasper,Inspection behind screen,Inspection behind transparent,1
+514,goggle_MaP_Jasper_2021-11-24 15-32-19,752.1333333,45128,796.2666667,47776,44.13333333,Jasper,Trial ,2,2
+515,goggle_MaP_Jasper_2021-11-24 15-32-19,752.2833333,45137,,,,Jasper,First look,First look transparent,2
+516,goggle_MaP_Jasper_2021-11-24 15-32-19,752.2833333,45137,752.8166667,45169,0.533333333,Jasper,Looking target,Duration looking transparent,2
+517,goggle_MaP_Jasper_2021-11-24 15-32-19,763.8333333,45830,765.1166667,45907,1.283333333,Jasper,Looking target,Duration looking opaque,2
+518,goggle_MaP_Jasper_2021-11-24 15-32-19,766.4166667,45985,766.7333333,46004,0.316666667,Jasper,Looking target,Duration looking transparent,2
+519,goggle_MaP_Jasper_2021-11-24 15-32-19,767.6666667,46060,,,,Jasper,First target choice,First choice transparent,2
+520,goggle_MaP_Jasper_2021-11-24 15-32-19,773.9166667,46435,,,,Jasper,Inspection behind screen,Inspection behind transparent,2
+521,goggle_MaP_Jasper_2021-11-24 15-32-19,841.2333333,50474,884.8,53088,43.56666667,Jasper,Trial ,3,3
+522,goggle_MaP_Jasper_2021-11-24 15-32-19,841.85,50511,,,,Jasper,First look,First look opaque,3
+523,goggle_MaP_Jasper_2021-11-24 15-32-19,841.85,50511,842.5166667,50551,0.666666667,Jasper,Looking target,Duration looking opaque,3
+524,goggle_MaP_Jasper_2021-11-24 15-32-19,848.4166667,50905,850.7666667,51046,2.35,Jasper,Looking target,Duration looking opaque,3
+525,goggle_MaP_Jasper_2021-11-24 15-32-19,855.4166667,51325,855.8166667,51349,0.4,Jasper,Looking target,Duration looking opaque,3
+526,goggle_MaP_Jasper_2021-11-24 15-32-19,856.55,51393,,,,Jasper,First target choice,First choice opaque,3
+527,goggle_MaP_Jasper_2021-11-24 15-32-19,862.2,51732,,,,Jasper,Inspection behind screen,Inspection behind transparent,3
+528,goggle_MaP_Jasper_2021-11-24 15-32-19,931.3833333,55883,976,58560,44.61666667,Jasper,Trial ,4,4
+529,goggle_MaP_Jasper_2021-11-24 15-32-19,943.1833333,56591,,,,Jasper,First look,First look transparent,4
+530,goggle_MaP_Jasper_2021-11-24 15-32-19,943.1833333,56591,943.9666667,56638,0.783333333,Jasper,Looking target,Duration looking transparent,4
+531,goggle_MaP_Jasper_2021-11-24 15-32-19,946.5833333,56795,,,,Jasper,First target choice,First choice opaque,4
+532,goggle_MaP_Jasper_2021-11-24 15-32-19,960.7166667,57643,,,,Jasper,Inspection behind screen,Inspection behind transparent,4
+533,goggle_MaP_Josephine_2021-11-29 09-55-59,470.0833333,28205,478.6333333,28718,8.55,Josephine,Manipulation check ,Manipulation check transparent,
+534,goggle_MaP_Josephine_2021-11-29 09-55-59,541.05,32463,551.9166667,33115,10.86666667,Josephine,Manipulation check ,Manipulation check transparent,
+535,goggle_MaP_Josephine_2021-11-29 09-55-59,652.5666667,39154,696.0833333,41765,43.51666667,Josephine,Trial ,1,1
+536,goggle_MaP_Josephine_2021-11-29 09-55-59,656.8833333,39413,,,,Josephine,First look,First look opaque,1
+537,goggle_MaP_Josephine_2021-11-29 09-55-59,656.8833333,39413,657.3166667,39439,0.433333333,Josephine,Looking target,Duration looking opaque,1
+538,goggle_MaP_Josephine_2021-11-29 09-55-59,657.5333333,39452,658.3333333,39500,0.8,Josephine,Looking target,Duration looking transparent,1
+539,goggle_MaP_Josephine_2021-11-29 09-55-59,658.7,39522,659.4333333,39566,0.733333333,Josephine,Looking target,Duration looking opaque,1
+540,goggle_MaP_Josephine_2021-11-29 09-55-59,659.7333333,39584,661.0333333,39662,1.3,Josephine,Looking target,Duration looking transparent,1
+541,goggle_MaP_Josephine_2021-11-29 09-55-59,661.5166667,39691,662.7833333,39767,1.266666667,Josephine,Looking target,Duration looking opaque,1
+542,goggle_MaP_Josephine_2021-11-29 09-55-59,663.5833333,39815,663.8166667,39829,0.233333333,Josephine,Looking target,Duration looking transparent,1
+543,goggle_MaP_Josephine_2021-11-29 09-55-59,666.9333333,40016,667.2833333,40037,0.35,Josephine,Looking target,Duration looking opaque,1
+544,goggle_MaP_Josephine_2021-11-29 09-55-59,668.85,40131,,,,Josephine,First target choice,First choice opaque,1
+545,goggle_MaP_Josephine_2021-11-29 09-55-59,759.8666667,45592,804.7333333,48284,44.86666667,Josephine,Trial ,2,2
+546,goggle_MaP_Josephine_2021-11-29 09-55-59,762.2,45732,,,,Josephine,First look,First look opaque,2
+547,goggle_MaP_Josephine_2021-11-29 09-55-59,762.2,45732,763.2833333,45797,1.083333333,Josephine,Looking target,Duration looking opaque,2
+548,goggle_MaP_Josephine_2021-11-29 09-55-59,766.6833333,46001,768,46080,1.316666667,Josephine,Looking target,Duration looking transparent,2
+549,goggle_MaP_Josephine_2021-11-29 09-55-59,768.3,46098,769.05,46143,0.75,Josephine,Looking target,Duration looking opaque,2
+550,goggle_MaP_Josephine_2021-11-29 09-55-59,769.3166667,46159,771.3166667,46279,2,Josephine,Looking target,Duration looking transparent,2
+551,goggle_MaP_Josephine_2021-11-29 09-55-59,774.1666667,46450,774.4,46464,0.233333333,Josephine,Looking target,Duration looking opaque,2
+552,goggle_MaP_Josephine_2021-11-29 09-55-59,775.1333333,46508,,,,Josephine,First target choice,First choice opaque,2
+553,goggle_MaP_Josephine_2021-11-29 09-55-59,855.5833333,51335,899.5666667,53974,43.98333333,Josephine,Trial ,3,3
+554,goggle_MaP_Josephine_2021-11-29 09-55-59,857.65,51459,,,,Josephine,First look,First look transparent,3
+555,goggle_MaP_Josephine_2021-11-29 09-55-59,857.65,51459,857.95,51477,0.3,Josephine,Looking target,Duration looking transparent,3
+556,goggle_MaP_Josephine_2021-11-29 09-55-59,859.1833333,51551,860.8833333,51653,1.7,Josephine,Looking target,Duration looking opaque,3
+557,goggle_MaP_Josephine_2021-11-29 09-55-59,861.35,51681,862.2166667,51733,0.866666667,Josephine,Looking target,Duration looking transparent,3
+558,goggle_MaP_Josephine_2021-11-29 09-55-59,862.55,51753,862.8333333,51770,0.283333333,Josephine,Looking target,Duration looking opaque,3
+559,goggle_MaP_Josephine_2021-11-29 09-55-59,863.3833333,51803,864.1333333,51848,0.75,Josephine,Looking target,Duration looking transparent,3
+560,goggle_MaP_Josephine_2021-11-29 09-55-59,864.5333333,51872,865.0333333,51902,0.5,Josephine,Looking target,Duration looking opaque,3
+561,goggle_MaP_Josephine_2021-11-29 09-55-59,865.8333333,51950,866.6666667,52000,0.833333333,Josephine,Looking target,Duration looking opaque,3
+562,goggle_MaP_Josephine_2021-11-29 09-55-59,867.3833333,52043,867.7166667,52063,0.333333333,Josephine,Looking target,Duration looking opaque,3
+563,goggle_MaP_Josephine_2021-11-29 09-55-59,869.55,52173,869.8833333,52193,0.333333333,Josephine,Looking target,Duration looking opaque,3
+564,goggle_MaP_Josephine_2021-11-29 09-55-59,870.8666667,52252,,,,Josephine,First target choice,First choice opaque,3
+565,goggle_MaP_Josephine_2021-11-29 09-55-59,951.85,57111,995.1833333,59711,43.33333333,Josephine,Trial ,4,4
+566,goggle_MaP_Josephine_2021-11-29 09-55-59,955.8,57348,,,,Josephine,First look,First look transparent,4
+567,goggle_MaP_Josephine_2021-11-29 09-55-59,955.8,57348,957.2833333,57437,1.483333333,Josephine,Looking target,Duration looking transparent,4
+568,goggle_MaP_Josephine_2021-11-29 09-55-59,961.7833333,57707,962.1333333,57728,0.35,Josephine,Looking target,Duration looking transparent,4
+569,goggle_MaP_Josephine_2021-11-29 09-55-59,962.55,57753,964.5833333,57875,2.033333333,Josephine,Looking target,Duration looking opaque,4
+570,goggle_MaP_Josephine_2021-11-29 09-55-59,964.9333333,57896,965.1,57906,0.166666667,Josephine,Looking target,Duration looking transparent,4
+571,goggle_MaP_Josephine_2021-11-29 09-55-59,965.4666667,57928,965.7166667,57943,0.25,Josephine,Looking target,Duration looking transparent,4
+572,goggle_MaP_Josephine_2021-11-29 09-55-59,966.0166667,57961,966.1833333,57971,0.166666667,Josephine,Looking target,Duration looking transparent,4
+573,goggle_MaP_Josephine_2021-11-29 09-55-59,966.6833333,58001,966.8166667,58009,0.133333333,Josephine,Looking target,Duration looking transparent,4
+574,goggle_MaP_Josephine_2021-11-29 09-55-59,967.1333333,58028,967.6666667,58060,0.533333333,Josephine,Looking target,Duration looking opaque,4
+575,goggle_MaP_Josephine_2021-11-29 09-55-59,968.5833333,58115,,,,Josephine,First target choice,First choice opaque,4
+576,goggle_MaP_Luna28_2021-11-29 11-06-28,588.1333333,35288,591.9,35514,3.766666667,Luna28,Manipulation check ,Manipulation check transparent,
+577,goggle_MaP_Luna28_2021-11-29 11-06-28,594.0166667,35641,645.1333333,38708,51.11666667,Luna28,Manipulation check ,Manipulation check transparent,
+578,goggle_MaP_Luna28_2021-11-29 11-06-28,650.05,39003,650.7166667,39043,0.666666667,Luna28,Manipulation check ,Manipulation check opaque,
+579,goggle_MaP_Luna28_2021-11-29 11-06-28,653.8166667,39229,654.3833333,39263,0.566666667,Luna28,Manipulation check ,Manipulation check opaque,
+580,goggle_MaP_Luna28_2021-11-29 11-06-28,773.4666667,46408,818.2,49092,44.73333333,Luna28,Trial ,1,1
+581,goggle_MaP_Luna28_2021-11-29 11-06-28,777.9,46674,,,,Luna28,First look,First look transparent,1
+582,goggle_MaP_Luna28_2021-11-29 11-06-28,777.9,46674,779.0333333,46742,1.133333333,Luna28,Looking target,Duration looking transparent,1
+583,goggle_MaP_Luna28_2021-11-29 11-06-28,783.2166667,46993,784.9666667,47098,1.75,Luna28,Looking target,Duration looking transparent,1
+584,goggle_MaP_Luna28_2021-11-29 11-06-28,789.3333333,47360,,,,Luna28,Inspection behind screen,Inspection behind transparent,1
+585,goggle_MaP_Luna28_2021-11-29 11-06-28,790.6666667,47440,,,,Luna28,First target choice,First choice transparent,1
+586,goggle_MaP_Luna28_2021-11-29 11-06-28,874.05,52443,920.15,55209,46.1,Luna28,Trial ,2,2
+587,goggle_MaP_Luna28_2021-11-29 11-06-28,879.9,52794,,,,Luna28,First look,First look transparent,2
+588,goggle_MaP_Luna28_2021-11-29 11-06-28,879.9,52794,880.9,52854,1,Luna28,Looking target,Duration looking transparent,2
+589,goggle_MaP_Luna28_2021-11-29 11-06-28,889.75,53385,,,,Luna28,First target choice,First choice transparent,2
+590,goggle_MaP_Luna28_2021-11-29 11-06-28,897.2,53832,,,,Luna28,Inspection behind screen,Inspection behind opaque,2
+591,goggle_MaP_Luna28_2021-11-29 11-06-28,975.3666667,58522,1019.583333,61175,44.21666667,Luna28,Trial ,3,3
+592,goggle_MaP_Luna28_2021-11-29 11-06-28,979.3,58758,,,,Luna28,First look,First look transparent,3
+593,goggle_MaP_Luna28_2021-11-29 11-06-28,979.3,58758,980.3,58818,1,Luna28,Looking target,Duration looking transparent,3
+594,goggle_MaP_Luna28_2021-11-29 11-06-28,983.8166667,59029,986.5,59190,2.683333333,Luna28,Looking target,Duration looking transparent,3
+595,goggle_MaP_Luna28_2021-11-29 11-06-28,987.6,59256,987.9333333,59276,0.333333333,Luna28,Looking target,Duration looking opaque,3
+596,goggle_MaP_Luna28_2021-11-29 11-06-28,990.2833333,59417,,,,Luna28,First target choice,First choice transparent,3
+597,goggle_MaP_Luna28_2021-11-29 11-06-28,1004.216667,60253,,,,Luna28,Inspection behind screen,Inspection behind transparent,3
+598,goggle_MaP_Luna28_2021-11-29 11-06-28,1073.983333,64439,1119.366667,67162,45.38333333,Luna28,Trial ,4,4
+599,goggle_MaP_Luna28_2021-11-29 11-06-28,1082.616667,64957,,,,Luna28,First look,First look opaque,4
+600,goggle_MaP_Luna28_2021-11-29 11-06-28,1082.616667,64957,1083.433333,65006,0.816666667,Luna28,Looking target,Duration looking opaque,4
+601,goggle_MaP_Luna28_2021-11-29 11-06-28,1089.6,65376,,,,Luna28,First target choice,First choice transparent,4
+602,goggle_MaP_Leia_2021-11-29 12-48-20,477.95,28677,494.3333333,29660,16.38333333,Leia,Manipulation check ,Manipulation check transparent,
+603,goggle_MaP_Leia_2021-11-29 12-48-20,496.8333333,29810,505.6666667,30340,8.833333333,Leia,Manipulation check ,Manipulation check transparent,
+604,goggle_MaP_Leia_2021-11-29 12-48-20,510.7333333,30644,544.95,32697,34.21666667,Leia,Manipulation check ,Manipulation check transparent,
+605,goggle_MaP_Leia_2021-11-29 12-48-20,550.6,33036,552.3,33138,1.7,Leia,Manipulation check ,Manipulation check transparent,
+606,goggle_MaP_Leia_2021-11-29 12-48-20,554.15,33249,562.1,33726,7.95,Leia,Manipulation check ,Manipulation check transparent,
+607,goggle_MaP_Leia_2021-11-29 12-48-20,616.25,36975,660.2,39612,43.95,Leia,Trial ,1,1
+608,goggle_MaP_Leia_2021-11-29 12-48-20,618.3666667,37102,,,,Leia,First look,First look transparent,1
+609,goggle_MaP_Leia_2021-11-29 12-48-20,618.3666667,37102,620.0833333,37205,1.716666667,Leia,Looking target,Duration looking transparent,1
+610,goggle_MaP_Leia_2021-11-29 12-48-20,620.35,37221,622.9833333,37379,2.633333333,Leia,Looking target,Duration looking opaque,1
+611,goggle_MaP_Leia_2021-11-29 12-48-20,623.45,37407,625.65,37539,2.2,Leia,Looking target,Duration looking transparent,1
+612,goggle_MaP_Leia_2021-11-29 12-48-20,626.7,37602,629.1833333,37751,2.483333333,Leia,Looking target,Duration looking opaque,1
+613,goggle_MaP_Leia_2021-11-29 12-48-20,631,37860,631.3666667,37882,0.366666667,Leia,Looking target,Duration looking opaque,1
+614,goggle_MaP_Leia_2021-11-29 12-48-20,632.55,37953,,,,Leia,First target choice,First choice opaque,1
+615,goggle_MaP_Leia_2021-11-29 12-48-20,651.95,39117,,,,Leia,Inspection behind screen,Inspection behind transparent,1
+616,goggle_MaP_Leia_2021-11-29 12-48-20,714.5,42870,758.6166667,45517,44.11666667,Leia,Trial ,2,2
+617,goggle_MaP_Leia_2021-11-29 12-48-20,717.0166667,43021,,,,Leia,First look,First look transparent,2
+618,goggle_MaP_Leia_2021-11-29 12-48-20,717.0166667,43021,718.1,43086,1.083333333,Leia,Looking target,Duration looking transparent,2
+619,goggle_MaP_Leia_2021-11-29 12-48-20,718.3166667,43099,721.65,43299,3.333333333,Leia,Looking target,Duration looking opaque,2
+620,goggle_MaP_Leia_2021-11-29 12-48-20,721.8666667,43312,727.25,43635,5.383333333,Leia,Looking target,Duration looking transparent,2
+621,goggle_MaP_Leia_2021-11-29 12-48-20,728.4,43704,728.7,43722,0.3,Leia,Looking target,Duration looking opaque,2
+622,goggle_MaP_Leia_2021-11-29 12-48-20,729.9166667,43795,,,,Leia,First target choice,First choice opaque,2
+623,goggle_MaP_Leia_2021-11-29 12-48-20,749.1666667,44950,,,,Leia,Inspection behind screen,Inspection behind transparent,2
+624,goggle_MaP_Leia_2021-11-29 12-48-20,810.15,48609,853.0833333,51185,42.93333333,Leia,Trial ,3,3
+625,goggle_MaP_Leia_2021-11-29 12-48-20,812.2666667,48736,,,,Leia,First look,First look transparent,3
+626,goggle_MaP_Leia_2021-11-29 12-48-20,812.2666667,48736,818.75,49125,6.483333333,Leia,Looking target,Duration looking transparent,3
+627,goggle_MaP_Leia_2021-11-29 12-48-20,819.2333333,49154,821.7833333,49307,2.55,Leia,Looking target,Duration looking opaque,3
+628,goggle_MaP_Leia_2021-11-29 12-48-20,823.5833333,49415,824.1833333,49451,0.6,Leia,Looking target,Duration looking transparent,3
+629,goggle_MaP_Leia_2021-11-29 12-48-20,825.5,49530,,,,Leia,First target choice,First choice transparent,3
+630,goggle_MaP_Leia_2021-11-29 12-48-20,849.2666667,50956,,,,Leia,Inspection behind screen,Inspection behind opaque,3
+631,goggle_MaP_Leia_2021-11-29 12-48-20,902.8,54168,946.2666667,56776,43.46666667,Leia,Trial ,4,4
+632,goggle_MaP_Leia_2021-11-29 12-48-20,908.5666667,54514,,,,Leia,First look,First look opaque,4
+633,goggle_MaP_Leia_2021-11-29 12-48-20,908.5666667,54514,911.5,54690,2.933333333,Leia,Looking target,Duration looking opaque,4
+634,goggle_MaP_Leia_2021-11-29 12-48-20,912.0833333,54725,915.1833333,54911,3.1,Leia,Looking target,Duration looking transparent,4
+635,goggle_MaP_Leia_2021-11-29 12-48-20,916.8333333,55010,917.1666667,55030,0.333333333,Leia,Looking target,Duration looking opaque,4
+636,goggle_MaP_Leia_2021-11-29 12-48-20,920,55200,,,,Leia,First target choice,First choice opaque,4
+637,goggle_MaP_Manni2_2021-11-25 14-11-38,549.1833333,32951,554.6666667,33280,5.483333333,Manni2,Manipulation check ,Manipulation check transparent,
+638,goggle_MaP_Manni2_2021-11-25 14-11-38,557.95,33477,559.6333333,33578,1.683333333,Manni2,Manipulation check ,Manipulation check opaque,
+639,goggle_MaP_Manni2_2021-11-25 14-11-38,743.25,44595,786.75,47205,43.5,Manni2,Trial ,1,1
+640,goggle_MaP_Manni2_2021-11-25 14-11-38,744.2,44652,,,,Manni2,First look,First look opaque,1
+641,goggle_MaP_Manni2_2021-11-25 14-11-38,744.2,44652,745.4666667,44728,1.266666667,Manni2,Looking target,Duration looking opaque,1
+642,goggle_MaP_Manni2_2021-11-25 14-11-38,750.1166667,45007,752.4166667,45145,2.3,Manni2,Looking target,Duration looking opaque,1
+643,goggle_MaP_Manni2_2021-11-25 14-11-38,752.6,45156,754.9,45294,2.3,Manni2,Looking target,Duration looking transparent,1
+644,goggle_MaP_Manni2_2021-11-25 14-11-38,758.4,45504,758.75,45525,0.35,Manni2,Looking target,Duration looking transparent,1
+645,goggle_MaP_Manni2_2021-11-25 14-11-38,759.5,45570,,,,Manni2,First target choice,First choice transparent,1
+646,goggle_MaP_Manni2_2021-11-25 14-11-38,766.5166667,45991,,,,Manni2,Inspection behind screen,Inspection behind transparent,1
+647,goggle_MaP_Manni2_2021-11-25 14-11-38,866.8833333,52013,910.5833333,54635,43.7,Manni2,Trial ,2,2
+648,goggle_MaP_Manni2_2021-11-25 14-11-38,868.7,52122,,,,Manni2,First look,First look opaque,2
+649,goggle_MaP_Manni2_2021-11-25 14-11-38,868.7,52122,870.8666667,52252,2.166666667,Manni2,Looking target,Duration looking opaque,2
+650,goggle_MaP_Manni2_2021-11-25 14-11-38,873.9833333,52439,876.4666667,52588,2.483333333,Manni2,Looking target,Duration looking transparent,2
+651,goggle_MaP_Manni2_2021-11-25 14-11-38,876.7166667,52603,878.6333333,52718,1.916666667,Manni2,Looking target,Duration looking opaque,2
+652,goggle_MaP_Manni2_2021-11-25 14-11-38,880.3,52818,880.5666667,52834,0.266666667,Manni2,Looking target,Duration looking transparent,2
+653,goggle_MaP_Manni2_2021-11-25 14-11-38,881.4166667,52885,,,,Manni2,First target choice,First choice transparent,2
+654,goggle_MaP_Manni2_2021-11-25 14-11-38,893.6166667,53617,,,,Manni2,Inspection behind screen,Inspection behind transparent,2
+655,goggle_MaP_Manni2_2021-11-25 14-11-38,1021.866667,61312,1066.233333,63974,44.36666667,Manni2,Trial ,3,3
+656,goggle_MaP_Manni2_2021-11-25 14-11-38,1022.5,61350,,,,Manni2,First look,First look opaque,3
+657,goggle_MaP_Manni2_2021-11-25 14-11-38,1022.5,61350,1030.4,61824,7.9,Manni2,Looking target,Duration looking opaque,3
+658,goggle_MaP_Manni2_2021-11-25 14-11-38,1031.266667,61876,1032.983333,61979,1.716666667,Manni2,Looking target,Duration looking opaque,3
+659,goggle_MaP_Manni2_2021-11-25 14-11-38,1033.533333,62012,1035.066667,62104,1.533333333,Manni2,Looking target,Duration looking transparent,3
+660,goggle_MaP_Manni2_2021-11-25 14-11-38,1036.966667,62218,1037.316667,62239,0.35,Manni2,Looking target,Duration looking opaque,3
+661,goggle_MaP_Manni2_2021-11-25 14-11-38,1038.216667,62293,,,,Manni2,First target choice,First choice opaque,3
+662,goggle_MaP_Manni2_2021-11-25 14-11-38,1137.9,68274,1183.483333,71009,45.58333333,Manni2,Trial ,4,4
+663,goggle_MaP_Manni2_2021-11-25 14-11-38,1141.95,68517,,,,Manni2,First look,First look opaque,4
+664,goggle_MaP_Manni2_2021-11-25 14-11-38,1141.95,68517,1144.316667,68659,2.366666667,Manni2,Looking target,Duration looking opaque,4
+665,goggle_MaP_Manni2_2021-11-25 14-11-38,1147.116667,68827,1148.716667,68923,1.6,Manni2,Looking target,Duration looking opaque,4
+666,goggle_MaP_Manni2_2021-11-25 14-11-38,1149.416667,68965,1151.1,69066,1.683333333,Manni2,Looking target,Duration looking opaque,4
+667,goggle_MaP_Manni2_2021-11-25 14-11-38,1152.633333,69158,1153.033333,69182,0.4,Manni2,Looking target,Duration looking opaque,4
+668,goggle_MaP_Manni2_2021-11-25 14-11-38,1153.95,69237,,,,Manni2,First target choice,First choice opaque,4
+669,goggle_MaP_Cully_2021-12-02 12-07-36,1216.5,72990,1259.833333,75590,43.33333333,Cully,Trial ,1,1
+670,goggle_MaP_Cully_2021-12-02 12-07-36,1230.633333,73838,,,,Cully,First look,First look transparent,1
+671,goggle_MaP_Cully_2021-12-02 12-07-36,1230.633333,73838,1230.9,73854,0.266666667,Cully,Looking target,Duration looking transparent,1
+672,goggle_MaP_Cully_2021-12-02 12-07-36,1231.766667,73906,,,,Cully,First target choice,First choice transparent,1
+673,goggle_MaP_Cully_2021-12-02 12-07-36,1234.766667,74086,,,,Cully,Inspection behind screen,Inspection behind opaque,1
+674,goggle_MaP_Cully_2021-12-02 12-07-36,1326.9,79614,1370.333333,82220,43.43333333,Cully,Trial ,2,2
+675,goggle_MaP_Cully_2021-12-02 12-07-36,1340.683333,80441,,,,Cully,First look,First look transparent,2
+676,goggle_MaP_Cully_2021-12-02 12-07-36,1340.683333,80441,1340.983333,80459,0.3,Cully,Looking target,Duration looking transparent,2
+677,goggle_MaP_Cully_2021-12-02 12-07-36,1341.583333,80495,,,,Cully,First target choice,First choice transparent,2
+678,goggle_MaP_Cully_2021-12-02 12-07-36,1346.616667,80797,,,,Cully,Inspection behind screen,Inspection behind opaque,2
+679,goggle_MaP_Cully_2021-12-02 12-07-36,1428.316667,85699,1472.183333,88331,43.86666667,Cully,Trial ,3,3
+680,goggle_MaP_Cully_2021-12-02 12-07-36,1442.866667,86572,,,,Cully,First look,First look transparent,3
+681,goggle_MaP_Cully_2021-12-02 12-07-36,1442.866667,86572,1443.15,86589,0.283333333,Cully,Looking target,Duration looking transparent,3
+682,goggle_MaP_Cully_2021-12-02 12-07-36,1443.933333,86636,,,,Cully,First target choice,First choice transparent,3
+683,goggle_MaP_Cully_2021-12-02 12-07-36,1450.933333,87056,,,,Cully,Inspection behind screen,Inspection behind transparent,3
+684,goggle_MaP_Cully_2021-12-02 12-07-36,1521.45,91287,1565.183333,93911,43.73333333,Cully,Trial ,4,4
+685,goggle_MaP_Cully_2021-12-02 12-07-36,1535.516667,92131,,,,Cully,First look,First look transparent,4
+686,goggle_MaP_Cully_2021-12-02 12-07-36,1535.516667,92131,1535.766667,92146,0.25,Cully,Looking target,Duration looking transparent,4
+687,goggle_MaP_Cully_2021-12-02 12-07-36,1536.683333,92201,,,,Cully,First target choice,First choice transparent,4
+688,goggle_MaP_Cully_2021-12-02 12-07-36,1542.283333,92537,,,,Cully,Inspection behind screen,Inspection behind transparent,4
+689,goggle_MaP_Minos_2021-12-02 10-39-03,1093.633333,65618,1146.833333,68810,53.2,Minos,Manipulation check ,Manipulation check transparent,
+690,goggle_MaP_Minos_2021-12-02 10-39-03,1267.5,76050,1312.083333,78725,44.58333333,Minos,Trial ,1,1
+691,goggle_MaP_Minos_2021-12-02 10-39-03,1268.183333,76091,,,,Minos,First look,First look opaque,1
+692,goggle_MaP_Minos_2021-12-02 10-39-03,1268.183333,76091,1269.85,76191,1.666666667,Minos,Looking target,Duration looking opaque,1
+693,goggle_MaP_Minos_2021-12-02 10-39-03,1277.033333,76622,1280.4,76824,3.366666667,Minos,Looking target,Duration looking transparent,1
+694,goggle_MaP_Minos_2021-12-02 10-39-03,1281.183333,76871,1282.183333,76931,1,Minos,Looking target,Duration looking transparent,1
+695,goggle_MaP_Minos_2021-12-02 10-39-03,1283.566667,77014,,,,Minos,First target choice,First choice transparent,1
+696,goggle_MaP_Minos_2021-12-02 10-39-03,1302.016667,78121,,,,Minos,Inspection behind screen,Inspection behind opaque,1
+697,goggle_MaP_Minos_2021-12-02 10-39-03,1379.466667,82768,1424.3,85458,44.83333333,Minos,Trial ,2,2
+698,goggle_MaP_Minos_2021-12-02 10-39-03,1383.966667,83038,,,,Minos,First look,First look transparent,2
+699,goggle_MaP_Minos_2021-12-02 10-39-03,1383.966667,83038,1391.416667,83485,7.45,Minos,Looking target,Duration looking transparent,2
+700,goggle_MaP_Minos_2021-12-02 10-39-03,1392.1,83526,1393.1,83586,1,Minos,Looking target,Duration looking transparent,2
+701,goggle_MaP_Minos_2021-12-02 10-39-03,1395.883333,83753,,,,Minos,Inspection behind screen,Inspection behind transparent,2
+702,goggle_MaP_Minos_2021-12-02 10-39-03,1398.866667,83932,,,,Minos,First target choice,First choice transparent,2
+703,goggle_MaP_Minos_2021-12-02 10-39-03,1507.55,90453,1550.916667,93055,43.36666667,Minos,Trial ,3,3
+704,goggle_MaP_Minos_2021-12-02 10-39-03,1518.166667,91090,,,,Minos,First look,First look transparent,3
+705,goggle_MaP_Minos_2021-12-02 10-39-03,1518.166667,91090,1521.516667,91291,3.35,Minos,Looking target,Duration looking transparent,3
+706,goggle_MaP_Minos_2021-12-02 10-39-03,1524.3,91458,,,,Minos,First target choice,First choice transparent,3
+707,goggle_MaP_Minos_2021-12-02 10-39-03,1644.9,98694,1688.833333,101330,43.93333333,Minos,Trial ,4,4
+708,goggle_MaP_Minos_2021-12-02 10-39-03,1651.616667,99097,,,,Minos,First look,First look opaque,4
+709,goggle_MaP_Minos_2021-12-02 10-39-03,1651.616667,99097,1656.833333,99410,5.216666667,Minos,Looking target,Duration looking opaque,4
+710,goggle_MaP_Minos_2021-12-02 10-39-03,1657.85,99471,1658.166667,99490,0.316666667,Minos,Looking target,Duration looking opaque,4
+711,goggle_MaP_Minos_2021-12-02 10-39-03,1660.566667,99634,,,,Minos,First target choice,First choice opaque,4
+712,goggle_MaP_Minos_2021-12-02 10-39-03,1663.9,99834,,,,Minos,Inspection behind screen,Inspection behind transparent,4
+713,goggle_MaP_Yuna_2021-11-29 14-18-11,541.55,32493,542.4333333,32546,0.883333333,Yuna,Manipulation check ,Manipulation check transparent,
+714,goggle_MaP_Yuna_2021-11-29 14-18-11,550.0833333,33005,610.2,36612,60.11666667,Yuna,Manipulation check ,Manipulation check transparent,
+715,goggle_MaP_Yuna_2021-11-29 14-18-11,716.4333333,42986,760.65,45639,44.21666667,Yuna,Trial ,1,1
+716,goggle_MaP_Yuna_2021-11-29 14-18-11,724.2833333,43457,,,,Yuna,First look,First look opaque,1
+717,goggle_MaP_Yuna_2021-11-29 14-18-11,724.2833333,43457,727.7666667,43666,3.483333333,Yuna,Looking target,Duration looking opaque,1
+718,goggle_MaP_Yuna_2021-11-29 14-18-11,729.5166667,43771,729.6,43776,0.083333333,Yuna,Looking target,Duration looking transparent,1
+719,goggle_MaP_Yuna_2021-11-29 14-18-11,733.4833333,44009,,,,Yuna,Inspection behind screen,Inspection behind opaque,1
+720,goggle_MaP_Yuna_2021-11-29 14-18-11,734.9666667,44098,,,,Yuna,First target choice,First choice opaque,1
+721,goggle_MaP_Yuna_2021-11-29 14-18-11,824.25,49455,868.7333333,52124,44.48333333,Yuna,Trial ,2,2
+722,goggle_MaP_Yuna_2021-11-29 14-18-11,834.1666667,50050,,,,Yuna,First look,First look opaque,2
+723,goggle_MaP_Yuna_2021-11-29 14-18-11,834.1666667,50050,837.2666667,50236,3.1,Yuna,Looking target,Duration looking opaque,2
+724,goggle_MaP_Yuna_2021-11-29 14-18-11,841.6333333,50498,,,,Yuna,Inspection behind screen,Inspection behind opaque,2
+725,goggle_MaP_Yuna_2021-11-29 14-18-11,843.6833333,50621,,,,Yuna,First target choice,First choice opaque,2
+731,goggle_MaP_Yuna_2021-11-29 14-18-11,1045.633333,62738,1089.95,65397,44.31666667,Yuna,Trial ,4,4
+732,goggle_MaP_Yuna_2021-11-29 14-18-11,1047.516667,62851,,,,Yuna,First look,First look opaque,4
+733,goggle_MaP_Yuna_2021-11-29 14-18-11,1047.516667,62851,1051.883333,63113,4.366666667,Yuna,Looking target,Duration looking opaque,4
+734,goggle_MaP_Yuna_2021-11-29 14-18-11,1061.85,63711,,,,Yuna,First target choice,First choice transparent,4
+735,goggle_MaP_Yuna_2021-11-29 14-18-11,1077.3,64638,,,,Yuna,Inspection behind screen,Inspection behind transparent,4
+736,goggle_MaP_Yuna_2021-11-29 14-18-11,1173.433333,70406,1217.666667,73060,44.23333333,Yuna,Trial ,3,3
+737,goggle_MaP_Yuna_2021-11-29 14-18-11,1190.383333,71423,,,,Yuna,First target choice,First choice transparent,3
+738,goggle_MaP_Yuna_2021-11-29 14-18-11,1217.416667,73045,,,,Yuna,Inspection behind screen,Inspection behind transparent,3
+739,goggle_MaP_Eowyn_2021-11-29 12-18-22,1068.95,64137,1124.166667,67450,55.21666667,Eowyn,Manipulation check ,Manipulation check transparent,
+740,goggle_MaP_Eowyn_2021-11-29 12-18-22,1238.666667,74320,1283.3,76998,44.63333333,Eowyn,Trial ,1,1
+741,goggle_MaP_Eowyn_2021-11-29 12-18-22,1239.583333,74375,,,,Eowyn,First look,First look transparent,1
+742,goggle_MaP_Eowyn_2021-11-29 12-18-22,1239.583333,74375,1240.85,74451,1.266666667,Eowyn,Looking target,Duration looking transparent,1
+743,goggle_MaP_Eowyn_2021-11-29 12-18-22,1241.433333,74486,1242.866667,74572,1.433333333,Eowyn,Looking target,Duration looking opaque,1
+744,goggle_MaP_Eowyn_2021-11-29 12-18-22,1244.233333,74654,1245.116667,74707,0.883333333,Eowyn,Looking target,Duration looking opaque,1
+745,goggle_MaP_Eowyn_2021-11-29 12-18-22,1245.35,74721,1246.783333,74807,1.433333333,Eowyn,Looking target,Duration looking transparent,1
+746,goggle_MaP_Eowyn_2021-11-29 12-18-22,1247.5,74850,1250.966667,75058,3.466666667,Eowyn,Looking target,Duration looking opaque,1
+747,goggle_MaP_Eowyn_2021-11-29 12-18-22,1251.966667,75118,1252.866667,75172,0.9,Eowyn,Looking target,Duration looking transparent,1
+748,goggle_MaP_Eowyn_2021-11-29 12-18-22,1253.666667,75220,,,,Eowyn,First target choice,First choice transparent,1
+749,goggle_MaP_Eowyn_2021-11-29 12-18-22,1265.616667,75937,,,,Eowyn,Inspection behind screen,Inspection behind opaque,1
+750,goggle_MaP_Eowyn_2021-11-29 12-18-22,1345.883333,80753,1389.833333,83390,43.95,Eowyn,Trial ,2,2
+751,goggle_MaP_Eowyn_2021-11-29 12-18-22,1345.95,80757,,,,Eowyn,First look,First look transparent,2
+752,goggle_MaP_Eowyn_2021-11-29 12-18-22,1345.95,80757,1346.683333,80801,0.733333333,Eowyn,Looking target,Duration looking transparent,2
+753,goggle_MaP_Eowyn_2021-11-29 12-18-22,1346.933333,80816,1347.383333,80843,0.45,Eowyn,Looking target,Duration looking opaque,2
+754,goggle_MaP_Eowyn_2021-11-29 12-18-22,1348.033333,80882,1348.933333,80936,0.9,Eowyn,Looking target,Duration looking transparent,2
+755,goggle_MaP_Eowyn_2021-11-29 12-18-22,1350.216667,81013,1352.05,81123,1.833333333,Eowyn,Looking target,Duration looking transparent,2
+756,goggle_MaP_Eowyn_2021-11-29 12-18-22,1352.333333,81140,1354,81240,1.666666667,Eowyn,Looking target,Duration looking opaque,2
+757,goggle_MaP_Eowyn_2021-11-29 12-18-22,1354.6,81276,1355.15,81309,0.55,Eowyn,Looking target,Duration looking transparent,2
+758,goggle_MaP_Eowyn_2021-11-29 12-18-22,1355.65,81339,1358.333333,81500,2.683333333,Eowyn,Looking target,Duration looking transparent,2
+759,goggle_MaP_Eowyn_2021-11-29 12-18-22,1358.5,81510,1358.75,81525,0.25,Eowyn,Looking target,Duration looking opaque,2
+760,goggle_MaP_Eowyn_2021-11-29 12-18-22,1360.05,81603,1360.3,81618,0.25,Eowyn,Looking target,Duration looking transparent,2
+761,goggle_MaP_Eowyn_2021-11-29 12-18-22,1361.016667,81661,,,,Eowyn,First target choice,First choice transparent,2
+762,goggle_MaP_Eowyn_2021-11-29 12-18-22,1380.366667,82822,,,,Eowyn,Inspection behind screen,Inspection behind transparent,2
+763,goggle_MaP_Eowyn_2021-11-29 12-18-22,1445.916667,86755,1489.7,89382,43.78333333,Eowyn,Trial ,3,3
+764,goggle_MaP_Eowyn_2021-11-29 12-18-22,1446.4,86784,,,,Eowyn,First look,First look transparent,3
+765,goggle_MaP_Eowyn_2021-11-29 12-18-22,1446.4,86784,1447.95,86877,1.55,Eowyn,Looking target,Duration looking transparent,3
+766,goggle_MaP_Eowyn_2021-11-29 12-18-22,1448.233333,86894,1448.883333,86933,0.65,Eowyn,Looking target,Duration looking opaque,3
+767,goggle_MaP_Eowyn_2021-11-29 12-18-22,1449.5,86970,1452.25,87135,2.75,Eowyn,Looking target,Duration looking transparent,3
+768,goggle_MaP_Eowyn_2021-11-29 12-18-22,1459.383333,87563,1460.166667,87610,0.783333333,Eowyn,Looking target,Duration looking transparent,3
+769,goggle_MaP_Eowyn_2021-11-29 12-18-22,1460.9,87654,,,,Eowyn,First target choice,First choice transparent,3
+770,goggle_MaP_Eowyn_2021-11-29 12-18-22,1478.75,88725,,,,Eowyn,Inspection behind screen,Inspection behind transparent,3
+771,goggle_MaP_Eowyn_2021-11-29 12-18-22,1537.083333,92225,1580.866667,94852,43.78333333,Eowyn,Trial ,4,4
+772,goggle_MaP_Eowyn_2021-11-29 12-18-22,1537.583333,92255,,,,Eowyn,First look,First look transparent,4
+773,goggle_MaP_Eowyn_2021-11-29 12-18-22,1537.583333,92255,1538.983333,92339,1.4,Eowyn,Looking target,Duration looking transparent,4
+774,goggle_MaP_Eowyn_2021-11-29 12-18-22,1540.483333,92429,1541.033333,92462,0.55,Eowyn,Looking target,Duration looking transparent,4
+775,goggle_MaP_Eowyn_2021-11-29 12-18-22,1541.7,92502,1542.25,92535,0.55,Eowyn,Looking target,Duration looking transparent,4
+776,goggle_MaP_Eowyn_2021-11-29 12-18-22,1542.55,92553,1543.15,92589,0.6,Eowyn,Looking target,Duration looking opaque,4
+777,goggle_MaP_Eowyn_2021-11-29 12-18-22,1546,92760,1547.95,92877,1.95,Eowyn,Looking target,Duration looking transparent,4
+778,goggle_MaP_Eowyn_2021-11-29 12-18-22,1551.183333,93071,1551.416667,93085,0.233333333,Eowyn,Looking target,Duration looking transparent,4
+779,goggle_MaP_Eowyn_2021-11-29 12-18-22,1552.283333,93137,,,,Eowyn,First target choice,First choice transparent,4
+780,goggle_MaP_Flamme_2021-11-25 14-36-28,528.1,31686,530.3333333,31820,2.233333333,Flamme,Manipulation check ,Manipulation check transparent,
+781,goggle_MaP_Flamme_2021-11-25 14-36-28,532.2333333,31934,533.5166667,32011,1.283333333,Flamme,Manipulation check ,Manipulation check opaque,
+782,goggle_MaP_Flamme_2021-11-25 14-36-28,535.1666667,32110,535.55,32133,0.383333333,Flamme,Manipulation check ,Manipulation check opaque,
+783,goggle_MaP_Flamme_2021-11-25 14-36-28,540.5333333,32432,542.3,32538,1.766666667,Flamme,Manipulation check ,Manipulation check transparent,
+784,goggle_MaP_Flamme_2021-11-25 14-36-28,544.2166667,32653,546.05,32763,1.833333333,Flamme,Manipulation check ,Manipulation check opaque,
+785,goggle_MaP_Flamme_2021-11-25 14-36-28,555.45,33327,559.4,33564,3.95,Flamme,Manipulation check ,Manipulation check transparent,
+786,goggle_MaP_Flamme_2021-11-25 14-36-28,560.9,33654,562.3833333,33743,1.483333333,Flamme,Manipulation check ,Manipulation check opaque,
+787,goggle_MaP_Flamme_2021-11-25 14-36-28,580.9,34854,584.25,35055,3.35,Flamme,Manipulation check ,Manipulation check transparent,
+788,goggle_MaP_Flamme_2021-11-25 14-36-28,644.3833333,38663,687.6166667,41257,43.23333333,Flamme,Trial ,1,1
+789,goggle_MaP_Flamme_2021-11-25 14-36-28,645.3833333,38723,,,,Flamme,First look,First look opaque,1
+790,goggle_MaP_Flamme_2021-11-25 14-36-28,645.3833333,38723,648.2166667,38893,2.833333333,Flamme,Looking target,Duration looking opaque,1
+791,goggle_MaP_Flamme_2021-11-25 14-36-28,653.2666667,39196,656.3666667,39382,3.1,Flamme,Looking target,Duration looking opaque,1
+792,goggle_MaP_Flamme_2021-11-25 14-36-28,657.9,39474,658.2333333,39494,0.333333333,Flamme,Looking target,Duration looking transparent,1
+793,goggle_MaP_Flamme_2021-11-25 14-36-28,659.1166667,39547,,,,Flamme,First target choice,First choice transparent,1
+794,goggle_MaP_Flamme_2021-11-25 14-36-28,662.4666667,39748,,,,Flamme,Inspection behind screen,Inspection behind opaque,1
+795,goggle_MaP_Flamme_2021-11-25 14-36-28,760.7333333,45644,804.55,48273,43.81666667,Flamme,Trial ,2,2
+796,goggle_MaP_Flamme_2021-11-25 14-36-28,761.0333333,45662,,,,Flamme,First look,First look transparent,2
+797,goggle_MaP_Flamme_2021-11-25 14-36-28,761.0333333,45662,764.6833333,45881,3.65,Flamme,Looking target,Duration looking transparent,2
+798,goggle_MaP_Flamme_2021-11-25 14-36-28,768.0666667,46084,771.7833333,46307,3.716666667,Flamme,Looking target,Duration looking opaque,2
+799,goggle_MaP_Flamme_2021-11-25 14-36-28,773.2833333,46397,775.5333333,46532,2.25,Flamme,Looking target,Duration looking transparent,2
+800,goggle_MaP_Flamme_2021-11-25 14-36-28,776.1,46566,,,,Flamme,First target choice,First choice transparent,2
+801,goggle_MaP_Flamme_2021-11-25 14-36-28,789.1166667,47347,,,,Flamme,Inspection behind screen,Inspection behind transparent,2
+802,goggle_MaP_Flamme_2021-11-25 14-36-28,862.1833333,51731,905.4166667,54325,43.23333333,Flamme,Trial ,3,3
+803,goggle_MaP_Flamme_2021-11-25 14-36-28,863.25,51795,,,,Flamme,First look,First look opaque,3
+804,goggle_MaP_Flamme_2021-11-25 14-36-28,863.25,51795,864.2333333,51854,0.983333333,Flamme,Looking target,Duration looking opaque,3
+805,goggle_MaP_Flamme_2021-11-25 14-36-28,865.2666667,51916,866.1666667,51970,0.9,Flamme,Looking target,Duration looking transparent,3
+806,goggle_MaP_Flamme_2021-11-25 14-36-28,870.7833333,52247,872.3333333,52340,1.55,Flamme,Looking target,Duration looking opaque,3
+807,goggle_MaP_Flamme_2021-11-25 14-36-28,875.7166667,52543,876.2833333,52577,0.566666667,Flamme,Looking target,Duration looking transparent,3
+808,goggle_MaP_Flamme_2021-11-25 14-36-28,877.1666667,52630,,,,Flamme,First target choice,First choice transparent,3
+809,goggle_MaP_Flamme_2021-11-25 14-36-28,890.6833333,53441,,,,Flamme,Inspection behind screen,Inspection behind transparent,3
+810,goggle_MaP_Flamme_2021-11-25 14-36-28,962.5333333,57752,1007.633333,60458,45.1,Flamme,Trial ,4,4
+811,goggle_MaP_Flamme_2021-11-25 14-36-28,965.35,57921,,,,Flamme,First look,First look opaque,4
+812,goggle_MaP_Flamme_2021-11-25 14-36-28,965.35,57921,969.1333333,58148,3.783333333,Flamme,Looking target,Duration looking opaque,4
+813,goggle_MaP_Flamme_2021-11-25 14-36-28,974.4166667,58465,975.8333333,58550,1.416666667,Flamme,Looking target,Duration looking opaque,4
+814,goggle_MaP_Flamme_2021-11-25 14-36-28,976.8,58608,977.1333333,58628,0.333333333,Flamme,Looking target,Duration looking opaque,4
+815,goggle_MaP_Flamme_2021-11-25 14-36-28,978.1833333,58691,,,,Flamme,First target choice,First choice opaque,4
+816,goggle_MaP_Flamme_2021-11-25 14-36-28,981.5,58890,,,,Flamme,Inspection behind screen,Inspection behind transparent,4
+817,goggle_MaP_Keres_2021-11-30 15-02-48,441.8666667,26512,453.5833333,27215,11.71666667,Keres,Manipulation check ,Manipulation check transparent,
+818,goggle_MaP_Keres_2021-11-30 15-02-48,622.5666667,37354,666.6666667,40000,44.1,Keres,Trial ,1,1
+819,goggle_MaP_Keres_2021-11-30 15-02-48,637.2,38232,,,,Keres,First look,First look transparent,1
+820,goggle_MaP_Keres_2021-11-30 15-02-48,637.2,38232,637.7666667,38266,0.566666667,Keres,Looking target,Duration looking transparent,1
+821,goggle_MaP_Keres_2021-11-30 15-02-48,638.9666667,38338,,,,Keres,First target choice,First choice transparent,1
+822,goggle_MaP_Keres_2021-11-30 15-02-48,656.4166667,39385,,,,Keres,Inspection behind screen,Inspection behind transparent,1
+823,goggle_MaP_Keres_2021-11-30 15-02-48,717.3166667,43039,761.1333333,45668,43.81666667,Keres,Trial ,2,2
+824,goggle_MaP_Keres_2021-11-30 15-02-48,731.2666667,43876,,,,Keres,First look,First look transparent,2
+825,goggle_MaP_Keres_2021-11-30 15-02-48,731.2666667,43876,731.7166667,43903,0.45,Keres,Looking target,Duration looking transparent,2
+826,goggle_MaP_Keres_2021-11-30 15-02-48,732.8666667,43972,,,,Keres,First target choice,First choice transparent,2
+827,goggle_MaP_Keres_2021-11-30 15-02-48,742.05,44523,,,,Keres,Inspection behind screen,Inspection behind opaque,2
+828,goggle_MaP_Keres_2021-11-30 15-02-48,803.95,48237,847.45,50847,43.5,Keres,Trial ,3,3
+829,goggle_MaP_Keres_2021-11-30 15-02-48,817.8833333,49073,,,,Keres,First look,First look transparent,3
+830,goggle_MaP_Keres_2021-11-30 15-02-48,817.8833333,49073,818.35,49101,0.466666667,Keres,Looking target,Duration looking transparent,3
+831,goggle_MaP_Keres_2021-11-30 15-02-48,819.25,49155,,,,Keres,First target choice,First choice transparent,3
+832,goggle_MaP_Keres_2021-11-30 15-02-48,893.0166667,53581,936.9666667,56218,43.95,Keres,Trial ,4,4
+833,goggle_MaP_Keres_2021-11-30 15-02-48,906.8833333,54413,,,,Keres,First look,First look transparent,4
+834,goggle_MaP_Keres_2021-11-30 15-02-48,906.8833333,54413,907.3166667,54439,0.433333333,Keres,Looking target,Duration looking transparent,4
+835,goggle_MaP_Keres_2021-11-30 15-02-48,907.8833333,54473,,,,Keres,First target choice,First choice transparent,4
+836,goggle_MaP_Flecki_2021-12-02 11-34-56,547.05,32823,551.8833333,33113,4.833333333,Flecki,Manipulation check ,Manipulation check transparent,
+837,goggle_MaP_Flecki_2021-12-02 11-34-56,564.15,33849,564.8833333,33893,0.733333333,Flecki,Manipulation check ,Manipulation check opaque,
+838,goggle_MaP_Flecki_2021-12-02 11-34-56,579.0833333,34745,586.9,35214,7.816666667,Flecki,Manipulation check ,Manipulation check transparent,
+839,goggle_MaP_Flecki_2021-12-02 11-34-56,778.3,46698,823.35,49401,45.05,Flecki,Trial ,1,1
+840,goggle_MaP_Flecki_2021-12-02 11-34-56,778.85,46731,,,,Flecki,First look,First look opaque,1
+841,goggle_MaP_Flecki_2021-12-02 11-34-56,778.85,46731,779.9666667,46798,1.116666667,Flecki,Looking target,Duration looking opaque,1
+842,goggle_MaP_Flecki_2021-12-02 11-34-56,781.55,46893,784.2666667,47056,2.716666667,Flecki,Looking target,Duration looking transparent,1
+843,goggle_MaP_Flecki_2021-12-02 11-34-56,789.5333333,47372,791.3666667,47482,1.833333333,Flecki,Looking target,Duration looking opaque,1
+844,goggle_MaP_Flecki_2021-12-02 11-34-56,791.7166667,47503,793.1333333,47588,1.416666667,Flecki,Looking target,Duration looking transparent,1
+845,goggle_MaP_Flecki_2021-12-02 11-34-56,794.5833333,47675,,,,Flecki,First target choice,First choice transparent,1
+846,goggle_MaP_Flecki_2021-12-02 11-34-56,806.8,48408,,,,Flecki,Inspection behind screen,Inspection behind opaque,1
+847,goggle_MaP_Flecki_2021-12-02 11-34-56,885.2333333,53114,928.8166667,55729,43.58333333,Flecki,Trial ,2,2
+848,goggle_MaP_Flecki_2021-12-02 11-34-56,889.45,53367,,,,Flecki,First look,First look opaque,2
+849,goggle_MaP_Flecki_2021-12-02 11-34-56,889.45,53367,891.7,53502,2.25,Flecki,Looking target,Duration looking opaque,2
+850,goggle_MaP_Flecki_2021-12-02 11-34-56,901.5833333,54095,,,,Flecki,Inspection behind screen,Inspection behind transparent,2
+851,goggle_MaP_Flecki_2021-12-02 11-34-56,906.5833333,54395,,,,Flecki,First target choice,First choice transparent,2
+852,goggle_MaP_Flecki_2021-12-02 11-34-56,1007.65,60459,1053.083333,63185,45.43333333,Flecki,Trial ,3,3
+853,goggle_MaP_Flecki_2021-12-02 11-34-56,1012.816667,60769,,,,Flecki,First look,First look transparent,3
+854,goggle_MaP_Flecki_2021-12-02 11-34-56,1012.816667,60769,1022.433333,61346,9.616666667,Flecki,Looking target,Duration looking transparent,3
+855,goggle_MaP_Flecki_2021-12-02 11-34-56,1025.533333,61532,,,,Flecki,First target choice,First choice opaque,3
+856,goggle_MaP_Flecki_2021-12-02 11-34-56,1112.566667,66754,1157.716667,69463,45.15,Flecki,Trial ,4,4
+857,goggle_MaP_Flecki_2021-12-02 11-34-56,1116.716667,67003,,,,Flecki,First look,First look opaque,4
+858,goggle_MaP_Flecki_2021-12-02 11-34-56,1116.716667,67003,1121.516667,67291,4.8,Flecki,Looking target,Duration looking opaque,4
+859,goggle_MaP_Flecki_2021-12-02 11-34-56,1122.166667,67330,1124.333333,67460,2.166666667,Flecki,Looking target,Duration looking transparent,4
+860,goggle_MaP_Flecki_2021-12-02 11-34-56,1129.666667,67780,,,,Flecki,First target choice,First choice opaque,4
+861,goggle_MaP_Flecki_2021-12-02 11-34-56,1137.95,68277,,,,Flecki,Inspection behind screen,Inspection behind transparent,4
+862,goggle_MaP_Jessy9_2021-12-02 11-10-37,666.5666667,39994,668.5833333,40115,2.016666667,Jessy9,Manipulation check ,Manipulation check opaque,
+863,goggle_MaP_Jessy9_2021-12-02 11-10-37,674.75,40485,683.1333333,40988,8.383333333,Jessy9,Manipulation check ,Manipulation check transparent,
+864,goggle_MaP_Jessy9_2021-12-02 11-10-37,685.6666667,41140,690.6666667,41440,5,Jessy9,Manipulation check ,Manipulation check transparent,
+865,goggle_MaP_Jessy9_2021-12-02 11-10-37,821.6333333,49298,875.7166667,52543,54.08333333,Jessy9,Trial ,1,1
+866,goggle_MaP_Jessy9_2021-12-02 11-10-37,824.3833333,49463,,,,Jessy9,First look,First look opaque,1
+867,goggle_MaP_Jessy9_2021-12-02 11-10-37,824.3833333,49463,827.3,49638,2.916666667,Jessy9,Looking target,Duration looking opaque,1
+868,goggle_MaP_Jessy9_2021-12-02 11-10-37,834.3,50058,837.6333333,50258,3.333333333,Jessy9,Looking target,Duration looking opaque,1
+869,goggle_MaP_Jessy9_2021-12-02 11-10-37,838.6666667,50320,842.5666667,50554,3.9,Jessy9,Looking target,Duration looking transparent,1
+870,goggle_MaP_Jessy9_2021-12-02 11-10-37,843.9833333,50639,844.1833333,50651,0.2,Jessy9,Looking target,Duration looking opaque,1
+871,goggle_MaP_Jessy9_2021-12-02 11-10-37,845.9166667,50755,,,,Jessy9,First target choice,First choice opaque,1
+872,goggle_MaP_Jessy9_2021-12-02 11-10-37,851.65,51099,,,,Jessy9,Inspection behind screen,Inspection behind transparent,1
+873,goggle_MaP_Jessy9_2021-12-02 11-10-37,980.1666667,58810,1030.716667,61843,50.55,Jessy9,Trial ,2,2
+874,goggle_MaP_Jessy9_2021-12-02 11-10-37,986.7,59202,,,,Jessy9,First look,First look transparent,2
+875,goggle_MaP_Jessy9_2021-12-02 11-10-37,986.7,59202,993.6666667,59620,6.966666667,Jessy9,Looking target,Duration looking transparent,2
+876,goggle_MaP_Jessy9_2021-12-02 11-10-37,994.4833333,59669,994.9,59694,0.416666667,Jessy9,Looking target,Duration looking opaque,2
+877,goggle_MaP_Jessy9_2021-12-02 11-10-37,997.2333333,59834,,,,Jessy9,First target choice,First choice opaque,2
+878,goggle_MaP_Jessy9_2021-12-02 11-10-37,1122.633333,67358,1167.35,70041,44.71666667,Jessy9,Trial ,3,3
+879,goggle_MaP_Jessy9_2021-12-02 11-10-37,1134.6,68076,,,,Jessy9,First look,First look opaque,3
+880,goggle_MaP_Jessy9_2021-12-02 11-10-37,1134.6,68076,1134.816667,68089,0.216666667,Jessy9,Looking target,Duration looking opaque,3
+881,goggle_MaP_Jessy9_2021-12-02 11-10-37,1135.083333,68105,1135.4,68124,0.316666667,Jessy9,Looking target,Duration looking transparent,3
+882,goggle_MaP_Jessy9_2021-12-02 11-10-37,1137.833333,68270,,,,Jessy9,First target choice,First choice transparent,3
+883,goggle_MaP_Jessy9_2021-12-02 11-10-37,1142.733333,68564,,,,Jessy9,Inspection behind screen,Inspection behind transparent,3
+884,goggle_MaP_Jessy9_2021-12-02 11-10-37,1224.483333,73469,1270.416667,76225,45.93333333,Jessy9,Trial ,4,4
+885,goggle_MaP_Jessy9_2021-12-02 11-10-37,1238.316667,74299,,,,Jessy9,First look,First look transparent,4
+886,goggle_MaP_Jessy9_2021-12-02 11-10-37,1238.316667,74299,1238.55,74313,0.233333333,Jessy9,Looking target,Duration looking transparent,4
+887,goggle_MaP_Jessy9_2021-12-02 11-10-37,1241.366667,74482,,,,Jessy9,First target choice,First choice transparent,4
+888,goggle_MaP_Jessy9_2021-12-02 11-10-37,1257.983333,75479,,,,Jessy9,Inspection behind screen,Inspection behind transparent,4
+889,goggle_MaP_Joline_2021-12-01 13-02-04,586.9333333,35216,603.1666667,36190,16.23333333,Joline,Manipulation check ,Manipulation check transparent,
+890,goggle_MaP_Joline_2021-12-01 13-02-04,609,36540,633.1,37986,24.1,Joline,Manipulation check ,Manipulation check transparent,
+891,goggle_MaP_Joline_2021-12-01 13-02-04,651.5166667,39091,663.7833333,39827,12.26666667,Joline,Manipulation check ,Manipulation check transparent,
+892,goggle_MaP_Joline_2021-12-01 13-02-04,841.9833333,50519,,,,Joline,First look,First look opaque,
+893,goggle_MaP_Joline_2021-12-01 13-02-04,841.9833333,50519,845.4333333,50726,3.45,Joline,Looking target,Duration looking opaque,
+894,goggle_MaP_Joline_2021-12-01 13-02-04,841.9833333,50519,886.8166667,53209,44.83333333,Joline,Trial ,1,1
+895,goggle_MaP_Joline_2021-12-01 13-02-04,846,50760,847.7,50862,1.7,Joline,Looking target,Duration looking transparent,1
+896,goggle_MaP_Joline_2021-12-01 13-02-04,848.3833333,50903,848.85,50931,0.466666667,Joline,Looking target,Duration looking transparent,1
+897,goggle_MaP_Joline_2021-12-01 13-02-04,849.3166667,50959,851.05,51063,1.733333333,Joline,Looking target,Duration looking opaque,1
+898,goggle_MaP_Joline_2021-12-01 13-02-04,851.5833333,51095,852.3166667,51139,0.733333333,Joline,Looking target,Duration looking transparent,1
+899,goggle_MaP_Joline_2021-12-01 13-02-04,855.0166667,51301,855.3166667,51319,0.3,Joline,Looking target,Duration looking opaque,1
+900,goggle_MaP_Joline_2021-12-01 13-02-04,856.95,51417,857.3333333,51440,0.383333333,Joline,Looking target,Duration looking opaque,1
+901,goggle_MaP_Joline_2021-12-01 13-02-04,858.25,51495,,,,Joline,First target choice,First choice opaque,1
+902,goggle_MaP_Joline_2021-12-01 13-02-04,866.25,51975,,,,Joline,Inspection behind screen,Inspection behind opaque,1
+903,goggle_MaP_Joline_2021-12-01 13-02-04,973.5833333,58415,1014.333333,60860,40.75,Joline,Trial ,2,2
+904,goggle_MaP_Joline_2021-12-01 13-02-04,977.5,58650,,,,Joline,First look,First look transparent,2
+905,goggle_MaP_Joline_2021-12-01 13-02-04,977.5,58650,980.8666667,58852,3.366666667,Joline,Looking target,Duration looking transparent,2
+906,goggle_MaP_Joline_2021-12-01 13-02-04,981.4833333,58889,984.95,59097,3.466666667,Joline,Looking target,Duration looking opaque,2
+907,goggle_MaP_Joline_2021-12-01 13-02-04,985.2666667,59116,986.0333333,59162,0.766666667,Joline,Looking target,Duration looking transparent,2
+908,goggle_MaP_Joline_2021-12-01 13-02-04,987.9333333,59276,988.1333333,59288,0.2,Joline,Looking target,Duration looking transparent,2
+909,goggle_MaP_Joline_2021-12-01 13-02-04,989.05,59343,,,,Joline,First target choice,First choice transparent,2
+910,goggle_MaP_Joline_2021-12-01 13-02-04,999.5,59970,,,,Joline,Inspection behind screen,Inspection behind transparent,2
+911,goggle_MaP_Joline_2021-12-01 13-02-04,1085.633333,65138,1130.6,67836,44.96666667,Joline,Trial ,3,3
+912,goggle_MaP_Joline_2021-12-01 13-02-04,1089.816667,65389,,,,Joline,First look,First look opaque,3
+913,goggle_MaP_Joline_2021-12-01 13-02-04,1089.816667,65389,1095.816667,65749,6,Joline,Looking target,Duration looking opaque,3
+914,goggle_MaP_Joline_2021-12-01 13-02-04,1099.7,65982,1100.25,66015,0.55,Joline,Looking target,Duration looking transparent,3
+915,goggle_MaP_Joline_2021-12-01 13-02-04,1101.45,66087,,,,Joline,First target choice,First choice transparent,3
+916,goggle_MaP_Joline_2021-12-01 13-02-04,1124.916667,67495,,,,Joline,Inspection behind screen,Inspection behind opaque,3
+917,goggle_MaP_Joline_2021-12-01 13-02-04,1199.4,71964,1243.35,74601,43.95,Joline,Trial ,4,4
+918,goggle_MaP_Joline_2021-12-01 13-02-04,1217.433333,73046,,,,Joline,Inspection behind screen,Inspection behind opaque,4
+919,goggle_MaP_Joline_2021-12-01 13-02-04,1219.35,73161,,,,Joline,First target choice,First choice opaque,4
+920,goggle_MaP_Queen_of_hearts_(queeny)_2021-12-17 16-54-03,459.7833333,27587,468.1,28086,8.316666667,Queenofhearts(queeny),Manipulation check ,Manipulation check transparent,
+921,goggle_MaP_Queen_of_hearts_(queeny)_2021-12-17 16-54-03,472.7333333,28364,474.8333333,28490,2.1,Queenofhearts(queeny),Manipulation check ,Manipulation check opaque,
+922,goggle_MaP_Queen_of_hearts_(queeny)_2021-12-17 16-54-03,484.9833333,29099,534.9,32094,49.91666667,Queenofhearts(queeny),Manipulation check ,Manipulation check transparent,
+923,goggle_MaP_Queen_of_hearts_(queeny)_2021-12-17 16-54-03,666.1666667,39970,711.7333333,42704,45.56666667,Queenofhearts(queeny),Trial ,1,1
+924,goggle_MaP_Queen_of_hearts_(queeny)_2021-12-17 16-54-03,675.1666667,40510,,,,Queenofhearts(queeny),First look,First look transparent,1
+925,goggle_MaP_Queen_of_hearts_(queeny)_2021-12-17 16-54-03,675.1666667,40510,675.7333333,40544,0.566666667,Queenofhearts(queeny),Looking target,Duration looking transparent,1
+926,goggle_MaP_Queen_of_hearts_(queeny)_2021-12-17 16-54-03,680.3666667,40822,680.8833333,40853,0.516666667,Queenofhearts(queeny),Looking target,Duration looking opaque,1
+927,goggle_MaP_Queen_of_hearts_(queeny)_2021-12-17 16-54-03,681.5833333,40895,,,,Queenofhearts(queeny),First target choice,First choice opaque,1
+928,goggle_MaP_Queen_of_hearts_(queeny)_2021-12-17 16-54-03,703.15,42189,,,,Queenofhearts(queeny),Inspection behind screen,Inspection behind opaque,1
+929,goggle_MaP_Queen_of_hearts_(queeny)_2021-12-17 16-54-03,837.5166667,50251,883.7333333,53024,46.21666667,Queenofhearts(queeny),Trial ,2,2
+930,goggle_MaP_Queen_of_hearts_(queeny)_2021-12-17 16-54-03,840.8166667,50449,,,,Queenofhearts(queeny),First look,First look opaque,2
+931,goggle_MaP_Queen_of_hearts_(queeny)_2021-12-17 16-54-03,840.8166667,50449,841.3833333,50483,0.566666667,Queenofhearts(queeny),Looking target,Duration looking opaque,2
+932,goggle_MaP_Queen_of_hearts_(queeny)_2021-12-17 16-54-03,847.6666667,50860,848.6666667,50920,1,Queenofhearts(queeny),Looking target,Duration looking transparent,2
+933,goggle_MaP_Queen_of_hearts_(queeny)_2021-12-17 16-54-03,851.5333333,51092,851.8166667,51109,0.283333333,Queenofhearts(queeny),Looking target,Duration looking opaque,2
+934,goggle_MaP_Queen_of_hearts_(queeny)_2021-12-17 16-54-03,852.5833333,51155,,,,Queenofhearts(queeny),First target choice,First choice opaque,2
+935,goggle_MaP_Queen_of_hearts_(queeny)_2021-12-17 16-54-03,861.2333333,51674,,,,Queenofhearts(queeny),Inspection behind screen,Inspection behind opaque,2
+936,goggle_MaP_Queen_of_hearts_(queeny)_2021-12-17 16-54-03,946.4666667,56788,991.7166667,59503,45.25,Queenofhearts(queeny),Trial ,3,3
+937,goggle_MaP_Queen_of_hearts_(queeny)_2021-12-17 16-54-03,950.25,57015,,,,Queenofhearts(queeny),First look,First look opaque,3
+938,goggle_MaP_Queen_of_hearts_(queeny)_2021-12-17 16-54-03,950.25,57015,951.1333333,57068,0.883333333,Queenofhearts(queeny),Looking target,Duration looking opaque,3
+939,goggle_MaP_Queen_of_hearts_(queeny)_2021-12-17 16-54-03,954.25,57255,955.0333333,57302,0.783333333,Queenofhearts(queeny),Looking target,Duration looking transparent,3
+940,goggle_MaP_Queen_of_hearts_(queeny)_2021-12-17 16-54-03,960.6833333,57641,960.95,57657,0.266666667,Queenofhearts(queeny),Looking target,Duration looking opaque,3
+941,goggle_MaP_Queen_of_hearts_(queeny)_2021-12-17 16-54-03,961.8166667,57709,,,,Queenofhearts(queeny),First target choice,First choice opaque,3
+942,goggle_MaP_Queen_of_hearts_(queeny)_2021-12-17 16-54-03,974.7,58482,,,,Queenofhearts(queeny),Inspection behind screen,Inspection behind transparent,3
+943,goggle_MaP_Queen_of_hearts_(queeny)_2021-12-17 16-54-03,1054.333333,63260,1102.933333,66176,48.6,Queenofhearts(queeny),Trial ,4,4
+944,goggle_MaP_Queen_of_hearts_(queeny)_2021-12-17 16-54-03,1059.516667,63571,,,,Queenofhearts(queeny),First look,First look opaque,4
+945,goggle_MaP_Queen_of_hearts_(queeny)_2021-12-17 16-54-03,1059.516667,63571,1060.383333,63623,0.866666667,Queenofhearts(queeny),Looking target,Duration looking opaque,4
+946,goggle_MaP_Queen_of_hearts_(queeny)_2021-12-17 16-54-03,1066.516667,63991,1067.183333,64031,0.666666667,Queenofhearts(queeny),Looking target,Duration looking transparent,4
+947,goggle_MaP_Queen_of_hearts_(queeny)_2021-12-17 16-54-03,1068.516667,64111,1068.733333,64124,0.216666667,Queenofhearts(queeny),Looking target,Duration looking opaque,4
+948,goggle_MaP_Queen_of_hearts_(queeny)_2021-12-17 16-54-03,1069.666667,64180,,,,Queenofhearts(queeny),First target choice,First choice opaque,4
+949,goggle_MaP_Jelly_Bean_2021-12-17 17-15-56,622.0333333,37322,640.2833333,38417,18.25,JellyBean,Manipulation check ,Manipulation check transparent,
+950,goggle_MaP_Jelly_Bean_2021-12-17 17-15-56,641.85,38511,646.5833333,38795,4.733333333,JellyBean,Manipulation check ,Manipulation check transparent,
+951,goggle_MaP_Jelly_Bean_2021-12-17 17-15-56,658.3333333,39500,658.7333333,39524,0.4,JellyBean,Manipulation check ,Manipulation check transparent,
+952,goggle_MaP_Jelly_Bean_2021-12-17 17-15-56,665.3166667,39919,672.1,40326,6.783333333,JellyBean,Manipulation check ,Manipulation check opaque,
+953,goggle_MaP_Jelly_Bean_2021-12-17 17-15-56,678.9333333,40736,680.0166667,40801,1.083333333,JellyBean,Manipulation check ,Manipulation check transparent,
+954,goggle_MaP_Jelly_Bean_2021-12-17 17-15-56,696.2166667,41773,701.0333333,42062,4.816666667,JellyBean,Manipulation check ,Manipulation check transparent,
+955,goggle_MaP_Jelly_Bean_2021-12-17 17-15-56,702.5666667,42154,704.6833333,42281,2.116666667,JellyBean,Manipulation check ,Manipulation check transparent,
+956,goggle_MaP_Jelly_Bean_2021-12-17 17-15-56,707.1166667,42427,707.3833333,42443,0.266666667,JellyBean,Manipulation check ,Manipulation check transparent,
+957,goggle_MaP_Jelly_Bean_2021-12-17 17-15-56,708.6666667,42520,721.2666667,43276,12.6,JellyBean,Manipulation check ,Manipulation check transparent,
+958,goggle_MaP_Jelly_Bean_2021-12-17 17-15-56,800.85,48051,844.55,50673,43.7,JellyBean,Trial ,1,1
+959,goggle_MaP_Jelly_Bean_2021-12-17 17-15-56,815,48900,,,,JellyBean,First look,First look opaque,1
+960,goggle_MaP_Jelly_Bean_2021-12-17 17-15-56,815,48900,815.3166667,48919,0.316666667,JellyBean,Looking target,Duration looking opaque,1
+961,goggle_MaP_Jelly_Bean_2021-12-17 17-15-56,816.1333333,48968,,,,JellyBean,First target choice,First choice opaque,1
+962,goggle_MaP_Jelly_Bean_2021-12-17 17-15-56,825.8666667,49552,,,,JellyBean,Inspection behind screen,Inspection behind opaque,1
+963,goggle_MaP_Jelly_Bean_2021-12-17 17-15-56,913.2666667,54796,958.0166667,57481,44.75,JellyBean,Trial ,2,2
+964,goggle_MaP_Jelly_Bean_2021-12-17 17-15-56,930.85,55851,,,,JellyBean,First look,First look opaque,2
+965,goggle_MaP_Jelly_Bean_2021-12-17 17-15-56,930.85,55851,931.2833333,55877,0.433333333,JellyBean,Looking target,Duration looking opaque,2
+966,goggle_MaP_Jelly_Bean_2021-12-17 17-15-56,931.95,55917,,,,JellyBean,First target choice,First choice opaque,2
+967,goggle_MaP_Jelly_Bean_2021-12-17 17-15-56,1012.283333,60737,1057.75,63465,45.46666667,JellyBean,Trial ,3,3
+968,goggle_MaP_Jelly_Bean_2021-12-17 17-15-56,1025.3,61518,,,,JellyBean,First look,First look opaque,3
+969,goggle_MaP_Jelly_Bean_2021-12-17 17-15-56,1025.3,61518,1025.95,61557,0.65,JellyBean,Looking target,Duration looking opaque,3
+970,goggle_MaP_Jelly_Bean_2021-12-17 17-15-56,1026.6,61596,,,,JellyBean,First target choice,First choice opaque,3
+971,goggle_MaP_Jelly_Bean_2021-12-17 17-15-56,1115.7,66942,1160.116667,69607,44.41666667,JellyBean,Trial ,4,4
+972,goggle_MaP_Jelly_Bean_2021-12-17 17-15-56,1129.633333,67778,,,,JellyBean,First look,First look opaque,4
+973,goggle_MaP_Jelly_Bean_2021-12-17 17-15-56,1129.633333,67778,1130.2,67812,0.566666667,JellyBean,Looking target,Duration looking opaque,4
+974,goggle_MaP_Jelly_Bean_2021-12-17 17-15-56,1131.366667,67882,,,,JellyBean,First target choice,First choice opaque,4
+975,Goggle_MaP_Anthony_2022-01-14 12-32-22,471.3,28278,480.8333333,28850,9.533333333,Anthony,Manipulation check ,Manipulation check transparent,
+976,Goggle_MaP_Anthony_2022-01-14 12-32-22,482.4333333,28946,483.1833333,28991,0.75,Anthony,Manipulation check ,Manipulation check opaque,
+977,Goggle_MaP_Anthony_2022-01-14 12-32-22,496.45,29787,512.7833333,30767,16.33333333,Anthony,Manipulation check ,Manipulation check transparent,
+978,Goggle_MaP_Anthony_2022-01-14 12-32-22,520.95,31257,525.8,31548,4.85,Anthony,Manipulation check ,Manipulation check transparent,
+979,Goggle_MaP_Anthony_2022-01-14 12-32-22,590.1333333,35408,635.3166667,38119,45.18333333,Anthony,Trial ,1,1
+980,Goggle_MaP_Anthony_2022-01-14 12-32-22,594.8,35688,,,,Anthony,First look,First look transparent,1
+981,Goggle_MaP_Anthony_2022-01-14 12-32-22,594.8,35688,597.0166667,35821,2.216666667,Anthony,Looking target,Duration looking transparent,1
+982,Goggle_MaP_Anthony_2022-01-14 12-32-22,597.3666667,35842,601.9666667,36118,4.6,Anthony,Looking target,Duration looking opaque,1
+983,Goggle_MaP_Anthony_2022-01-14 12-32-22,604.1333333,36248,604.3333333,36260,0.2,Anthony,Looking target,Duration looking opaque,1
+984,Goggle_MaP_Anthony_2022-01-14 12-32-22,605.9333333,36356,,,,Anthony,First target choice,First choice transparent,1
+985,Goggle_MaP_Anthony_2022-01-14 12-32-22,609.9666667,36598,,,,Anthony,Inspection behind screen,Inspection behind opaque,1
+986,Goggle_MaP_Anthony_2022-01-14 12-32-22,688.3166667,41299,733.2666667,43996,44.95,Anthony,Trial ,2,2
+987,Goggle_MaP_Anthony_2022-01-14 12-32-22,696.65,41799,,,,Anthony,First look,First look transparent,2
+988,Goggle_MaP_Anthony_2022-01-14 12-32-22,696.65,41799,701.1166667,42067,4.466666667,Anthony,Looking target,Duration looking transparent,2
+989,Goggle_MaP_Anthony_2022-01-14 12-32-22,703.1333333,42188,703.35,42201,0.216666667,Anthony,Looking target,Duration looking transparent,2
+990,Goggle_MaP_Anthony_2022-01-14 12-32-22,704.3666667,42262,,,,Anthony,First target choice,First choice transparent,2
+991,Goggle_MaP_Anthony_2022-01-14 12-32-22,786.8833333,47213,831.0833333,49865,44.2,Anthony,Trial ,3,3
+992,Goggle_MaP_Anthony_2022-01-14 12-32-22,790.65,47439,,,,Anthony,First look,First look transparent,3
+993,Goggle_MaP_Anthony_2022-01-14 12-32-22,790.65,47439,799.4833333,47969,8.833333333,Anthony,Looking target,Duration looking transparent,3
+994,Goggle_MaP_Anthony_2022-01-14 12-32-22,800.6666667,48040,801.0833333,48065,0.416666667,Anthony,Looking target,Duration looking transparent,3
+995,Goggle_MaP_Anthony_2022-01-14 12-32-22,802.2833333,48137,,,,Anthony,First target choice,First choice transparent,3
+996,Goggle_MaP_Anthony_2022-01-14 12-32-22,810,48600,,,,Anthony,Inspection behind screen,Inspection behind transparent,3
+997,Goggle_MaP_Anthony_2022-01-14 12-32-22,888.3333333,53300,932.45,55947,44.11666667,Anthony,Trial ,4,4
+998,Goggle_MaP_Anthony_2022-01-14 12-32-22,897.2666667,53836,,,,Anthony,First look,First look opaque,4
+999,Goggle_MaP_Anthony_2022-01-14 12-32-22,897.2666667,53836,900.4333333,54026,3.166666667,Anthony,Looking target,Duration looking opaque,4
+1000,Goggle_MaP_Anthony_2022-01-14 12-32-22,903.2,54192,903.6666667,54220,0.466666667,Anthony,Looking target,Duration looking opaque,4
+1001,Goggle_MaP_Anthony_2022-01-14 12-32-22,904.6166667,54277,,,,Anthony,First target choice,First choice opaque,4
+1002,Goggle_MaP_Crash_2022-01-14 15-17-13,483,28980,490.9833333,29459,7.983333333,Crash,Manipulation check ,Manipulation check transparent,
+1003,Goggle_MaP_Crash_2022-01-14 15-17-13,492.75,29565,493.4333333,29606,0.683333333,Crash,Manipulation check ,Manipulation check opaque,
+1004,Goggle_MaP_Crash_2022-01-14 15-17-13,494.5166667,29671,515.6333333,30938,21.11666667,Crash,Manipulation check ,Manipulation check transparent,
+1005,Goggle_MaP_Crash_2022-01-14 15-17-13,519.6,31176,520.4,31224,0.8,Crash,Manipulation check ,Manipulation check opaque,
+1006,Goggle_MaP_Crash_2022-01-14 15-17-13,522.45,31347,522.9833333,31379,0.533333333,Crash,Manipulation check ,Manipulation check transparent,
+1007,Goggle_MaP_Crash_2022-01-14 15-17-13,528.8166667,31729,554.9333333,33296,26.11666667,Crash,Manipulation check ,Manipulation check transparent,
+1008,Goggle_MaP_Crash_2022-01-14 15-17-13,631.8333333,37910,679,40740,47.16666667,Crash,Trial ,1,1
+1009,Goggle_MaP_Crash_2022-01-14 15-17-13,644.7333333,38684,,,,Crash,First look,First look transparent,1
+1010,Goggle_MaP_Crash_2022-01-14 15-17-13,644.7333333,38684,645.05,38703,0.316666667,Crash,Looking target,Duration looking transparent,1
+1011,Goggle_MaP_Crash_2022-01-14 15-17-13,645.2666667,38716,645.4,38724,0.133333333,Crash,Looking target,Duration looking opaque,1
+1012,Goggle_MaP_Crash_2022-01-14 15-17-13,645.5166667,38731,645.7166667,38743,0.2,Crash,Looking target,Duration looking transparent,1
+1013,Goggle_MaP_Crash_2022-01-14 15-17-13,646.4833333,38789,,,,Crash,First target choice,First choice transparent,1
+1014,Goggle_MaP_Crash_2022-01-14 15-17-13,654.55,39273,,,,Crash,Inspection behind screen,Inspection behind opaque,1
+1015,Goggle_MaP_Crash_2022-01-14 15-17-13,731.6333333,43898,775.3,46518,43.66666667,Crash,Trial ,2,2
+1016,Goggle_MaP_Crash_2022-01-14 15-17-13,740.3,44418,,,,Crash,First look,First look transparent,2
+1017,Goggle_MaP_Crash_2022-01-14 15-17-13,740.3,44418,741.2,44472,0.9,Crash,Looking target,Duration looking transparent,2
+1018,Goggle_MaP_Crash_2022-01-14 15-17-13,745.1166667,44707,745.3166667,44719,0.2,Crash,Looking target,Duration looking transparent,2
+1019,Goggle_MaP_Crash_2022-01-14 15-17-13,746.1,44766,,,,Crash,First target choice,First choice transparent,2
+1020,Goggle_MaP_Crash_2022-01-14 15-17-13,758.9,45534,,,,Crash,Inspection behind screen,Inspection behind opaque,2
+1021,Goggle_MaP_Crash_2022-01-14 15-17-13,819.9666667,49198,862.8333333,51770,42.86666667,Crash,Trial ,3,3
+1022,Goggle_MaP_Crash_2022-01-14 15-17-13,823.6166667,49417,,,,Crash,First look,First look transparent,3
+1023,Goggle_MaP_Crash_2022-01-14 15-17-13,823.6166667,49417,825.3666667,49522,1.75,Crash,Looking target,Duration looking transparent,3
+1024,Goggle_MaP_Crash_2022-01-14 15-17-13,828.6333333,49718,829.0333333,49742,0.4,Crash,Looking target,Duration looking opaque,3
+1025,Goggle_MaP_Crash_2022-01-14 15-17-13,832.6,49956,833.25,49995,0.65,Crash,Looking target,Duration looking transparent,3
+1026,Goggle_MaP_Crash_2022-01-14 15-17-13,834.0333333,50042,,,,Crash,First target choice,First choice transparent,3
+1027,Goggle_MaP_Crash_2022-01-14 15-17-13,859.2166667,51553,,,,Crash,Inspection behind screen,Inspection behind transparent,3
+1028,Goggle_MaP_Crash_2022-01-14 15-17-13,907.8666667,54472,950.6833333,57041,42.81666667,Crash,Trial ,4,4
+1029,Goggle_MaP_Crash_2022-01-14 15-17-13,919.9833333,55199,,,,Crash,First look,First look transparent,4
+1030,Goggle_MaP_Crash_2022-01-14 15-17-13,919.9833333,55199,920.3833333,55223,0.4,Crash,Looking target,Duration looking transparent,4
+1031,Goggle_MaP_Crash_2022-01-14 15-17-13,921.2333333,55274,921.45,55287,0.216666667,Crash,Looking target,Duration looking transparent,4
+1032,Goggle_MaP_Crash_2022-01-14 15-17-13,922.2333333,55334,,,,Crash,First target choice,First choice transparent,4
+1033,Goggle_MaP_Crash_2022-01-14 15-17-13,928.8333333,55730,,,,Crash,Inspection behind screen,Inspection behind transparent,4
+1034,Goggle_MaP_Alou_2022-01-14 14-47-57,1075.966667,64558,1080.366667,64822,4.4,Alou,Manipulation check ,Manipulation check transparent,
+1035,Goggle_MaP_Alou_2022-01-14 14-47-57,1081.616667,64897,1082.483333,64949,0.866666667,Alou,Manipulation check ,Manipulation check opaque,
+1036,Goggle_MaP_Alou_2022-01-14 14-47-57,1083.716667,65023,1084.333333,65060,0.616666667,Alou,Manipulation check ,Manipulation check transparent,
+1037,Goggle_MaP_Alou_2022-01-14 14-47-57,1085.733333,65144,1103.233333,66194,17.5,Alou,Manipulation check ,Manipulation check transparent,
+1038,Goggle_MaP_Alou_2022-01-14 14-47-57,1107.2,66432,1107.633333,66458,0.433333333,Alou,Manipulation check ,Manipulation check transparent,
+1039,Goggle_MaP_Alou_2022-01-14 14-47-57,1109.5,66570,1109.916667,66595,0.416666667,Alou,Manipulation check ,Manipulation check transparent,
+1040,Goggle_MaP_Alou_2022-01-14 14-47-57,1111.2,66672,1111.566667,66694,0.366666667,Alou,Manipulation check ,Manipulation check opaque,
+1041,Goggle_MaP_Alou_2022-01-14 14-47-57,1112.516667,66751,1112.983333,66779,0.466666667,Alou,Manipulation check ,Manipulation check opaque,
+1042,Goggle_MaP_Alou_2022-01-14 14-47-57,1116.483333,66989,1126.816667,67609,10.33333333,Alou,Manipulation check ,Manipulation check transparent,
+1043,Goggle_MaP_Alou_2022-01-14 14-47-57,1128.533333,67712,1129.733333,67784,1.2,Alou,Manipulation check ,Manipulation check opaque,
+1044,Goggle_MaP_Alou_2022-01-14 14-47-57,1302.983333,78179,1347.95,80877,44.96666667,Alou,Trial ,1,1
+1045,Goggle_MaP_Alou_2022-01-14 14-47-57,1316.416667,78985,,,,Alou,First look,First look transparent,1
+1046,Goggle_MaP_Alou_2022-01-14 14-47-57,1316.416667,78985,1316.65,78999,0.233333333,Alou,Looking target,Duration looking transparent,1
+1047,Goggle_MaP_Alou_2022-01-14 14-47-57,1317.666667,79060,,,,Alou,First target choice,First choice transparent,1
+1048,Goggle_MaP_Alou_2022-01-14 14-47-57,1323.516667,79411,,,,Alou,Inspection behind screen,Inspection behind transparent,1
+1049,Goggle_MaP_Alou_2022-01-14 14-47-57,1406.1,84366,1455.516667,87331,49.41666667,Alou,Trial ,2,2
+1050,Goggle_MaP_Alou_2022-01-14 14-47-57,1414.416667,84865,,,,Alou,First look,First look transparent,2
+1051,Goggle_MaP_Alou_2022-01-14 14-47-57,1414.416667,84865,1416.633333,84998,2.216666667,Alou,Looking target,Duration looking transparent,2
+1052,Goggle_MaP_Alou_2022-01-14 14-47-57,1417.266667,85036,1420.416667,85225,3.15,Alou,Looking target,Duration looking opaque,2
+1053,Goggle_MaP_Alou_2022-01-14 14-47-57,1424.35,85461,1424.533333,85472,0.183333333,Alou,Looking target,Duration looking transparent,2
+1054,Goggle_MaP_Alou_2022-01-14 14-47-57,1425.183333,85511,,,,Alou,First target choice,First choice transparent,2
+1055,Goggle_MaP_Alou_2022-01-14 14-47-57,1433.533333,86012,,,,Alou,Inspection behind screen,Inspection behind transparent,2
+1056,Goggle_MaP_Alou_2022-01-14 14-47-57,1500.883333,90053,1544.666667,92680,43.78333333,Alou,Trial ,3,3
+1057,Goggle_MaP_Alou_2022-01-14 14-47-57,1507.15,90429,,,,Alou,First look,First look transparent,3
+1058,Goggle_MaP_Alou_2022-01-14 14-47-57,1507.15,90429,1508.116667,90487,0.966666667,Alou,Looking target,Duration looking transparent,3
+1059,Goggle_MaP_Alou_2022-01-14 14-47-57,1515.266667,90916,1515.4,90924,0.133333333,Alou,Looking target,Duration looking transparent,3
+1060,Goggle_MaP_Alou_2022-01-14 14-47-57,1516.15,90969,,,,Alou,First target choice,First choice transparent,3
+1061,Goggle_MaP_Alou_2022-01-14 14-47-57,1522.233333,91334,,,,Alou,Inspection behind screen,Inspection behind transparent,3
+1062,Goggle_MaP_Alou_2022-01-14 14-47-57,1588.966667,95338,1633.733333,98024,44.76666667,Alou,Trial ,4,4
+1063,Goggle_MaP_Alou_2022-01-14 14-47-57,1598.733333,95924,,,,Alou,First look,First look opaque,4
+1064,Goggle_MaP_Alou_2022-01-14 14-47-57,1598.733333,95924,1600.233333,96014,1.5,Alou,Looking target,Duration looking opaque,4
+1065,Goggle_MaP_Alou_2022-01-14 14-47-57,1602.216667,96133,1602.383333,96143,0.166666667,Alou,Looking target,Duration looking transparent,4
+1066,Goggle_MaP_Alou_2022-01-14 14-47-57,1603.283333,96197,,,,Alou,First target choice,First choice transparent,4
+1067,Goggle_MaP_Alou_2022-01-14 14-47-57,1608.233333,96494,,,,Alou,Inspection behind screen,Inspection behind transparent,4
+1068,Goggle_MaP_Daytona_2022-01-18 18-04-09,516.05,30963,559.7833333,33587,43.73333333,Daytona,Manipulation check ,Manipulation check transparent,
+1069,Goggle_MaP_Daytona_2022-01-18 18-04-09,660.7166667,39643,705.4166667,42325,44.7,Daytona,Trial ,1,1
+1070,Goggle_MaP_Daytona_2022-01-18 18-04-09,661.7833333,39707,,,,Daytona,First look,First look opaque,1
+1071,Goggle_MaP_Daytona_2022-01-18 18-04-09,661.7833333,39707,663.0166667,39781,1.233333333,Daytona,Looking target,Duration looking opaque,1
+1072,Goggle_MaP_Daytona_2022-01-18 18-04-09,663.6833333,39821,665.4,39924,1.716666667,Daytona,Looking target,Duration looking transparent,1
+1073,Goggle_MaP_Daytona_2022-01-18 18-04-09,668.6333333,40118,670.2333333,40214,1.6,Daytona,Looking target,Duration looking opaque,1
+1074,Goggle_MaP_Daytona_2022-01-18 18-04-09,677.1166667,40627,,,,Daytona,Inspection behind screen,Inspection behind transparent,1
+1075,Goggle_MaP_Daytona_2022-01-18 18-04-09,678.7,40722,,,,Daytona,First target choice,First choice transparent,1
+1076,Goggle_MaP_Daytona_2022-01-18 18-04-09,768.25,46095,815.3,48918,47.05,Daytona,Trial ,2,2
+1077,Goggle_MaP_Daytona_2022-01-18 18-04-09,771.9666667,46318,,,,Daytona,First look,First look opaque,2
+1078,Goggle_MaP_Daytona_2022-01-18 18-04-09,771.9666667,46318,773.4833333,46409,1.516666667,Daytona,Looking target,Duration looking opaque,2
+1079,Goggle_MaP_Daytona_2022-01-18 18-04-09,774.3,46458,776.4333333,46586,2.133333333,Daytona,Looking target,Duration looking transparent,2
+1080,Goggle_MaP_Daytona_2022-01-18 18-04-09,778.2333333,46694,779.0666667,46744,0.833333333,Daytona,Looking target,Duration looking opaque,2
+1081,Goggle_MaP_Daytona_2022-01-18 18-04-09,779.8666667,46792,780.6166667,46837,0.75,Daytona,Looking target,Duration looking transparent,2
+1082,Goggle_MaP_Daytona_2022-01-18 18-04-09,784.5333333,47072,,,,Daytona,Inspection behind screen,Inspection behind opaque,2
+1083,Goggle_MaP_Daytona_2022-01-18 18-04-09,786.2,47172,,,,Daytona,First target choice,First choice opaque,2
+1084,Goggle_MaP_Daytona_2022-01-18 18-04-09,871.9166667,52315,917,55020,45.08333333,Daytona,Trial ,3,3
+1085,Goggle_MaP_Daytona_2022-01-18 18-04-09,875.5,52530,,,,Daytona,First look,First look transparent,3
+1086,Goggle_MaP_Daytona_2022-01-18 18-04-09,875.5,52530,876.6333333,52598,1.133333333,Daytona,Looking target,Duration looking transparent,3
+1087,Goggle_MaP_Daytona_2022-01-18 18-04-09,885.7833333,53147,886.6666667,53200,0.883333333,Daytona,Looking target,Duration looking opaque,3
+1088,Goggle_MaP_Daytona_2022-01-18 18-04-09,887.6333333,53258,,,,Daytona,First target choice,First choice opaque,3
+1089,Goggle_MaP_Daytona_2022-01-18 18-04-09,968.4833333,58109,1037.633333,62258,69.15,Daytona,Trial ,4,4
+1090,Goggle_MaP_Daytona_2022-01-18 18-04-09,985.4833333,59129,,,,Daytona,First look,First look transparent,4
+1091,Goggle_MaP_Daytona_2022-01-18 18-04-09,985.4833333,59129,985.6333333,59138,0.15,Daytona,Looking target,Duration looking transparent,4
+1092,Goggle_MaP_Daytona_2022-01-18 18-04-09,988.35,59301,989.45,59367,1.1,Daytona,Looking target,Duration looking opaque,4
+1093,Goggle_MaP_Daytona_2022-01-18 18-04-09,990.2666667,59416,990.5666667,59434,0.3,Daytona,Looking target,Duration looking opaque,4
+1094,Goggle_MaP_Daytona_2022-01-18 18-04-09,991.9,59514,992.0666667,59524,0.166666667,Daytona,Looking target,Duration looking transparent,4
+1095,Goggle_MaP_Daytona_2022-01-18 18-04-09,993.2,59592,994.15,59649,0.95,Daytona,Looking target,Duration looking transparent,4
+1096,Goggle_MaP_Daytona_2022-01-18 18-04-09,997.4,59844,997.7333333,59864,0.333333333,Daytona,Looking target,Duration looking opaque,4
+1097,Goggle_MaP_Daytona_2022-01-18 18-04-09,1007.733333,60464,,,,Daytona,First target choice,First choice opaque,4
+1098,Goggle_MaP_Amarie_2022-01-12 14-07-23,997.9166667,59875,1041.05,62463,43.13333333,Amarie,Trial ,1,1
+1099,Goggle_MaP_Amarie_2022-01-12 14-07-23,998.7,59922,,,,Amarie,First look,First look opaque,1
+1100,Goggle_MaP_Amarie_2022-01-12 14-07-23,998.7,59922,1007.416667,60445,8.716666667,Amarie,Looking target,Duration looking opaque,1
+1101,Goggle_MaP_Amarie_2022-01-12 14-07-23,1007.5,60450,1009.133333,60548,1.633333333,Amarie,Looking target,Duration looking transparent,1
+1102,Goggle_MaP_Amarie_2022-01-12 14-07-23,1010.916667,60655,1011.15,60669,0.233333333,Amarie,Looking target,Duration looking opaque,1
+1103,Goggle_MaP_Amarie_2022-01-12 14-07-23,1011.9,60714,,,,Amarie,First target choice,First choice opaque,1
+1104,Goggle_MaP_Amarie_2022-01-12 14-07-23,1038.55,62313,,,,Amarie,Inspection behind screen,Inspection behind opaque,1
+1105,Goggle_MaP_Amarie_2022-01-12 14-07-23,1097.25,65835,1141.7,68502,44.45,Amarie,Trial ,2,2
+1106,Goggle_MaP_Amarie_2022-01-12 14-07-23,1110.9,66654,,,,Amarie,First look,First look transparent,2
+1107,Goggle_MaP_Amarie_2022-01-12 14-07-23,1110.9,66654,1111.116667,66667,0.216666667,Amarie,Looking target,Duration looking transparent,2
+1108,Goggle_MaP_Amarie_2022-01-12 14-07-23,1111.983333,66719,,,,Amarie,First target choice,First choice transparent,2
+1109,Goggle_MaP_Amarie_2022-01-12 14-07-23,1191.65,71499,1237.816667,74269,46.16666667,Amarie,Trial ,3,3
+1110,Goggle_MaP_Amarie_2022-01-12 14-07-23,1196.216667,71773,,,,Amarie,First look,First look opaque,3
+1111,Goggle_MaP_Amarie_2022-01-12 14-07-23,1196.216667,71773,1200.033333,72002,3.816666667,Amarie,Looking target,Duration looking opaque,3
+1112,Goggle_MaP_Amarie_2022-01-12 14-07-23,1200.5,72030,1204.416667,72265,3.916666667,Amarie,Looking target,Duration looking transparent,3
+1113,Goggle_MaP_Amarie_2022-01-12 14-07-23,1205.666667,72340,1205.9,72354,0.233333333,Amarie,Looking target,Duration looking opaque,3
+1114,Goggle_MaP_Amarie_2022-01-12 14-07-23,1206.8,72408,,,,Amarie,First target choice,First choice opaque,3
+1115,Goggle_MaP_Amarie_2022-01-12 14-07-23,1290.783333,77447,1335.5,80130,44.71666667,Amarie,Trial ,4,4
+1116,Goggle_MaP_Amarie_2022-01-12 14-07-23,1300.516667,78031,,,,Amarie,First look,First look opaque,4
+1117,Goggle_MaP_Amarie_2022-01-12 14-07-23,1300.516667,78031,1302.2,78132,1.683333333,Amarie,Looking target,Duration looking opaque,4
+1118,Goggle_MaP_Amarie_2022-01-12 14-07-23,1304.516667,78271,1304.966667,78298,0.45,Amarie,Looking target,Duration looking transparent,4
+1119,Goggle_MaP_Amarie_2022-01-12 14-07-23,1305.983333,78359,,,,Amarie,First target choice,First choice transparent,4
+1120,Goggle_MaP_Ambiano_2022-01-14 11-58-27,1331.633333,79898,1377.366667,82642,45.73333333,Ambiano,Trial ,1,1
+1121,Goggle_MaP_Ambiano_2022-01-14 11-58-27,1347.7,80862,,,,Ambiano,Inspection behind screen,Inspection behind opaque,1
+1122,Goggle_MaP_Ambiano_2022-01-14 11-58-27,1357.033333,81422,,,,Ambiano,First target choice,First choice transparent,1
+1123,Goggle_MaP_Ambiano_2022-01-14 11-58-27,1449.3,86958,1495.8,89748,46.5,Ambiano,Trial ,2,2
+1124,Goggle_MaP_Ambiano_2022-01-14 11-58-27,1464.15,87849,,,,Ambiano,Inspection behind screen,Inspection behind transparent,2
+1125,Goggle_MaP_Ambiano_2022-01-14 11-58-27,1472.45,88347,,,,Ambiano,First target choice,First choice transparent,2
+1126,Goggle_MaP_Ambiano_2022-01-14 11-58-27,1568.1,94086,1617.483333,97049,49.38333333,Ambiano,Trial ,3,3
+1127,Goggle_MaP_Ambiano_2022-01-14 11-58-27,1581.383333,94883,,,,Ambiano,First look,First look transparent,3
+1128,Goggle_MaP_Ambiano_2022-01-14 11-58-27,1581.383333,94883,1581.5,94890,0.116666667,Ambiano,Looking target,Duration looking transparent,3
+1129,Goggle_MaP_Ambiano_2022-01-14 11-58-27,1674.6,100476,1718.45,103107,43.85,Ambiano,Trial ,4,4
+1130,Goggle_MaP_Ambiano_2022-01-14 11-58-27,1692.05,101523,,,,Ambiano,Inspection behind screen,Inspection behind transparent,4
