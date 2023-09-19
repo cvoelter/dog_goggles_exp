@@ -16,7 +16,7 @@ source("./functions/drop1_para_glmmtmb.r")
 source("./functions/extract_ranef_gmmTMB.r")
 
 
-#load(file="goggles_workspace.RData")
+#load(file="workspace.RData")
 ```
 
 Yuna: trial 3 repeated due to a noise outside --> trial repeated
@@ -25,19 +25,19 @@ Alou: to be excluded (exceeds planned sample size)
 ## Read in data
 
 ```{r}
-remove<-c("Lakota", 	"Minos",	"Cully",	"Eowyn",	"Amarie",	"Ambiano",	"Winnie2",	 "Alou")#dogs that did not meet inclusion criteria
+remove<-c("Lakota", 	"Minos",	"Cully",	"Eowyn",	"Amarie",	"Ambiano",	"Winnie2",	 "Alou")#dogs that did not meet inclusion criteria 
 
 demo.data<-read.csv(file = "data/Goggles_Counterbalance_ filled.csv")%>%
   rename(Subject="dog_name")%>%
-  filter(!Subject %in% remove)%>%
-  filter(!Subject %in% c("Jolie",	"Jaimie",	"Leaf"))%>%
+  filter(!Subject %in% remove)%>% 
+#  filter(!Subject %in% c("Jolie",	"Jaimie",	"Leaf"))%>%  #LL: It seems this can be removed... There are no dogs with these names in the csv counterbalancing file
+  
   mutate(transparent_side=ifelse(tunnel_right_side==transparent_screen, "right", "left"))%>%
   mutate(looking_condition=ifelse(tunnel_right_side=="blue"& transparent_screen=="blue"& looking_direction=="R", "transparent",
                                   ifelse(tunnel_right_side=="yellow"& transparent_screen=="yellow"& looking_direction=="R", "transparent",
                                          ifelse(tunnel_right_side=="blue"& transparent_screen=="yellow"& looking_direction=="L", "transparent",
                                   ifelse(tunnel_right_side=="yellow"& transparent_screen=="blue"& looking_direction=="L", "transparent","opaque"
                                   )))))
-  
 
 raw.data<-read.csv(file="data/scoringproject_50_Goggles_experiment.csv")%>%
   filter(!Subject %in% remove)
@@ -92,10 +92,11 @@ p_looking_score<-ggplot(data=looking_score_data_agg, aes(x=looking_condition, y=
   xlab("Experimenter gaze cue")+
   ylab("Gaze congruent looking score")+
   theme_classic()
+```
 
- ggsave(p_looking_score, filename = "graphics/looking_score.png", width=6, height=5, scale=0.7)
- 
- 
+
+```{r}
+ggsave(p_looking_score, filename = "graphics/looking_score.png", width=6, height=5, scale=0.7)
 ```
 
 first look transparent plot
@@ -137,9 +138,6 @@ first_choice_agg2<-first_choice_agg%>%
   group_by(looking_condition)%>%
   summarise(mean=mean(mean_choice), se=sd(mean_choice)/sqrt(length(mean_choice)))
 ```
-
-
-
 ```{r}
 p_choice<-ggplot(data=first_choice_agg2, aes(x=looking_condition, y=mean))+
   geom_bar(stat="identity")+
@@ -150,8 +148,10 @@ p_choice<-ggplot(data=first_choice_agg2, aes(x=looking_condition, y=mean))+
   theme_classic()
 
 p_choice
+```
 
 
+```{r}
 ggsave(p_choice, filename = "graphics/gaze_congruent_choice.png", width=6, height=5, scale=0.7)
 ```
 
@@ -200,7 +200,7 @@ inspection_agg_complete2<-inspection_agg_complete%>%
   summarise(mean=mean(mean_inspection), se=sd(mean_inspection)/sqrt(length(mean_inspection)))
 ```
 
-### Plot of inspection behind barrier (did myself)
+### MP: Plot of inspection behind barrier (did myself)
 ```{r}
 p_inspection_complete<-ggplot(data=inspection_agg_complete2, aes(x=looking_condition, y=mean))+
   geom_bar(stat="identity")+
@@ -210,10 +210,15 @@ p_inspection_complete<-ggplot(data=inspection_agg_complete2, aes(x=looking_condi
   theme_classic()
 
 p_inspection_complete
- #write right code to save 
+```
+
+
+```{r}
 ggsave(p_inspection_complete, filename = "graphics/inspection_opaque_with_zero.png", width=6, height=5, scale=0.7)
+```
 
 
+```{r}
 p_inspection<-ggplot(data=inspection_agg2, aes(x=looking_condition, y=mean))+
   geom_bar(stat="identity")+
   geom_errorbar(aes(ymin=mean-se, ymax=mean+se), width=0.5)+
@@ -222,16 +227,18 @@ p_inspection<-ggplot(data=inspection_agg2, aes(x=looking_condition, y=mean))+
   theme_classic()
 
 p_inspection
- #write right code to save 
+```
+
+
+```{r}
+#Save 
 ggsave(p_inspection, filename = "graphics/inspection_opaque_without_zero.png", width=6, height=5, scale=0.7)
-
-
-
 ```
 
 ### Looking times
 ```{r}
 levels(as.factor(raw.data$Value))
+levels(as.factor(raw.data$Behaviour))
 levels(as.factor(raw.data$Subject))
 duration.data<-raw.data %>%
   droplevels()%>%
@@ -247,7 +254,9 @@ duration.data<-raw.data %>%
   replace_na(list(sum_duration=0))%>%
   pivot_wider(names_from = Value, values_from=sum_duration)%>%
   rename(duration_transparent="Duration looking transparent", duration_opaque="Duration looking opaque")%>%
-  mutate(gaze_congruent_look=as.numeric(ifelse(looking_condition=="transparent", duration_transparent, duration_opaque )), total_looking_time=duration_transparent+duration_opaque, prop_duration_congruent_look=gaze_congruent_look/total_looking_time)
+  mutate(gaze_congruent_look=as.numeric(ifelse(looking_condition=="transparent", duration_transparent, duration_opaque)), 
+         total_looking_time=duration_transparent+duration_opaque,       
+         prop_duration_congruent_look=gaze_congruent_look/total_looking_time)
 
 levels(as.factor(duration.data$Subject))
 
@@ -259,26 +268,37 @@ write.csv(duration.data, file = "data/goggles_looking_time_data.csv")
 p_congruent<-ggplot(data=duration.data, aes(x=looking_condition, y=prop_duration_congruent_look))+
   geom_boxplot()+
   xlab("Experimenter gaze cue")+
-  ylab("Gaze congruent look")+
-  theme_classic()
+  ylab("Prop looking time to gaze-congruent target")+
+  theme_classic()+
+  theme(text = element_text(size = 16)) +
+  theme(axis.text = element_text(size = 16)) +
+  theme(plot.margin = unit(c(1, 0.1, 0.4, 0.1),
+                                "inches"))
 
 p_congruent
+```
 
-ggsave(p_congruent, filename = "graphics/gaze_congruent_look.png", width=6, height=5, scale=0.7)
 
-# Added myself becuase first graf shows absolute
+```{r}
+ggsave(p_congruent, filename = "graphics/prop_looking_time_gaze_congruent_target.png", width=4, height=5)
+```
+
+
+```{r}
+#plotting absolute looking times to the gaze-congruent target
 p_congruent<-ggplot(data=duration.data, aes(x=looking_condition, y=gaze_congruent_look))+
   geom_boxplot()+
   xlab("Experimenter gaze cue")+
-  ylab("Porportion of duration of congruent looking time")+
-  theme_classic()
+  ylab("Absolute looking time to gaze-congruent target")+
+  theme_classic()+
+  theme(plot.margin = unit(c(0.8, 0.1, 0.2, 0.1),
+                                "inches"))+
+  theme(axis.title = element_text(size = 16)) +
+  theme(axis.text = element_text(size = 14)) 
+ 
+p_congruent
 
-#should i add error bars? dont know how. geom_errorbar(aes(ymin=mean-se, ymax=mean+se), width=0.5)+
-
-
-ggsave(p_choice, filename = "graphics/gaze_congruent_choice.png", width=6, height=5, scale=0.7)
-
-
+ggsave(p_congruent, filename = "graphics/absolute_looking_time_gaze_congruent_target.png", width=4, height=5)
 ```
 ### Looking times to opaque and clear tunnels
 ```{r}
@@ -296,7 +316,7 @@ duration.data2<-raw.data %>%
   inner_join(demo.data)%>%
   replace_na(list(sum_duration=0))
 
-#did myself 
+#MP: did myself 
 p_duration<-ggplot(data=duration.data2, aes(x=Value, y=sum_duration))+
   geom_boxplot()+
   xlab("Duration looking")+
@@ -338,15 +358,9 @@ library(cowplot)
 combine<-plot_grid(p_choice, p_fl, labels=c("A", "B"), ncol=2)
 
 ggsave(combine, filename = "graphics/combine.png", width = 10, height=5, scale=0.7)
-
-
-
 ```
 
-
-
-
-# Analysis of looking times
+## Analysis of proportion looking time
 scale covariates
 ```{r}
 # Analysis of looking times
@@ -361,9 +375,7 @@ re="(1|Subject)", data=duration.data)
 
 duration.data2<-xx.fe.re$data
 
-#duration.data2$z.trial<-as.vector(scale(duration.data2$trial))
 duration.data2$z.trial<-(duration.data2$trial-mean(duration.data2$trial))/sd(duration.data2$trial)
-#duration.data2$z.age<-as.vector(scale(duration.data2$age))
 duration.data2$z.age<-(duration.data2$age-mean(duration.data2$age))/sd(duration.data2$age)
 duration.data2$looking_condition.transparent.c<-duration.data2$looking_condition.transparent-mean(duration.data2$looking_condition.transparent)
 duration.data2$transparent_screen.yellow.c<-duration.data2$transparent_screen.yellow-mean(duration.data2$transparent_screen.yellow)
@@ -371,7 +383,7 @@ duration.data2$transparent_screen.yellow.c<-duration.data2$transparent_screen.ye
 
 
 
-code to remove 1 and 0 from the distribution of the response variable
+Remove 1 and 0 from the distribution of the response variable
 
 ```{r}
 duration.data2$resp <- (duration.data2$prop_duration_congruent_look*(length(duration.data2$prop_duration_congruent_look) - 1) + 0.5)/length(duration.data2$prop_duration_congruent_look) 
@@ -408,31 +420,52 @@ mm1_duration.drop1<-as.data.frame(drop1(mm1_duration, test="Chisq", control=cont
 mm1_duration.drop1
 ```
 
-confidence interval + DOESNT WORK 
+stability
+```{r}
+duration.beta.stab=glmmTMB.stab(model.res=mm1_duration, para=F, data=duration.data2)
+
+duration.beta.stab$summary
+
+m.stab.plot(round(duration.beta.stab$summary[1:6, -1], 2))
+#is.re=grepl(x=rownames(mm1.beta.stab$summary), pattern="@")
+#m.stab.plot(mm1.beta.stab$summary[!is.re, -1])
+```
+
+confidence intervals 
 
 
 ```{r}
 duration.data2<-as.data.frame(duration.data2)
 source("./functions/boot_glmm.r")
 boot.res.duration=boot.glmmtmb(mm1_duration,data=duration.data2, nboots=1000, para=T, level=0.95, n.cores = "all-1")
-```
 
+boot.res.duration$ci.estimates$fe[1:6,]
+```
+vif #LL: update
+```{r}
+library(car)
+xx=lm(resp~looking_condition+transparent_screen+z.trial+z.age+sex, data=duration.data2)
+vif(xx)
+```
 ### output table
 
 ```{r}
 ###model_tail_cis=grepl(x=rownames(mm3_tail.ci$ci.estimates$fe), pattern="@cond")
 
 model_table_1<- bind_cols(as.data.frame(summary(mm1_duration)$coefficients$cond),
-                             mm1_duration.drop1)%>%
-                            # mm3_tail.ci$ci.estimates$fe[1:7,]) %>%
-  select(Estimate, SE = `Std. Error`, Chi2 = LRT, df = Df, p = `Pr(>Chi)`,LowerCI = X2.5., UpperCI = X97.5.,) %>%
-  mutate(across(.cols = c(p), ~ format(round(.x, 3), nsmall=3))) %>% 
-  mutate(across(.cols = c(Estimate:Chi2), ~ format(round(.x, 2), nsmall=2))) %>% 
-  mutate(across(Chi2:p, ~replace_na(.x, "")))%>%
-mutate(p=replace(p, p==0, "<0.001"))
+                             mm1_duration.drop1,
+                             boot.res.duration$ci.estimates$fe[1:6,],
+                             duration.beta.stab$summary[1:6,-1]) %>% 
+  select(Estimate, SE = `Std. Error`, Chi2 = `LRT`, df = `Df`, p = `Pr(>Chi)`,LowerCI = `X2.5.`, UpperCI = `X97.5.`, min, max) %>%
+  mutate(across(.cols = c(p), ~ format(round(.x, 3), nsmall=3))) %>%
+  mutate(across(.cols = c(Estimate:Chi2), ~ format(round(.x, 2), nsmall=2))) %>%
+  mutate(across(.cols = c(LowerCI:max), ~ format(round(.x, 2), nsmall=2))) 
+  #mutate(across(Chi2:p, ~replace_na(.x, "")))%>%
+  #mutate(p=replace(p, p==0, "<.001"))
 
-write.csv(model_table_1, file = "saves/mm1_duration_output_table_CI.csv")
+model_table_1
 
+write.csv(model_table_1, file = "saves/mm1_duration_output_table.csv")
 ```
 
 
@@ -442,6 +475,18 @@ scale covariates
 # Analysis of first look
 first_look_data$z.trial<-scale(first_look_data$trial)
 first_look_data$z.age<-scale(first_look_data$age)
+
+#manually dummy code and center looking_condition for random slope component 
+first_look_data$looking_condition.c<-as.factor(first_look_data$looking_condition)
+first_look_data$looking_condition.c<-as.vector(scale(
+  as.numeric(
+    first_look_data$looking_condition.c == levels(as.factor(
+      first_look_data$looking_condition.c
+    ))[2]
+  ),
+  center = TRUE,
+  scale = FALSE
+))
 ```
 
 ```{r}
@@ -449,9 +494,10 @@ library(lme4)
 #
 mm1_fl<-glmer(first_look_cong ~ looking_condition+ transparent_screen+
             z.trial+z.age+sex+
-            (1+z.trial+looking_condition|Subject), family=binomial, data=first_look_data, control=glmerControl(optimizer="bobyqa",optCtrl=list(maxfun=2e5)))
+            (1+z.trial+looking_condition.c|Subject), family=binomial, data=first_look_data, control=glmerControl(optimizer="bobyqa",optCtrl=list(maxfun=2e5)))
 
 ```
+
 ```{R echo=FALSE, error=FALSE, warning=FALSE}
 library(car)
 col.full.fl <- lm(first_look_cong ~ looking_condition+ transparent_screen+ z.trial+z.age+sex, data = first_look_data)
@@ -462,30 +508,29 @@ Check model stability
 ```{r eval=FALSE, echo=FALSE}
 m.stab.fl <- glmm.model.stab(model.res = mm1_fl)
 m.stab.fl$detailed$warnings
-xx <- as.data.frame(round(m.stab.fl$summary[, -1], 3))
-xx
-m.stab.plot(round(m.stab.fl$summary[, -1], 3))
+as.data.frame(round(m.stab.fl$summary[1:6, -1], 2))
 
+m.stab.plot(round(m.stab.fl$summary[, -1], 2))
 ```
 
 ####Model output
   + Coefficients
 ```{r}
-round(summary(mm1_fl)$coefficients, 3)
+round(summary(mm1_fl)$coefficients, 2)
 ```
-  + Individual predictors: likelihood ratio tests  
-Drop1: P values for the individual effects were based on likelihood ratio tests comparing the full with respective reduced models (Barr et al., 2013; R function drop1 with argument 'test' set to "Chisq"). 
+Individual predictors: likelihood ratio tests  
+Drop1: P values for the individual effects were based on likelihood ratio tests comparing the full with respective reduced models (R function drop1 with argument 'test' set to "Chisq"). 
 
 ```{r}
 drop1.mm1_fl=drop1(mm1_fl, test="Chisq")
 round(drop1.mm1_fl,3)
 ```
 
- + confidence intervals
+confidence intervals
 
 ```{r}
 boot.res.mm1_fl=boot.glmm.pred(model.res=mm1_fl, excl.warnings=T,	nboots=1000, para=F)
-ci.res.mm1_fl<-round(boot.res.mm1_fl$ci.estimates, 3)
+ci.res.mm1_fl<-round(boot.res.mm1_fl$ci.estimates, 2)
 ci.res.mm1_fl
 ```
 
@@ -494,39 +539,48 @@ save.image(file="goggles_workspace.RData")
 ```
 
 
-### output table
+### output table - first look
 
 ```{r}
-#model_tail_cis=grepl(x=rownames(mm3_tail.ci$ci.estimates$fe), pattern="@cond")
-
 model_table_fl<- bind_cols(as.data.frame(summary(mm1_fl)$coefficients),
-                             drop1.mm1_fl)%>%
-                            # ci.res.mm1_fl$ci.estimates$fe[1:6,]) %>%
-  select(Estimate, SE = `Std. Error`, Chi2 = LRT, df = npar, p = `Pr(Chi)`) %>% #LowerCI = X2.5., UpperCI = X97.5., 
+                             drop1.mm1_fl,
+                             boot.res.mm1_fl$ci.estimates[1:6,],
+                             m.stab.fl$summary[1:6, -1]) %>% 
+  select(Estimate, SE = `Std. Error`, Chi2 = LRT, df = npar, p = `Pr(Chi)`, LowerCI = X2.5., UpperCI = X97.5., min, max) %>%  
   mutate(across(.cols = c(p), ~ format(round(.x, 3), nsmall=3))) %>% 
   mutate(across(.cols = c(Estimate:Chi2), ~ format(round(.x, 2), nsmall=2))) %>% 
-  mutate(across(Chi2:p, ~replace_na(.x, "")))%>%
-mutate(p=replace(p, p==0, "<0.001"))
-
+  mutate(across(.cols = c(LowerCI:max), ~ format(round(.x, 2), nsmall=2))) 
+  # mutate(across(Chi2:p, ~replace_na(.x, "")))%>%
+  # mutate(p=replace(p, p==0, "<.001"))
+model_table_fl
 write.csv(model_table_fl, file = "saves/mm1_first_look_output_table.csv")
 ```
 
-
-
-#Analysis of first choice (did myself)
+#Analysis of first choice 
 scale covariates
 ```{r}
-# Analysis of first choice
 first_choice_data$z.trial<-scale(first_choice_data$trial)
 first_choice_data$z.age<-scale(first_choice_data$age)
+
+#manually dummy code and centre looking condition for random slope component
+first_choice_data$looking_condition.c<-as.factor(first_choice_data$looking_condition)
+first_choice_data$looking_condition.c<-as.vector(scale(
+  as.numeric(
+    first_choice_data$looking_condition.c == levels(as.factor(
+      first_choice_data$looking_condition.c
+    ))[2]
+  ),
+  center = TRUE,
+  scale = FALSE
+))
 ```
 
 ```{r}
 library(lme4)
-#
+
 mm1_fc<-glmer(first_choice_cong ~ looking_condition+ transparent_screen+
             z.trial+z.age+sex+
-            (1+z.trial+looking_condition|Subject), family=binomial, data=first_choice_data, control=glmerControl(optimizer="bobyqa",optCtrl=list(maxfun=2e5)))
+            (1+z.trial+looking_condition.c|Subject), family=binomial, data=first_choice_data, control=glmerControl(optimizer="bobyqa",optCtrl=list(maxfun=2e5)))
 
 ```
 ```{R echo=FALSE, error=FALSE, warning=FALSE}
@@ -535,12 +589,16 @@ col.full.fc <- lm(first_choice_cong ~ looking_condition+ transparent_screen+ z.t
 vif(col.full.fc)
 #no problem
 ```
-Check model stability
+Model stability
 ```{r eval=FALSE, echo=FALSE}
 m.stab.fc <- glmm.model.stab(model.res = mm1_fc)
+#Warning: for 8 subset(s) the full model could not be fitted because of fixed effects factor levels dropped from the data
+
 m.stab.fc$detailed$warnings
-xx <- as.data.frame(round(m.stab.fc$summary[, -1], 3))
-xx
+#most of the models failed to converge 
+
+as.data.frame(round(m.stab.fc$summary[1:6, -1], 2))
+
 m.stab.plot(round(m.stab.fc$summary[, -1], 3))
 
 ```
@@ -561,8 +619,9 @@ round(drop1.mm1_fc,3)
  + confidence intervals
 
 ```{r}
-boot.res.mm1_fc=boot.glmm.pred(model.res=mm1_fc, excl.warnings=T,	nboots=1000, para=F)
-ci.res.mm1_fc<-round(boot.res.mm1_fc$ci.estimates, 3)
+boot.res.mm1_fc=boot.glmm.pred(model.res=mm1_fc, excl.warnings=F,	nboots=1000, para=T, n.cores="all-1", resol=1000, level=0.95)
+
+ci.res.mm1_fc<-round(boot.res.mm1_fc$ci.estimates, 2)
 ci.res.mm1_fc
 ```
 
@@ -571,30 +630,42 @@ save.image(file="goggles_workspace.RData")
 ```
 
 
-### output table
+### output table - first choice
 
 ```{r}
-#model_tail_cis=grepl(x=rownames(mm3_tail.ci$ci.estimates$fe), pattern="@cond")
-
 model_table_fc<- bind_cols(as.data.frame(summary(mm1_fc)$coefficients),
-                             drop1.mm1_fc)%>%
-                            # ci.res.mm1_fc$ci.estimates$fe[1:7,]) %>%
-  select(Estimate, SE = `Std. Error`, Chi2 = LRT, df = npar, p = `Pr(Chi)`) %>%  #LowerCI = X2.5., UpperCI = X97.5. %>%
+                             drop1.mm1_fc,
+                             m.stab.fc$summary[1:6, -1],
+                             boot.res.mm1_fc$ci.estimates)%>%
+                          
+  select(Estimate, SE = `Std. Error`, Chi2 = LRT, df = npar, p = `Pr(Chi)`, LowerCI = X2.5., UpperCI = X97.5., min, max) %>%
   mutate(across(.cols = c(p), ~ format(round(.x, 3), nsmall=3))) %>% 
   mutate(across(.cols = c(Estimate:Chi2), ~ format(round(.x, 2), nsmall=2))) %>% 
-  mutate(across(Chi2:p, ~replace_na(.x, "")))%>%
-mutate(p=replace(p, p==0, "<0.001"))
+  mutate(across(.cols = c(LowerCI:max), ~ format(round(.x, 2), nsmall=2))) 
+# mutate(across(Chi2:p, ~replace_na(.x, "")))%>%
+# mutate(p=replace(p, p==0, "<0.001"))
 
 write.csv(model_table_fc, file = "saves/mm1_first_choice_output_table.csv")
 ```
 
 
 
-## Analysis of inspection behind barrier without the zeros 
+## Analysis of inspection behind barrier without zeros 
 scale covariates
 ```{r}
 inspection_data$z.trial<-scale(inspection_data$trial)
 inspection_data$z.age<-scale(inspection_data$age)
+
+#dummy code and centre condition
+inspection_data$looking_condition.c <-
+  as.vector(scale(
+    as.numeric(
+      inspection_data$looking_condition==levels(as.factor(
+        inspection_data$looking_condition))[2]),
+      scale = FALSE,
+      center = TRUE
+   
+  ))
 ```
 
 ```{r}
@@ -602,9 +673,10 @@ library(lme4)
 #
 mm1_inspection<-glmer(inspection_opaque ~ looking_condition+ transparent_screen+
             z.trial+z.age+sex+
-            (1+z.trial+looking_condition|Subject), family=binomial, data=inspection_data, control=glmerControl(optimizer="bobyqa",optCtrl=list(maxfun=2e5)))
+            (1+z.trial+looking_condition.c|Subject), family=binomial, data=inspection_data, control=glmerControl(optimizer="bobyqa",optCtrl=list(maxfun=2e5)))
 
 ```
+
 ```{R echo=FALSE, error=FALSE, warning=FALSE}
 library(car)
 col.insp <- lm(inspection_opaque ~ looking_condition+ transparent_screen+ z.trial+ z.age+ sex, data = inspection_data)
@@ -615,8 +687,8 @@ Check model stability
 ```{r eval=FALSE, echo=FALSE}
 m.stab.insp <- glmm.model.stab(model.res = mm1_inspection)
 m.stab.insp$detailed$warnings
-xx <- as.data.frame(round(m.stab.insp$summary[, -1], 3))
-xx
+as.data.frame(round(m.stab.insp$summary[1:6, -1], 2))
+
 m.stab.plot(round(m.stab.insp$summary[, -1], 3))
 
 ```
@@ -624,7 +696,7 @@ m.stab.plot(round(m.stab.insp$summary[, -1], 3))
 ####Model output
   + Coefficients
 ```{r}
-round(summary(mm1_inspection)$coefficients, 3)
+round(summary(mm1_inspection)$coefficients, 2)
 ```
   + Individual predictors: likelihood ratio tests  
 Drop1: P values for the individual effects were based on likelihood ratio tests comparing the full with respective reduced models (Barr et al., 2013; R function drop1 with argument 'test' set to "Chisq"). 
@@ -637,8 +709,8 @@ round(drop1.insp,3)
  + confidence intervals
 
 ```{r}
-boot.res=boot.glmm.pred(model.res=mm1_inspection, excl.warnings=T,	nboots=1000, para=F)
-res.insp<-round(boot.res$ci.estimates, 3)
+boot.res=boot.glmm.pred(model.res=mm1_inspection, excl.warnings=F,	nboots=1000, para=T, n.cores="all-1", resol=1000, level=0.95)
+res.insp<-round(boot.res$ci.estimates, 2)
 res.insp
 ```
 
@@ -646,21 +718,19 @@ res.insp
 save.image(file="goggles_workspace.RData")
 ```
 
-
-
-### output table
+### output table - inspections behind opaque tunnel without zeros
 
 ```{r}
-#model_tail_cis=grepl(x=rownames(mm3_tail.ci$ci.estimates$fe), pattern="@cond")
-
 model_table_insp<- bind_cols(as.data.frame(summary(mm1_inspection)$coefficients),
-                             drop1.insp)%>%
-                            # mm3_tail.ci$ci.estimates$fe[1:7,]) %>%
-  select(Estimate, SE = `Std. Error`, Chi2 = LRT, df = npar, p = `Pr(Chi)`) %>% #LowerCI = X2.5., UpperCI = X97.5., 
+                             drop1.insp,
+                             m.stab.insp$summary[1:6, -1],
+                             res.insp)%>%
+  select(Estimate, SE = `Std. Error`, Chi2 = LRT, df = npar, p = `Pr(Chi)`, LowerCI = X2.5., UpperCI = X97.5., min, max) %>% 
   mutate(across(.cols = c(p), ~ format(round(.x, 3), nsmall=3))) %>% 
-  mutate(across(.cols = c(Estimate:Chi2), ~ format(round(.x, 2), nsmall=2))) %>% 
-  mutate(across(Chi2:p, ~replace_na(.x, "")))%>%
-mutate(p=replace(p, p==0, "<0.001"))
+  mutate(across(.cols = c(Estimate:df), ~ format(round(.x, 2), nsmall=2))) %>%
+  mutate(across(.cols = c(LowerCI:max), ~ format(round(.x, 2), nsmall=2))) 
+  # mutate(across(Chi2:p, ~replace_na(.x, "")))%>%
+  # mutate(p=replace(p, p==0, "<0.001"))
 
 write.csv(model_table_insp, file = "saves/mm1_inspection_without_zero_output_table.csv")
 ```
@@ -668,7 +738,7 @@ write.csv(model_table_insp, file = "saves/mm1_inspection_without_zero_output_tab
 
 
 
-## Analysis of inspection behind barrier with the zeros 
+## Analysis of inspection behind barrier with zeros 
 scale covariates
 ```{r}
 inspection_data_complete$z.trial<-scale(inspection_data_complete$trial)
@@ -748,9 +818,8 @@ write.csv(model_table_insp, file = "saves/mm1_inspection_with_zero_output_table.
 
 
 
-## Absolute looking time to transparent barrier
+## Analysis of absolute looking time to transparent barrier
 ```{r}
-
 transparent.duration.data<-raw.data %>%
   droplevels()%>%
   filter(!is.na(trial))%>%
@@ -764,11 +833,15 @@ transparent.duration.data<-raw.data %>%
   inner_join(demo.data)%>%
   replace_na(list(sum_duration=0))%>%
   filter(Value=="Duration looking transparent")
+```
 
+### plot of absolute looking time to transparent screen
+```{r}
+hist(transparent.duration.data$sum_duration)
+hist(sqrt(transparent.duration.data$sum_duration))
 ggplot(data=transparent.duration.data, aes(x=looking_condition, y=sum_duration))+
   geom_boxplot()
 
-#added myself to save the plot 
 p_trans_dur<-ggplot(data=transparent.duration.data, aes(x=looking_condition, y=sum_duration))+
   geom_boxplot()+
   xlab("Experimenter gaze cue")+
@@ -776,15 +849,14 @@ p_trans_dur<-ggplot(data=transparent.duration.data, aes(x=looking_condition, y=s
   theme_classic()
 
 p_trans_dur
+```
 
+
+```{r}
 ggsave(p_trans_dur, filename = "graphics/duration_transparent.png", width=6, height=5, scale=0.7)
+```
 
-
-hist(sqrt(transparent.duration.data$sum_duration))
-
-``` 
-
-## combine multiple plots into one added myself 
+### combine multiple plots into one #LL: should come below? After analysis and plot of looking time to opaque?
 ```{r}
 
 library(cowplot)
@@ -792,7 +864,6 @@ library(cowplot)
 fl_dur<-plot_grid(p_trans_dur, p_opaque_dur, labels=c("A", "B"), ncol=2)
 
 ggsave(fl_dur, filename = "graphics/fl_dur.png", width = 10, height=5, scale=0.7)
-
 ```
 
 scale covariates
@@ -800,59 +871,81 @@ scale covariates
 transparent.duration.data$z.trial<-scale(transparent.duration.data$trial)
 transparent.duration.data$z.age<-scale(transparent.duration.data$age)
 
-#manual dummy coding
-transparent.duration.data$looking_condition_dummy=as.numeric(transparent.duration.data$looking_condition==levels(as.factor(transparent.duration.data$looking_condition))[2])
+#manual dummy coding and centering the factors for random slope component
+transparent.duration.data$looking_condition_dummy.c <- as.factor(transparent.duration.data$looking_condition)
+
+levels(transparent.duration.data$looking_condition_dummy.c)
+
+transparent.duration.data$looking_condition_dummy.c = as.vector(scale(
+  as.numeric(
+    transparent.duration.data$looking_condition_dummy.c == levels(as.factor(
+      transparent.duration.data$looking_condition
+    ))[2]
+  ),
+  center = TRUE,
+  scale = FALSE
+))
+
 ```
 
 ### fitting LMM 
 ```{r}
-#library(lmerTest)
 library(lme4)
 
 mm1_transparent<-lmer(sqrt(sum_duration) ~ looking_condition+ transparent_screen+
             z.trial+z.age+sex+
-            (1+z.trial+looking_condition_dummy||Subject), REML=FALSE, data=transparent.duration.data)
+            (1+z.trial+looking_condition_dummy.c|Subject), REML=FALSE, data=transparent.duration.data)
 ```
 
 Assumptions and stability
 ```{r}
 diagnostics.plot(mm1_transparent)
 ranef.diagn.plot(mm1_transparent)
+
 full.stab.transp=glmm.model.stab(model.res=mm1_transparent, contr=NULL, para=F, data=transparent.duration.data)
 m.stab.plot(full.stab.transp$summary[, -1])
-full.stab.transp$summary
+round(full.stab.transp$summary[1:6,-1],2)
 ```
 
 Model output
 ```{r}
-summary(mm1_transparent)
-drop1.trans<-drop1(mm1_transparent, test="Chisq")
+#coefficients
+summary(mm1_transparent)$coefficients
 
+library(lmerTest)
+mm1_transparent.reml<-lmerTest::lmer(sqrt(sum_duration) ~ looking_condition+ transparent_screen+
+            z.trial+z.age+sex+
+            (1+z.trial+looking_condition_dummy.c|Subject), REML=T, data=transparent.duration.data)
+
+#p-values
+round(summary(mm1_transparent.reml)$coefficients,3)
 ```
 
 
  + confidence intervals
 
 ```{r}
-boot.res.trans=boot.glmm.pred(model.res=mm1_transparent, excl.warnings=T,	nboots=1000, para=F)
+boot.res.trans=boot.glmm.pred(model.res=mm1_transparent, excl.warnings=F,	nboots=1000, para=T, n.cores="all-1", resol=1000, level=0.95)
+
 res.trans<-round(boot.res.trans$ci.estimates, 3)
 res.trans
 ```
 
-
+###Output table - absolute looking time to transparent
 ```{r}
-#model_tail_cis=grepl(x=rownames(mm3_tail.ci$ci.estimates$fe), pattern="@cond")
 
 model_table_transp<- bind_cols(as.data.frame(summary(mm1_transparent)$coefficients),
-                             drop1.trans)%>%
-                            # mm3_tail.ci$ci.estimates$fe[1:7,]) %>%
-  select(Estimate, SE = `Std. Error`, Chi2 = LRT, df = npar, p = `Pr(Chi)`) %>% #LowerCI = X2.5., UpperCI = X97.5., 
+                             summary(mm1_transparent.reml)$coefficients[,3:5],
+                             full.stab.transp$summary[1:6, -1],
+                             boot.res.trans$ci.estimates)%>%
+  select(Estimate, SE = `Std. Error`, t =`t value...3`, df, p=`Pr(>|t|)`, LowerCI = X2.5., UpperCI = X97.5., min, max) %>%  
   mutate(across(.cols = c(p), ~ format(round(.x, 3), nsmall=3))) %>% 
-  mutate(across(.cols = c(Estimate:Chi2), ~ format(round(.x, 2), nsmall=2))) %>% 
-  mutate(across(Chi2:p, ~replace_na(.x, "")))%>%
-mutate(p=replace(p, p==0, "<0.001"))
+  mutate(across(.cols = c(Estimate:t), ~ format(round(.x, 2), nsmall=2))) %>% 
+  mutate(across(.cols = c(LowerCI:max), ~ format(round(.x, 2), nsmall=2))) 
+# mutate(across(Chi2:p, ~replace_na(.x, "")))%>%
+# mutate(p=replace(p, p==0, "<0.001"))
 
-write.csv(model_table_transp, file = "saves/mm1_transp_output_table.csv")
+write.csv(model_table_transp, file = "saves/mm1_abs_lt_transp_output_table.csv")
 ```
 
 ## Looking time to opaque barrier
@@ -873,81 +966,179 @@ opaque.duration.data<-raw.data %>%
   replace_na(list(sum_duration=0))%>%
   filter(Value=="Duration looking opaque")
 
-p_opaque_dur<-ggplot(data=opaque.duration.data, aes(x=looking_condition, y=sum_duration))+
-  geom_boxplot()
 
-#added myself to save the plot 
 p_opaque_dur<-ggplot(data=opaque.duration.data, aes(x=looking_condition, y=sum_duration))+
   geom_boxplot()+
   xlab("Experimenter gaze cue")+
-  ylab("Duration looking opaque")+
+  ylab("Absolute looking time to opaque")+
   theme_classic()
 
 p_opaque_dur
 
-ggsave(p_opaque_dur, filename = "graphics/duration_opaque.png", width=6, height=5, scale=0.7)
+ggsave(p_opaque_dur, filename = "graphics/abs_lt_opaque.png", width=6, height=5, scale=0.7)
 
-
-hist(sqrt(opaque.duration.data$sum_duration))
+hist(opaque.duration.data$sum_duration) #also skewed
+hist(sqrt(opaque.duration.data$sum_duration)) #better, we use this as response
 ```
 scale covariates
 ```{r}
 opaque.duration.data$z.trial<-scale(opaque.duration.data$trial)
 opaque.duration.data$z.age<-scale(opaque.duration.data$age)
 
-#manual dummy coding
-opaque.duration.data$looking_condition_dummy=as.numeric(opaque.duration.data$looking_condition==levels(as.factor(opaque.duration.data$looking_condition))[2])
+#manual dummy coding and centering of factor
+opaque.duration.data$looking_condition_dummy.c=as.vector(scale(as.numeric(opaque.duration.data$looking_condition==levels(as.factor(opaque.duration.data$looking_condition))[2]),
+                                                               center=TRUE,
+                                                               scale=FALSE))
 ```
 
 ### fitting LMM 
 ```{r}
-#library(lmerTest)
 library(lme4)
 
 mm1_opaque<-lmer(sqrt(sum_duration) ~ looking_condition+ transparent_screen+
             z.trial+z.age+sex+
-            (1+z.trial+looking_condition_dummy||Subject), REML=FALSE, data=opaque.duration.data)
+            (1+z.trial+looking_condition_dummy.c|Subject), REML=FALSE, data=opaque.duration.data)
 ```
 
 Assumptions and stability
 ```{r}
 diagnostics.plot(mm1_opaque)
 ranef.diagn.plot(mm1_opaque)
-full.stab.transp=glmm.model.stab(model.res=mm1_opaque, contr=NULL, para=F, data=opaque.duration.data)
-m.stab.plot(full.stab.transp$summary[, -1])
-full.stab.transp$summary
+full.stab.opaque=glmm.model.stab(model.res=mm1_opaque, contr=NULL, para=F, data=opaque.duration.data)
+
+m.stab.plot(full.stab.opaque$summary[, -1])
+full.stab.opaque$summary[1:6, -1]
 ```
 
 Model output
 ```{r}
-summary(mm1_opaque)
-drop1(mm1_opaque, test="Chisq")
+summary(mm1_opaque)$coefficients
+
+library(lmerTest)
+mm1_opaque.reml<-lmerTest::lmer(sqrt(sum_duration) ~ looking_condition+ transparent_screen+
+            z.trial+z.age+sex+
+            (1+z.trial+looking_condition_dummy.c|Subject), REML=T, data=opaque.duration.data)
+
+#p-values
+round(summary(mm1_opaque.reml)$coefficients,3)
 
 ```
  + confidence intervals
 
 ```{r}
-boot.res.opa=boot.glmm.pred(model.res=mm1_opaque, excl.warnings=T,	nboots=1000, para=F)
-res.opa<-round(boot.res.opa$ci.estimates, 3)
+boot.res.opa=boot.glmm.pred(model.res=mm1_opaque, excl.warnings=F,	nboots=1000, para=T, n.cores="all-1", resol=1000, level=0.95)
+res.opa<-round(boot.res.opa$ci.estimates, 2)
 res.opa
 ```
-
+### Output table - absolute looking time to opaque
 
 ```{r}
-#added myself but doesnt work 
-#model_tail_cis=grepl(x=rownames(mm3_tail.ci$ci.estimates$fe), pattern="@cond")
+
 
 model_table_opaque<- bind_cols(as.data.frame(summary(mm1_opaque)$coefficients),
-                             drop1.trans)%>%
-                            # mm3_tail.ci$ci.estimates$fe[1:7,]) %>%
-  select(Estimate, SE = `Std. Error`, Chi2 = LRT, df = npar, p = `Pr(Chi)`) %>% #LowerCI = X2.5., UpperCI = X97.5., 
+                            summary(mm1_opaque.reml)$coefficients[,3:5],
+                            full.stab.opaque$summary[1:6, -1],
+                            res.opa)%>%
+  select(Estimate, SE = `Std. Error`, t = `t value...3`, df , p = `Pr(>|t|)`, LowerCI = X2.5., UpperCI = X97.5., min, max)%>% 
+  mutate(across(.cols = c(p), ~ format(round(.x, 3), nsmall=3))) %>% 
+  mutate(across(.cols = c(Estimate:df), ~ format(round(.x, 2), nsmall=2))) %>% 
+  mutate(across(.cols = c(LowerCI:max), ~ format(round(.x, 2), nsmall=2)))  
+  # mutate(across(Chi2:p, ~replace_na(.x, "")))%>%
+  # mutate(p=replace(p, p==0, "<0.001"))
+
+write.csv(model_table_opaque, file = "saves/mm1_abs_lt_opaque_output_table.csv")
+```
+
+#Analysis of whether the probability that dogs looked to the transparent screen at least once during a trial was influenced by looking condition
+
+```{r}
+#LL:check what duration.data2 is about
+duration.data3<-duration.data %>% 
+  mutate(looked_transp=ifelse(duration_transparent>0,1,0)) # did the dog look to the transparent screen at least once during a trial?
+```
+
+```{r}
+#scale covariates
+duration.data3$z.trial<-scale(duration.data3$trial)
+duration.data3$z.age<-scale(duration.data3$age)
+#dummy code and centre condition for random slope component
+duration.data3$looking_condition.c <-
+  as.vector(scale(
+    as.numeric(
+      duration.data3$looking_condition==levels(as.factor(
+        duration.data3$looking_condition))[2]),
+      scale = FALSE,
+      center = TRUE
+   
+  ))
+
+#fitting binomial model
+library(lme4)
+at_least1_look_transp<-glmer(looked_transp ~ looking_condition+ transparent_screen+
+            z.trial+z.age+sex+
+            (1+z.trial+looking_condition.c|Subject), family=binomial, data=duration.data3, control=glmerControl(optimizer="bobyqa",optCtrl=list(maxfun=2e5)))
+```
+
+```{R echo=FALSE, error=FALSE, warning=FALSE}
+library(car)
+col.at_least1_look_transp <- lm(looked_transp ~ looking_condition+ transparent_screen+ z.trial+z.age+sex, data = duration.data3)
+vif(col.at_least1_look_transp)
+#no problem
+```
+Check model stability
+```{r eval=FALSE, echo=FALSE}
+stab.at_least1_look_transp <- glmm.model.stab(model.res = at_least1_look_transp)
+stab.at_least1_look_transp$detailed$warnings
+as.data.frame(round(stab.at_least1_look_transp$summary[1:6, -1], 2))
+
+m.stab.plot(round(stab.at_least1_look_transp$summary[1:6, -1], 2))
+
+#the estimates vary considerably depending on which subject is excluded
+```
+
+####Model output
+  + Coefficients
+```{r}
+round(summary(at_least1_look_transp)$coefficients, 2)
+```
+Individual predictors: likelihood ratio tests  
+Drop1: P values for the individual effects were based on likelihood ratio tests comparing the full with respective reduced models (R function drop1 with argument 'test' set to "Chisq"). 
+
+```{r}
+drop1.at_least1_look_transp=drop1(at_least1_look_transp, test="Chisq")
+round(drop1.at_least1_look_transp,2)
+```
+
+confidence intervals
+
+```{r}
+boot.res.at_least1_look_transp=boot.glmm.pred(model.res=at_least1_look_transp, excl.warnings=F,	nboots=1000, para=T, n.cores="all-1", resol=1000, level=0.95)
+ci.res.at_least1_look_transp<-round(boot.res.at_least1_look_transp$ci.estimates, 2)
+ci.res.at_least1_look_transp
+```
+
+```{r}
+save.image(file="goggles_workspace.RData")
+```
+
+
+### output table - at least 1 look to transparent screen during a trial
+
+```{r}
+model_table_at_least1_look_transp<- bind_cols(as.data.frame(summary(at_least1_look_transp)$coefficients),
+                             drop1.at_least1_look_transp,
+                             ci.res.at_least1_look_transp,
+                             stab.at_least1_look_transp$summary[1:6, -1]) %>% 
+  select(Estimate, SE = `Std. Error`, Chi2 = LRT, df = npar, p = `Pr(Chi)`, LowerCI = X2.5., UpperCI = X97.5., min, max) %>%  
   mutate(across(.cols = c(p), ~ format(round(.x, 3), nsmall=3))) %>% 
   mutate(across(.cols = c(Estimate:Chi2), ~ format(round(.x, 2), nsmall=2))) %>% 
-  mutate(across(Chi2:p, ~replace_na(.x, "")))%>%
-mutate(p=replace(p, p==0, "<0.001"))
-
-write.csv(model_table_opaque, file = "saves/mm1_opaque_output_table.csv")
+  mutate(across(.cols = c(LowerCI:max), ~ format(round(.x, 2), nsmall=2))) 
+  # mutate(across(Chi2:p, ~replace_na(.x, "")))%>%
+  # mutate(p=replace(p, p==0, "<.001"))
+model_table_at_least1_look_transp
+write.csv(model_table_at_least1_look_transp, file = "saves/mm1_at_least1_look_transp_output_table.csv")
 ```
+
 
 # First look to transparent barrier
 
@@ -978,7 +1169,7 @@ first_look_trans_data$z.age<-scale(first_look_trans_data$age)
 
 ```{r}
 library(lme4)
-#
+
 mm1_flt<-glmer(first_look_transparent ~ looking_condition+ transparent_screen+
             z.trial+z.age+sex+
             (1+z.trial+looking_condition|Subject), family=binomial, data=first_look_trans_data, control=glmerControl(optimizer="bobyqa",optCtrl=list(maxfun=2e5)))
@@ -1219,7 +1410,7 @@ col.full.fct <- lm(first_choice_transparent ~ looking_condition+ transparent_scr
 vif(col.full.fct)
 #no problem
 ```
-Check model stability
+Model stability
 ```{r eval=FALSE, echo=FALSE}
 m.stab.fct <- glmm.model.stab(model.res = mm1_fct)
 m.stab.fct$detailed$warnings
@@ -1258,16 +1449,15 @@ save.image(file="goggles_workspace.RData")
 ### output table
 
 ```{r}
-#model_tail_cis=grepl(x=rownames(mm3_tail.ci$ci.estimates$fe), pattern="@cond")
-
 model_table_fct<- bind_cols(as.data.frame(summary(mm1_fct)$coefficients),
-                             drop1.mm1_fct)%>%
-                            # ci.res.mm1_fc$ci.estimates$fe[1:7,]) %>%
-  select(Estimate, SE = `Std. Error`, Chi2 = LRT, df = npar, p = `Pr(Chi)`) %>%  #LowerCI = X2.5., UpperCI = X97.5. %>%
+                             drop1.mm1_fct,
+                             m.stab.fct$summary[, -1],
+                             boot.res.mm1_fct$ci.estimates)%>%
+  select(Estimate, SE = `Std. Error`, Chi2 = LRT, df = npar, p = `Pr(Chi)`, LowerCI = X2.5., UpperCI = X97.5., min, max) %>%
   mutate(across(.cols = c(p), ~ format(round(.x, 3), nsmall=3))) %>% 
   mutate(across(.cols = c(Estimate:Chi2), ~ format(round(.x, 2), nsmall=2))) %>% 
-  mutate(across(Chi2:p, ~replace_na(.x, "")))%>%
-mutate(p=replace(p, p==0, "<0.001"))
+# mutate(across(Chi2:p, ~replace_na(.x, "")))%>%
+# mutate(p=replace(p, p==0, "<0.001"))
 
 write.csv(model_table_fc, file = "saves/mm1_first_choice_transparent_output_table.csv")
 ```
