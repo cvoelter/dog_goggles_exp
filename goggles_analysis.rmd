@@ -400,7 +400,6 @@ max(duration.data2$resp)
 
 ```{r}
 library(glmmTMB)
-contr<-glmmTMBControl(optCtrl=list(iter.max=100000000, eval.max=100000000))
 mm1_duration=glmmTMB(resp~looking_condition+ transparent_screen+
             z.trial+z.age+sex+ (1|Subject) + 
             (0+z.trial|Subject)+(0+looking_condition.transparent.c|Subject), family=beta_family, data=duration.data2,
