@@ -16,7 +16,7 @@ source("./functions/drop1_para_glmmtmb.r")
 source("./functions/extract_ranef_gmmTMB.r")
 
 
-#load(file="workspace.RData")
+load(file="goggles_workspace.RData")
 ```
 
 Yuna: trial 3 repeated due to a noise outside --> trial repeated
@@ -48,6 +48,39 @@ levels(as.factor(demo.data$Subject))
 table(raw.data$Subject, raw.data$trial)
 
 raw.data%>%filter(is.na(trial))
+
+```
+### Manipulation check
+```{r}
+raw.data.man.check<-read.csv(file="data/scoringproject_50_Goggles_experiment.csv")%>%
+  filter(!Subject %in% remove) %>% 
+  filter(Behaviour== "Manipulation check ")
+str(raw.data.man.check)
+
+#first chosen screen
+raw.data.man.check.wider<-raw.data.man.check %>% 
+  dplyr::select(Subject, Value, Start, Stop, duration) %>% 
+  pivot_wider(names_from = Value, values_from = Start) %>% 
+  rename("start_transparent" = "Manipulation check transparent") %>% 
+  rename("start_opaque" = "Manipulation check opaque")
+
+raw.data.man.check.wider.agg<-raw.data.man.check.wider %>% 
+  group_by(Subject) %>% 
+  summarise(min_transparent=min(start_transparent, na.rm=T),
+            min_opaque=min(start_opaque, na.rm=T)) %>% 
+  mutate(min_opaque=recode(as.factor(min_opaque), "Inf"= NA))
+levels(as.factor(raw.data.man.check.wider.agg$min_opaque))                           
+#replace "Inf" with NA (meaning the dogs never approached the opaque tunnel)          
+raw.data.man.check.wider.agg$min_opaque[(raw.data.man.check.wider.agg$min_opaque=="Inf")] <- "NA"
+
+raw.data.man.check.wider.agg<-raw.data.man.check.wider.agg %>% 
+  mutate(transp_chosen_first=ifelse((min_transparent<min_opaque)|is.na(min_opaque),1,0))
+
+binom.test(sum(raw.data.man.check.wider.agg$transp_chosen_first), length(raw.data.man.check.wider.agg$transp_chosen_first))
+#more dogs than expected by chance (28/32) approached and looked through the transparent screen first (p = 1.93e-05) 
+
+#if we consider the additional 6 dogs that did not pass the manipulation check, the result holds:
+binom.test(28,38) #p-value = 0.005
 
 ```
 
