@@ -106,30 +106,57 @@ table(first_look_data$Subject, first_look_data$trial)
 
 
 ```{r}
-looking_score_data<-first_look_data%>%
+#descriptive stats
+mean(first_look_data$first_look_cong) #probability that dogs directed their first look to the gaze-congruent side of the room
+# 0.60
+#SE
+sd(first_look_data$first_look_cong)/sqrt(length(first_look_data$first_look_cong))
+#0.05
+
+#t.test
+first_looks_data_descr<-first_look_data%>%
+  group_by(Subject)%>%
+  summarise(mean_first_look_cong=mean(first_look_cong, na.rm=TRUE), mean_first_look_transparent=mean(first_look_transparent),
+            se_first_look_con=sd(first_look_cong, na.rm=TRUE)/sqrt(length(first_look_cong)))
+
+t.test(first_looks_data_descr$mean_first_look_cong, mu=0.5) 
+#t = 2.7519, df = 31, p-value = 0.009809
+#dogs are more likely than chance to direct their first look to the gaze-congruent side of the room
+
+     
+##Plot first looks congruent
+first_looks_data<-first_look_data%>%
   group_by(Subject, looking_condition)%>%
-  summarise(looking_score=sum(looking_score), first_look_cong=mean(first_look_cong), first_look_transparent=mean(first_look_transparent) )%>%
+  summarise(mean_first_look_cong=mean(first_look_cong), mean_first_look_transparent=mean(first_look_transparent),
+se_first_look_con=sd(first_look_cong, na.rm=TRUE)/sqrt(length(first_look_cong))
+            )%>%
   ungroup()%>%
-  complete(Subject, looking_condition, fill=list(looking_score=0)) #fill in 0s
+  complete(Subject, looking_condition, fill=list(mean_first_look_cong=0)) %>%  #fill in 0s
+  # complete(Subject, looking_condition, fill=list(mean_first_look_transparent=0)) %>% #fill in 0s
+  # complete(Subject, looking_condition, fill=list(se_first_look_con=0)) #fill in 0s
 
-table(looking_score_data$Subject, looking_score_data$looking_condition)
+  table(first_looks_data$Subject, first_looks_data$looking_condition)
 
-looking_score_data_agg<-looking_score_data%>%
+first_looks_data_agg<-first_looks_data%>%
   group_by(looking_condition)%>%
-  summarise(mean_ls=mean(looking_score), se_ls=sd(looking_score)/sqrt(length(looking_score)), mean_fl_con=mean(first_look_cong, na.rm=TRUE), se_fl_con=sd(first_look_cong, na.rm=TRUE)/sqrt(length(first_look_cong)), mean_fl_trans=mean(first_look_transparent, na.rm=TRUE), se_fl_trans=sd(first_look_transparent, na.rm=TRUE)/sqrt(length(first_look_transparent)))
+  summarise(mean_fl_con=mean(mean_first_look_cong, na.rm=TRUE), se_fl_con=sd(mean_first_look_cong, na.rm=TRUE)/sqrt(length(mean_first_look_cong)), mean_fl_trans=mean(mean_first_look_transparent, na.rm=TRUE), se_fl_trans=sd(mean_first_look_transparent, na.rm=TRUE)/sqrt(length(mean_first_look_transparent)))
 
-p_looking_score<-ggplot(data=looking_score_data_agg, aes(x=looking_condition, y=mean_ls))+
-  geom_bar(stat="identity")+
-  geom_errorbar(aes(ymin=mean_ls-se_ls, ymax=mean_ls+se_ls), width=0.5)+
-  ylim(-2, 2)+
+plot_first_look<-ggplot(data=first_looks_data_agg, aes(x=looking_condition, y=mean_fl_con))+
+  geom_bar(stat="identity", alpha=0.8)+
+  geom_errorbar(aes(ymin=mean_fl_con-se_fl_trans, ymax=mean_fl_con+se_fl_trans), width=0.5)+
+  #scale_y_continuous(breaks = seq(0,0.75, by=0.25))+
+  ylim(0, 0.85)+
   xlab("Experimenter gaze cue")+
-  ylab("Gaze congruent looking score")+
+  ylab("Probability to look first at gaze congruent target")+
+  geom_hline(lty=2, yintercept=0.5)+
   theme_classic()
+
+plot_first_look
 ```
 
 
 ```{r}
-ggsave(p_looking_score, filename = "graphics/looking_score.png", width=6, height=5, scale=0.7)
+ggsave(plot_first_look, filename = "graphics/LL_first_look.png", width=5, height=6, scale=0.6)
 ```
 
 first look transparent plot
@@ -167,17 +194,34 @@ first_choice_agg<-first_choice_data%>%
   group_by(Subject, looking_condition)%>%
   summarise(mean_choice=mean(first_choice_cong))
 
+first_choice_agg_subj<-first_choice_data%>%
+  group_by(Subject)%>%
+  summarise(mean_choice=mean(first_choice_cong),
+            se_choice=sd(first_choice_cong)/sqrt(length(first_choice_cong)))
+
+mean(first_choice_agg_subj$mean_choice)
+sd(first_choice_agg_subj$mean_choice)/sqrt(length(first_choice_agg_subj$mean_choice))
+#on average dogs chose the gaze-congruent bucket on 56% of trials (SE:3%)
+
+t.test(first_choice_agg_subj$mean_choice, mu=0.5) #t = 2.0203, df = 31, p-value = 0.05206
+
+#adjust first choice and first look p-values for multiple comparisons
+library(broom)
+p.adjust(c(0.009809,0.05206), method = "bonferroni", n = 2)
+#0.019618, 0.104120
+
 first_choice_agg2<-first_choice_agg%>%
   group_by(looking_condition)%>%
   summarise(mean=mean(mean_choice), se=sd(mean_choice)/sqrt(length(mean_choice)))
 ```
 ```{r}
 p_choice<-ggplot(data=first_choice_agg2, aes(x=looking_condition, y=mean))+
-  geom_bar(stat="identity")+
+  geom_bar(stat="identity", alpha=0.8)+
   geom_errorbar(aes(ymin=mean-se, ymax=mean+se), width=0.5)+
-  #geom_hline(yintercept = 0.5, lty=2, color="red")+
+  geom_hline(yintercept = 0.5, lty=2)+
+  ylim(0,0.85)+
   xlab("Experimenter gaze cue")+
-  ylab("Gaze congruent choice (mean)")+
+  ylab("Probability to choose gaze congruent target")+
   theme_classic()
 
 p_choice
@@ -185,7 +229,17 @@ p_choice
 
 
 ```{r}
-ggsave(p_choice, filename = "graphics/gaze_congruent_choice.png", width=6, height=5, scale=0.7)
+ggsave(p_choice, filename = "graphics/LL_first_choice.png", width=5, height=6, scale=0.6)
+```
+
+###Figure 4: plot of first looks and first choices
+```{r}
+library(cowplot)
+fl_fc_plot<-plot_grid(plot_first_look, p_choice, nrow=1, labels=c("A)", "B)"))
+fl_fc_plot
+```
+```{r}
+ggsave(fl_fc_plot, filename = "graphics/LL_first_look&choice.png", width=9, height=7, scale=0.6)
 ```
 
 ### Inspection behind screen
