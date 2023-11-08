@@ -36,6 +36,11 @@ filter(Behaviour=="Manipulation check ")
 
 man.check.data<-man.check.data[!duplicated(man.check.data$Subject),] #only keep first row per subject (i.e., first screen approached)
 
+#first looks
+first.looks.data1<-first.scoring.data.red %>% 
+filter(Behaviour=="First look")
+#LL: I can use the dataframe "first.looks.data" for calculating agreement on first looks. 
+#use first.looks.data1$Value
 
 #Aggregated data 1st scoring
 agg.data1<-first.scoring.data.red %>%
@@ -64,7 +69,8 @@ agg.data.first.choice1<-agg.data1 %>%
 #Inspection behind screen 1
 agg.data.inspection1<-agg.data1 %>% 
   filter(Behaviour=="Inspection behind screen") %>%  
-  select(Subject:Behaviour)
+  select(Subject:Behaviour) %>% 
+  complete(Subject, trial, Behaviour, fill=list(Value=NA))
 ```
 
 ```{r}
@@ -83,7 +89,6 @@ man.check.data2<-man.check.data2 %>%
   filter(Subject!="Cully")
 
 
-
 #Aggregated data 2nd scoring
 agg.data2<-second.scoring.data %>%
   droplevels()%>%
@@ -96,7 +101,12 @@ agg.data2<-second.scoring.data %>%
   ungroup()%>%
   droplevels()%>%
   complete(Subject, trial, Value, fill=list(sum.duration=0)) #fill in 0s
-  
+
+#First looks 2nd coder
+first.looks.data2<-agg.data2 %>% 
+filter(Behaviour=="First look") %>% 
+  select(-"sum_duration")
+
 
 #Looking duration transparent 2
 agg.data.dur.transp2<-agg.data2 %>% 
@@ -110,10 +120,13 @@ agg.data.first.choice2<-agg.data2 %>%
   select(Subject:Behaviour)
 #Riu trial 3 no choice
 
-#Inspection behind screen 2
+#Inspection behind screen 2nd coder
 agg.data.inspection2<-agg.data2 %>% 
   filter(Behaviour=="Inspection behind screen") %>%  
   select(Subject:Behaviour)
+
+agg.data.inspection2<-agg.data.inspection2[!duplicated(agg.data.inspection2[1:2]),] %>% #only keep unique values per subject and trial (i.e., first tunnel inspected)
+complete(Subject, trial, Behaviour, fill=list(Value=NA))
 ```
 
 ```{r}
@@ -126,13 +139,22 @@ man.check.datafr.rearranged1<-man.check.datafr[order(man.check.datafr$man.check.
 man.check.datafr.rearranged2<-man.check.datafr[order(man.check.datafr$man.check.data2.Subject),3:4]
 man.check.datafr.rearranged<-cbind(man.check.datafr.rearranged1, man.check.datafr.rearranged2)
 
+#first looks
+first.looks.datafr<-data.frame(first.looks.data1$Subject, first.looks.data1$Value,  first.looks.data2$Subject, first.looks.data2$Value)
+#reorder so that subjects match  
+first.looks.datafr.rearranged1<-first.looks.datafr[order(first.looks.datafr$first.looks.data1.Subject),1:2]
+first.looks.datafr.rearranged2<-first.looks.datafr[order(first.looks.datafr$first.looks.data2.Subject),3:4]
+first.looks.datafr.rearranged<-cbind(first.looks.datafr.rearranged1, first.looks.datafr.rearranged2)
+
 #duration looking 
 dur.looking<-data.frame(agg.data.dur.transp1$Subject, agg.data.dur.transp1$sum_duration, agg.data.dur.transp2$sum_duration, agg.data.dur.opaque1$Subject, agg.data.dur.opaque1$sum_duration, agg.data.dur.opaque2$sum_duration)
 
 #first choice
-
 first.choices<-data.frame(agg.data.first.choice1, agg.data.first.choice2$Value)
 
+#inspection behind screens
+inspections.datafr<-data.frame(agg.data.inspection1[,c("Subject", "trial", "Value")], agg.data.inspection2[,c("Subject", "Value")]) %>% 
+  rename(Value.2=Value.1)
 ```
 
 
@@ -158,24 +180,32 @@ icc(
 shapiro.test(dur.looking[,2])
 shapiro.test(dur.looking[,3]) #neither is normally distributed
 
-#Spearman
+#Spearman transparent
 cor.test(dur.looking[,2], dur.looking[,3], method= "spearman", use="complete.obs")
 length(dur.looking[,2])
+
+#Spearman opaque
+cor.test(dur.looking[,5], dur.looking[,6], method= "spearman", use="complete.obs")
+length(dur.looking[,5])
 ```
 
 ```{r}
 #Agreement on first choice
 #Cohen's Kappa
-
-#already done above? Line 134?
-#first_choices<-data.frame(agg.data.first.choice1$Value, agg.data.first.choice2$Value)
-
-kappa2(first_choices)
+kappa2(first.choices[,c(3,5)])
 ```
 
 ```{r}
 #Agreement on manipulation check
 #Cohen's Kappa
 kappa2(man.check.datafr.rearranged[,c(2,4)])
+```
+```{r}
+#Agreement on first look
+kappa2(first.looks.datafr.rearranged[,c(2,4)])
+```
+```{r}
+#Agreement on inspections behind screens
+kappa2(inspections.datafr[,c(3,5)])
 ```
 
