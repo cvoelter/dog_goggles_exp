@@ -77,11 +77,14 @@ raw.data.man.check.wider.agg<-raw.data.man.check.wider.agg %>%
   mutate(transp_chosen_first=ifelse((min_transparent<min_opaque)|is.na(min_opaque),1,0))
 
 binom.test(sum(raw.data.man.check.wider.agg$transp_chosen_first), length(raw.data.man.check.wider.agg$transp_chosen_first))
-#more dogs than expected by chance (28/32) approached and looked through the transparent screen first (p = 1.93e-05) 
+#more dogs than expected by chance (28/32) approached and looked through the transparent screen first on the trial in which they passed (could be first or second) (p = 1.93e-05) 
 
-#if we consider the additional 6 dogs that did not pass the manipulation check, the result holds:
-binom.test(28,38) #p-value = 0.005
+binom.test(23,32) #dogs that approached the transparent screen first on their first man. check trial, out of the 32 tested dogs
+#p-value = 0.020
 
+#if we consider the additional 5 dogs that did not pass the manipulation check, the result holds:
+#dogs that approached the transparent screen first on the trial in which they passed (could be first or second) the manipulation check:
+binom.test(28,37) #p-value = 0.003
 ```
 
 
@@ -147,7 +150,7 @@ plot_first_look<-ggplot(data=first_looks_data_agg, aes(x=looking_condition, y=me
   #scale_y_continuous(breaks = seq(0,0.75, by=0.25))+
   ylim(0, 0.85)+
   xlab("Experimenter gaze cue")+
-  ylab("Probability to look first at gaze congruent target")+
+  ylab("Proportion first look at gaze congruent target")+
   geom_hline(lty=2, yintercept=0.5)+
   theme_classic()
 
@@ -221,7 +224,7 @@ p_choice<-ggplot(data=first_choice_agg2, aes(x=looking_condition, y=mean))+
   geom_hline(yintercept = 0.5, lty=2)+
   ylim(0,0.85)+
   xlab("Experimenter gaze cue")+
-  ylab("Probability to choose gaze congruent target")+
+  ylab("Proportion choice of gaze congruent target")+
   theme_classic()
 
 p_choice
