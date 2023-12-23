@@ -1182,13 +1182,15 @@ as.data.frame(round(stab.at_least1_look_transp$summary[1:6, -1], 2))
 
 m.stab.plot(round(stab.at_least1_look_transp$summary[1:6, -1], 2))
 
-#the estimates vary considerably depending on which subject is excluded
+#the estimates vary excessively depending on which subject is excluded. 
 ```
 
 ####Model output
   + Coefficients
 ```{r}
 round(summary(at_least1_look_transp)$coefficients, 2)
+
+#There are issues with this model: complete separation and excessive instability. Hence, we fit it again, removing the correlations between random intercept and slopes below. 
 ```
 Individual predictors: likelihood ratio tests  
 Drop1: P values for the individual effects were based on likelihood ratio tests comparing the full with respective reduced models (R function drop1 with argument 'test' set to "Chisq"). 
@@ -1227,6 +1229,61 @@ model_table_at_least1_look_transp<- bind_cols(as.data.frame(summary(at_least1_lo
 model_table_at_least1_look_transp
 write.csv(model_table_at_least1_look_transp, file = "saves/mm1_at_least1_look_transp_output_table.csv")
 ```
+
+### Model without correlation between random intercept and slopes
+```{r}
+#fitting binomial model
+library(lme4)
+at_least1_look_transp.woc<-glmer(looked_transp ~ looking_condition+ transparent_screen+
+            z.trial+z.age+sex+
+            (1+z.trial+looking_condition.c||Subject), family=binomial, data=duration.data3, control=glmerControl(optimizer="bobyqa",optCtrl=list(maxfun=2e5)))
+```
+```{r}
+#evaluate stability
+stab.at_least1_look_transp.woc <- glmm.model.stab(model.res = at_least1_look_transp.woc)
+stab.at_least1_look_transp.woc$detailed$warnings #most models failed to converge
+as.data.frame(round(stab.at_least1_look_transp.woc$summary[1:6, -1], 2)) #but the model is more stable than the previous one
+
+m.stab.plot(round(stab.at_least1_look_transp.woc$summary[1:6, -1], 2))
+
+```
+
+### model output
+```{r}
+round(summary(at_least1_look_transp.woc)$coefficients, 2)
+```
+Individual predictors: likelihood ratio tests  
+Drop1: P values for the individual effects were based on likelihood ratio tests comparing the full with respective reduced models (R function drop1 with argument 'test' set to "Chisq"). 
+
+```{r}
+drop1.at_least1_look_transp.woc=drop1(at_least1_look_transp.woc, test="Chisq")
+round(drop1.at_least1_look_transp.woc,3)
+```
+
+confidence intervals
+
+```{r}
+boot.res.at_least1_look_transp.woc=boot.glmm.pred(model.res=at_least1_look_transp.woc, excl.warnings=F,	nboots=1000, para=T, n.cores="all-1", resol=1000, level=0.95)
+ci.res.at_least1_look_transp.woc<-round(boot.res.at_least1_look_transp.woc$ci.estimates, 2)
+ci.res.at_least1_look_transp.woc
+```
+### output table - at least 1 look to transparent screen during a trial without correlations
+
+```{r}
+model_table_at_least1_look_transp.woc<- bind_cols(as.data.frame(summary(at_least1_look_transp.woc)$coefficients),
+                             drop1.at_least1_look_transp.woc,
+                             ci.res.at_least1_look_transp.woc,
+                             stab.at_least1_look_transp.woc$summary[1:6, -1]) %>% 
+  select(Estimate, SE = `Std. Error`, Chi2 = LRT, df = npar, p = `Pr(Chi)`, LowerCI = X2.5., UpperCI = X97.5., min, max) %>%  
+  mutate(across(.cols = c(p), ~ format(round(.x, 3), nsmall=3))) %>% 
+  mutate(across(.cols = c(Estimate:Chi2), ~ format(round(.x, 2), nsmall=2))) %>% 
+  mutate(across(.cols = c(LowerCI:max), ~ format(round(.x, 2), nsmall=2))) 
+  # mutate(across(Chi2:p, ~replace_na(.x, "")))%>%
+  # mutate(p=replace(p, p==0, "<.001"))
+model_table_at_least1_look_transp.woc
+write.csv(model_table_at_least1_look_transp.woc, file = "saves/mm1_at_least1_look_transp_woc_output_table.csv")
+```
+
 
 
 # First look to transparent barrier
@@ -1442,16 +1499,6 @@ t.test(first_look_trans_agg_data$mean_trans_fl[first_look_trans_agg_data$looking
 t.test(first_look_trans_agg_data$mean_trans_fl[first_look_trans_agg_data$looking_condition=="transparent"], first_look_opaque_agg_data$mean_opaque_fl[first_look_opaque_agg_data$looking_condition=="transparent"], paired=TRUE)
 
 ```
-
-
-
-
-
-
-
-
-
-
 #Analysis of first choice transparent 
 CV: Add binomial glmm (DV: first_look_transparent, data= first_look_trans_data)
 
@@ -1550,8 +1597,6 @@ model_table_fct<- bind_cols(as.data.frame(summary(mm1_fct)$coefficients),
 
 write.csv(model_table_fc, file = "saves/mm1_first_choice_transparent_output_table.csv")
 ```
-
-
 
 ## First trial analysis
 
