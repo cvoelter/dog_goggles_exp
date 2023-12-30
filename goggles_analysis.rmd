@@ -30,8 +30,6 @@ remove<-c("Lakota", 	"Minos",	"Cully",	"Eowyn",	"Amarie",	"Ambiano",	"Winnie2",	
 demo.data<-read.csv(file = "data/Goggles_Counterbalance_ filled.csv")%>%
   rename(Subject="dog_name")%>%
   filter(!Subject %in% remove)%>% 
-#  filter(!Subject %in% c("Jolie",	"Jaimie",	"Leaf"))%>%  #LL: It seems this can be removed... There are no dogs with these names in the csv counterbalancing file
-  
   mutate(transparent_side=ifelse(tunnel_right_side==transparent_screen, "right", "left"))%>%
   mutate(looking_condition=ifelse(tunnel_right_side=="blue"& transparent_screen=="blue"& looking_direction=="R", "transparent",
                                   ifelse(tunnel_right_side=="yellow"& transparent_screen=="yellow"& looking_direction=="R", "transparent",
@@ -290,7 +288,7 @@ inspection_agg_complete2<-inspection_agg_complete%>%
   summarise(mean=mean(mean_inspection), se=sd(mean_inspection)/sqrt(length(mean_inspection)))
 ```
 
-### MP: Plot of inspection behind barrier (did myself)
+### Plot of inspection behind barrier 
 ```{r}
 p_inspection_complete<-ggplot(data=inspection_agg_complete2, aes(x=looking_condition, y=mean))+
   geom_bar(stat="identity")+
@@ -406,7 +404,6 @@ duration.data2<-raw.data %>%
   inner_join(demo.data)%>%
   replace_na(list(sum_duration=0))
 
-#MP: did myself 
 p_duration<-ggplot(data=duration.data2, aes(x=Value, y=sum_duration))+
   geom_boxplot()+
   xlab("Duration looking")+
@@ -530,7 +527,7 @@ boot.res.duration=boot.glmmtmb(mm1_duration,data=duration.data2, nboots=1000, pa
 
 boot.res.duration$ci.estimates$fe[1:6,]
 ```
-vif #LL: update
+vif 
 ```{r}
 library(car)
 xx=lm(resp~looking_condition+transparent_screen+z.trial+z.age+sex, data=duration.data2)
@@ -539,8 +536,6 @@ vif(xx)
 ### output table
 
 ```{r}
-###model_tail_cis=grepl(x=rownames(mm3_tail.ci$ci.estimates$fe), pattern="@cond")
-
 model_table_1<- bind_cols(as.data.frame(summary(mm1_duration)$coefficients$cond),
                              mm1_duration.drop1,
                              boot.res.duration$ci.estimates$fe[1:6,],
@@ -945,15 +940,6 @@ p_trans_dur
 ggsave(p_trans_dur, filename = "graphics/duration_transparent.png", width=6, height=5, scale=0.7)
 ```
 
-### combine multiple plots into one #LL: should come below? After analysis and plot of looking time to opaque?
-```{r}
-
-library(cowplot)
-
-fl_dur<-plot_grid(p_trans_dur, p_opaque_dur, labels=c("A", "B"), ncol=2)
-
-ggsave(fl_dur, filename = "graphics/fl_dur.png", width = 10, height=5, scale=0.7)
-```
 
 scale covariates
 ```{r}
@@ -1137,11 +1123,18 @@ model_table_opaque<- bind_cols(as.data.frame(summary(mm1_opaque)$coefficients),
 
 write.csv(model_table_opaque, file = "saves/mm1_abs_lt_opaque_output_table.csv")
 ```
+### combine multiple plots into one 
+```{r}
 
+library(cowplot)
+
+fl_dur<-plot_grid(p_trans_dur, p_opaque_dur, labels=c("A", "B"), ncol=2)
+
+ggsave(fl_dur, filename = "graphics/fl_dur.png", width = 10, height=5, scale=0.7)
+```
 #Analysis of whether the probability that dogs looked to the transparent screen at least once during a trial was influenced by looking condition
 
 ```{r}
-#LL:check what duration.data2 is about
 duration.data3<-duration.data %>% 
   mutate(looked_transp=ifelse(duration_transparent>0,1,0)) # did the dog look to the transparent screen at least once during a trial?
 ```
@@ -1298,12 +1291,6 @@ first_look_trans_data<-raw.data%>%
   full_join(demo.data)%>%
   complete(Subject, trial,  fill=list(first_look_transparent=0))#fill in 0s
 ```
-
-CV: Add binomial glmm (DV: first_look_transparent, data= first_look_trans_data)
-
-Next steps: do the same for first choice analysis (new DV: first_choice_transparent)
-Modify from here:
-
 
 ## Analysis of first look transparent
 scale covariates
@@ -1500,14 +1487,6 @@ t.test(first_look_trans_agg_data$mean_trans_fl[first_look_trans_agg_data$looking
 
 ```
 #Analysis of first choice transparent 
-CV: Add binomial glmm (DV: first_look_transparent, data= first_look_trans_data)
-
-Next steps: do the same for first choice analysis (new DV: first_choice_transparent)
-Modify from here:
-
-DV: first_choice_transparent, data= first_choice_trans_data
-
-
 ```{r}
 first_choice_trans_data<-raw.data%>%
   filter(Behaviour=="First target choice")%>%
