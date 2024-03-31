@@ -1659,3 +1659,11 @@ mutate(p=replace(p, p==0, "<0.001"))
 write.csv(model_table_fl_trial1, file = "saves/mm1_first_look_trial1_output_table.csv")
 ```
 
+## Exploratory analysis excluding dogs that did not pass manipulation check immediately
+```{r}
+dogs.to.excl<-c("Toulouse", "Samira", "JellyBean", "Joseph", "Elvis3", "Ronja7", "Nemo1", "Jasper", "Jessy9")
+
+filter!(subject %in% dogs.to.excl)
+```
+
+
