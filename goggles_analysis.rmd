@@ -1659,11 +1659,79 @@ mutate(p=replace(p, p==0, "<0.001"))
 write.csv(model_table_fl_trial1, file = "saves/mm1_first_look_trial1_output_table.csv")
 ```
 
-## Exploratory analysis excluding dogs that did not pass manipulation check immediately
+## Exploratory analyses excluding dogs that did not pass manipulation check immediately
 ```{r}
 dogs.to.excl<-c("Toulouse", "Samira", "JellyBean", "Joseph", "Elvis3", "Ronja7", "Nemo1", "Jasper", "Jessy9")
+```
+###Proportion looking time to gaze-congruent screen
 
-filter!(subject %in% dogs.to.excl)
+```{r}
+duration.data.23dogs<- duration.data2 %>% 
+  filter(!Subject %in% dogs.to.excl)
+
+library(glmmTMB)
+mm2_duration=glmmTMB(resp~looking_condition+ transparent_screen+
+            z.trial+z.age+sex+ (1|Subject) + 
+            (0+z.trial|Subject)+(0+looking_condition.transparent.c|Subject), family=beta_family, data=duration.data.23dogs,
+      control=glmmTMBControl(optCtrl=list(iter.max=100000000, eval.max=100000000)))
+
+summary(mm2_duration)
 ```
 
+```{r}
+overdisp.test(mm2_duration)
+```
+
+
+```{r}
+mm2_duration.drop1<-as.data.frame(drop1(mm2_duration, test="Chisq", control=contr))
+###tail.mm3.drop1<-tail.mm3.drop1%>%filter(!is.na(Df))%>%add_row(Df = rep(NA,3),  .before = 1)
+mm2_duration.drop1
+```
+
+stability
+```{r}
+duration.beta2.stab=glmmTMB.stab(model.res=mm2_duration, para=F, data=duration.data.23dogs)
+
+duration.beta2.stab$summary
+
+m.stab.plot(round(duration.beta2.stab$summary[1:6, -1], 2))
+#is.re=grepl(x=rownames(mm1.beta.stab$summary), pattern="@")
+#m.stab.plot(mm1.beta.stab$summary[!is.re, -1])
+```
+
+confidence intervals 
+
+
+```{r}
+duration.data.23dogs<-as.data.frame(duration.data.23dogs)
+source("./functions/boot_glmm.r")
+boot.res.duration2=boot.glmmtmb(mm2_duration,data=duration.data.23dogs, nboots=1000, para=T, level=0.95, n.cores = "all-1")
+
+boot.res.duration2$ci.estimates$fe[1:6,]
+```
+vif 
+```{r}
+library(car)
+xx=lm(resp~looking_condition+transparent_screen+z.trial+z.age+sex, data=duration.data.23dogs)
+vif(xx)
+```
+### output table
+
+```{r}
+model_table_prop_lt_23_dogs<- bind_cols(as.data.frame(summary(mm2_duration)$coefficients$cond),
+                             mm2_duration.drop1,
+                             boot.res.duration2$ci.estimates$fe[1:6,],
+                             duration.beta2.stab$summary[1:6,-1]) %>% 
+  select(Estimate, SE = `Std. Error`, Chi2 = `LRT`, df = `Df`, p = `Pr(>Chi)`,LowerCI = `X2.5.`, UpperCI = `X97.5.`, min, max) %>%
+  mutate(across(.cols = c(p), ~ format(round(.x, 3), nsmall=3))) %>%
+  mutate(across(.cols = c(Estimate:Chi2), ~ format(round(.x, 2), nsmall=2))) %>%
+  mutate(across(.cols = c(LowerCI:max), ~ format(round(.x, 2), nsmall=2))) 
+  #mutate(across(Chi2:p, ~replace_na(.x, "")))%>%
+  #mutate(p=replace(p, p==0, "<.001"))
+
+model_table_prop_lt_23_dogs
+
+write.csv(model_table_prop_lt_23_dogs, file = "saves/mm2_duration_lt_congr_23dogs_output_table.csv")
+```
 
