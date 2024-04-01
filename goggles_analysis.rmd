@@ -1659,16 +1659,55 @@ mutate(p=replace(p, p==0, "<0.001"))
 write.csv(model_table_fl_trial1, file = "saves/mm1_first_look_trial1_output_table.csv")
 ```
 
-## Exploratory analyses excluding dogs that did not pass manipulation check immediately
+# Exploratory analyses excluding dogs that did not pass manipulation check immediately
 ```{r}
 dogs.to.excl<-c("Toulouse", "Samira", "JellyBean", "Joseph", "Elvis3", "Ronja7", "Nemo1", "Jasper", "Jessy9")
 ```
-###Proportion looking time to gaze-congruent screen
 
+## Proportion looking time to gaze-congruent screen
+scale covariates
 ```{r}
-duration.data.23dogs<- duration.data2 %>% 
+
+duration.data.23dogs<- duration.data %>% 
   filter(!Subject %in% dogs.to.excl)
 
+duration.data.23dogs$z.trial<-scale(duration.data.23dogs$trial)
+duration.data.23dogs$z.age<-scale(duration.data.23dogs$age)
+```
+
+
+```{r}
+xx.fe.re=fe.re.tab(fe.model="prop_duration_congruent_look~looking_condition+ transparent_screen+trial+age+sex",
+re="(1|Subject)", data=duration.data.23dogs)
+
+duration.data.23dogs<-xx.fe.re$data
+
+duration.data.23dogs$z.trial<-(duration.data.23dogs$trial-mean(duration.data.23dogs$trial))/sd(duration.data.23dogs$trial)
+
+duration.data.23dogs$z.age<-(duration.data.23dogs$age-mean(duration.data.23dogs$age))/sd(duration.data.23dogs$age)
+
+duration.data.23dogs$looking_condition.transparent.c<-duration.data.23dogs$looking_condition.transparent-mean(duration.data.23dogs$looking_condition.transparent)
+
+duration.data.23dogs$transparent_screen.yellow.c<-duration.data.23dogs$transparent_screen.yellow-mean(duration.data.23dogs$transparent_screen.yellow)
+```
+
+
+
+Remove 1 and 0 from the distribution of the response variable
+
+```{r}
+duration.data.23dogs$resp <- (duration.data.23dogs$prop_duration_congruent_look*(length(duration.data.23dogs$prop_duration_congruent_look) - 1) + 0.5)/length(duration.data.23dogs$prop_duration_congruent_look) 
+
+
+hist(duration.data.23dogs$prop_duration_congruent_look)
+hist(duration.data.23dogs$resp)
+
+min(duration.data.23dogs$resp)
+max(duration.data.23dogs$resp)
+```
+
+
+```{r}
 library(glmmTMB)
 mm2_duration=glmmTMB(resp~looking_condition+ transparent_screen+
             z.trial+z.age+sex+ (1|Subject) + 
@@ -1733,5 +1772,93 @@ model_table_prop_lt_23_dogs<- bind_cols(as.data.frame(summary(mm2_duration)$coef
 model_table_prop_lt_23_dogs
 
 write.csv(model_table_prop_lt_23_dogs, file = "saves/mm2_duration_lt_congr_23dogs_output_table.csv")
+```
+## First look - only 23 dogs that immediately passed manipulation check
+##LL: continue adapting from here, use dogs.to.excl
+
+scale covariates
+```{r}
+# Analysis of first look
+first_look_data$z.trial<-scale(first_look_data$trial)
+first_look_data$z.age<-scale(first_look_data$age)
+
+#manually dummy code and center looking_condition for random slope component 
+first_look_data$looking_condition.c<-as.factor(first_look_data$looking_condition)
+first_look_data$looking_condition.c<-as.vector(scale(
+  as.numeric(
+    first_look_data$looking_condition.c == levels(as.factor(
+      first_look_data$looking_condition.c
+    ))[2]
+  ),
+  center = TRUE,
+  scale = FALSE
+))
+```
+
+```{r}
+library(lme4)
+#
+mm1_fl<-glmer(first_look_cong ~ looking_condition+ transparent_screen+
+            z.trial+z.age+sex+
+            (1+z.trial+looking_condition.c|Subject), family=binomial, data=first_look_data, control=glmerControl(optimizer="bobyqa",optCtrl=list(maxfun=2e5)))
+
+```
+
+```{R echo=FALSE, error=FALSE, warning=FALSE}
+library(car)
+col.full.fl <- lm(first_look_cong ~ looking_condition+ transparent_screen+ z.trial+z.age+sex, data = first_look_data)
+vif(col.full.fl)
+#no problem
+```
+Check model stability
+```{r eval=FALSE, echo=FALSE}
+m.stab.fl <- glmm.model.stab(model.res = mm1_fl)
+m.stab.fl$detailed$warnings
+as.data.frame(round(m.stab.fl$summary[1:6, -1], 2))
+
+m.stab.plot(round(m.stab.fl$summary[, -1], 2))
+```
+
+Model output
+  + Coefficients
+```{r}
+round(summary(mm1_fl)$coefficients, 2)
+```
+Individual predictors: likelihood ratio tests  
+Drop1: P values for the individual effects were based on likelihood ratio tests comparing the full with respective reduced models (R function drop1 with argument 'test' set to "Chisq"). 
+
+```{r}
+drop1.mm1_fl=drop1(mm1_fl, test="Chisq")
+round(drop1.mm1_fl,3)
+```
+
+confidence intervals
+
+```{r}
+boot.res.mm1_fl=boot.glmm.pred(model.res=mm1_fl, excl.warnings=T,	nboots=1000, para=F)
+ci.res.mm1_fl<-round(boot.res.mm1_fl$ci.estimates, 2)
+ci.res.mm1_fl
+```
+
+```{r}
+save.image(file="goggles_workspace.RData")
+```
+
+
+### output table - first look
+
+```{r}
+model_table_fl<- bind_cols(as.data.frame(summary(mm1_fl)$coefficients),
+                             drop1.mm1_fl,
+                             boot.res.mm1_fl$ci.estimates[1:6,],
+                             m.stab.fl$summary[1:6, -1]) %>% 
+  select(Estimate, SE = `Std. Error`, Chi2 = LRT, df = npar, p = `Pr(Chi)`, LowerCI = X2.5., UpperCI = X97.5., min, max) %>%  
+  mutate(across(.cols = c(p), ~ format(round(.x, 3), nsmall=3))) %>% 
+  mutate(across(.cols = c(Estimate:Chi2), ~ format(round(.x, 2), nsmall=2))) %>% 
+  mutate(across(.cols = c(LowerCI:max), ~ format(round(.x, 2), nsmall=2))) 
+  # mutate(across(Chi2:p, ~replace_na(.x, "")))%>%
+  # mutate(p=replace(p, p==0, "<.001"))
+model_table_fl
+write.csv(model_table_fl, file = "saves/mm1_first_look_output_table.csv")
 ```
 
