@@ -1779,15 +1779,17 @@ write.csv(model_table_prop_lt_23_dogs, file = "saves/mm2_duration_lt_congr_23dog
 scale covariates
 ```{r}
 # Analysis of first look
-first_look_data$z.trial<-scale(first_look_data$trial)
-first_look_data$z.age<-scale(first_look_data$age)
+first_look_data.23dogs<-first_look_data %>% 
+  filter(!Subject %in% dogs.to.excl)
+first_look_data.23dogs$z.trial<-scale(first_look_data.23dogs$trial)
+first_look_data.23dogs$z.age<-scale(first_look_data.23dogs$age)
 
 #manually dummy code and center looking_condition for random slope component 
-first_look_data$looking_condition.c<-as.factor(first_look_data$looking_condition)
-first_look_data$looking_condition.c<-as.vector(scale(
+first_look_data.23dogs$looking_condition.c<-as.factor(first_look_data.23dogs$looking_condition)
+first_look_data.23dogs$looking_condition.c<-as.vector(scale(
   as.numeric(
-    first_look_data$looking_condition.c == levels(as.factor(
-      first_look_data$looking_condition.c
+    first_look_data.23dogs$looking_condition.c == levels(as.factor(
+      first_look_data.23dogs$looking_condition.c
     ))[2]
   ),
   center = TRUE,
@@ -1798,46 +1800,46 @@ first_look_data$looking_condition.c<-as.vector(scale(
 ```{r}
 library(lme4)
 #
-mm1_fl<-glmer(first_look_cong ~ looking_condition+ transparent_screen+
+mm2_fl<-glmer(first_look_cong ~ looking_condition+ transparent_screen+
             z.trial+z.age+sex+
-            (1+z.trial+looking_condition.c|Subject), family=binomial, data=first_look_data, control=glmerControl(optimizer="bobyqa",optCtrl=list(maxfun=2e5)))
+            (1+z.trial+looking_condition.c|Subject), family=binomial, data=first_look_data.23dogs, control=glmerControl(optimizer="bobyqa",optCtrl=list(maxfun=2e5)))
 
 ```
 
 ```{R echo=FALSE, error=FALSE, warning=FALSE}
 library(car)
-col.full.fl <- lm(first_look_cong ~ looking_condition+ transparent_screen+ z.trial+z.age+sex, data = first_look_data)
-vif(col.full.fl)
+col.full.fl2 <- lm(first_look_cong ~ looking_condition+ transparent_screen+ z.trial+z.age+sex, data = first_look_data.23dogs)
+vif(col.full.fl2)
 #no problem
 ```
 Check model stability
 ```{r eval=FALSE, echo=FALSE}
-m.stab.fl <- glmm.model.stab(model.res = mm1_fl)
-m.stab.fl$detailed$warnings
-as.data.frame(round(m.stab.fl$summary[1:6, -1], 2))
+m.stab.fl2 <- glmm.model.stab(model.res = mm2_fl)
+m.stab.fl2$detailed$warnings
+as.data.frame(round(m.stab.fl2$summary[1:6, -1], 2))
 
-m.stab.plot(round(m.stab.fl$summary[, -1], 2))
+m.stab.plot(round(m.stab.fl2$summary[, -1], 2))
 ```
 
 Model output
   + Coefficients
 ```{r}
-round(summary(mm1_fl)$coefficients, 2)
+round(summary(mm2_fl)$coefficients, 2)
 ```
 Individual predictors: likelihood ratio tests  
 Drop1: P values for the individual effects were based on likelihood ratio tests comparing the full with respective reduced models (R function drop1 with argument 'test' set to "Chisq"). 
 
 ```{r}
-drop1.mm1_fl=drop1(mm1_fl, test="Chisq")
-round(drop1.mm1_fl,3)
+drop1.mm2_fl=drop1(mm2_fl, test="Chisq")
+round(drop1.mm2_fl,3)
 ```
 
 confidence intervals
 
 ```{r}
-boot.res.mm1_fl=boot.glmm.pred(model.res=mm1_fl, excl.warnings=T,	nboots=1000, para=F)
-ci.res.mm1_fl<-round(boot.res.mm1_fl$ci.estimates, 2)
-ci.res.mm1_fl
+boot.res.mm2_fl=boot.glmm.pred(model.res=mm2_fl, excl.warnings=T,	nboots=1000, para=F)
+ci.res.mm2_fl<-round(boot.res.mm2_fl$ci.estimates, 2)
+ci.res.mm2_fl
 ```
 
 ```{r}
@@ -1848,17 +1850,17 @@ save.image(file="goggles_workspace.RData")
 ### output table - first look
 
 ```{r}
-model_table_fl<- bind_cols(as.data.frame(summary(mm1_fl)$coefficients),
-                             drop1.mm1_fl,
-                             boot.res.mm1_fl$ci.estimates[1:6,],
-                             m.stab.fl$summary[1:6, -1]) %>% 
+model_table_fl.23dogs<- bind_cols(as.data.frame(summary(mm2_fl)$coefficients),
+                             drop1.mm2_fl,
+                             boot.res.mm2_fl$ci.estimates[1:6,],
+                             m.stab.fl2$summary[1:6, -1]) %>% 
   select(Estimate, SE = `Std. Error`, Chi2 = LRT, df = npar, p = `Pr(Chi)`, LowerCI = X2.5., UpperCI = X97.5., min, max) %>%  
   mutate(across(.cols = c(p), ~ format(round(.x, 3), nsmall=3))) %>% 
   mutate(across(.cols = c(Estimate:Chi2), ~ format(round(.x, 2), nsmall=2))) %>% 
   mutate(across(.cols = c(LowerCI:max), ~ format(round(.x, 2), nsmall=2))) 
   # mutate(across(Chi2:p, ~replace_na(.x, "")))%>%
   # mutate(p=replace(p, p==0, "<.001"))
-model_table_fl
-write.csv(model_table_fl, file = "saves/mm1_first_look_output_table.csv")
+model_table_fl.23dogs
+write.csv(model_table_fl.23dogs, file = "saves/mm2_first_look_23dogs_output_table.csv")
 ```
 
