@@ -551,6 +551,42 @@ model_table_1
 
 write.csv(model_table_1, file = "saves/mm1_duration_output_table.csv")
 ```
+### Proportion looking time - aggregated data
+```{r}
+duration.data2_agg <- duration.data2 %>%
+  group_by(Subject, looking_condition) %>%
+  summarise(mean_prop_looking = mean(prop_duration_congruent_look))%>%
+  pivot_wider(names_from = looking_condition, values_from = mean_prop_looking)
+```
+Paired t-test and BF
+```{r}
+t.test(duration.data2_agg$transparent, duration.data2_agg$opaque, paired=TRUE)
+
+library(BayesFactor)
+## Compute difference scores
+diffScores = duration.data2_agg$transparent -  duration.data2_agg$opaque
+
+## Traditional two-tailed t test
+t.test(diffScores)
+bf = ttestBF(x = diffScores)
+bf
+```
+Equivalence test
+```{r}
+library(TOSTER)
+eq_test1 = t_TOST(x = duration.data2_agg$transparent,
+                       y = duration.data2_agg$opaque,
+                  paired = TRUE,
+              eqb = 0.25)
+eq_test1
+#alternative code (same outcome)
+# eq_test2 = t_TOST(x = diffScores,
+#               hypothesis = "EQU",
+#               eqb = c(-0.25, 0.25),
+#               smd_ci = "goulet")
+# 
+# eq_test2
+```
 
 
 ## Analysis of first look
