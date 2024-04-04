@@ -504,6 +504,10 @@ overdisp.test(mm1_duration)
 mm1_duration.drop1<-as.data.frame(drop1(mm1_duration, test="Chisq", control=contr))
 ###tail.mm3.drop1<-tail.mm3.drop1%>%filter(!is.na(Df))%>%add_row(Df = rep(NA,3),  .before = 1)
 mm1_duration.drop1
+mm1_duration_aic<-mm1_duration.drop1[1, "AIC"]
+mm1_duration_aic_drop1<-mm1_duration.drop1[, "AIC"][-1]
+mm1_duration_aic_drop1_delta<- c(NA, round(mm1_duration_aic - mm1_duration_aic_drop1, 2))
+mm1_duration_aic_drop1_delta_df <- data.frame(delta_aic = mm1_duration_aic_drop1_delta)
 ```
 
 stability
@@ -539,8 +543,9 @@ vif(xx)
 model_table_1<- bind_cols(as.data.frame(summary(mm1_duration)$coefficients$cond),
                              mm1_duration.drop1,
                              boot.res.duration$ci.estimates$fe[1:6,],
-                             duration.beta.stab$summary[1:6,-1]) %>% 
-  select(Estimate, SE = `Std. Error`, Chi2 = `LRT`, df = `Df`, p = `Pr(>Chi)`,LowerCI = `X2.5.`, UpperCI = `X97.5.`, min, max) %>%
+                             duration.beta.stab$summary[1:6,-1],
+                          mm1_duration_aic_drop1_delta_df) %>% 
+  select(Estimate, SE = `Std. Error`, Chi2 = `LRT`, df = `Df`, p = `Pr(>Chi)`,LowerCI = `X2.5.`, UpperCI = `X97.5.`, min, max, delta_aic) %>%
   mutate(across(.cols = c(p), ~ format(round(.x, 3), nsmall=3))) %>%
   mutate(across(.cols = c(Estimate:Chi2), ~ format(round(.x, 2), nsmall=2))) %>%
   mutate(across(.cols = c(LowerCI:max), ~ format(round(.x, 2), nsmall=2))) 
@@ -616,7 +621,14 @@ mm1_fl<-glmer(first_look_cong ~ looking_condition+ transparent_screen+
             z.trial+z.age+sex+
             (1+z.trial+looking_condition.c|Subject), family=binomial, data=first_look_data, control=glmerControl(optimizer="bobyqa",optCtrl=list(maxfun=2e5)))
 
+mm1_fl_red<-glmer(first_look_cong ~ looking_condition+ 
+            z.trial+z.age+sex+
+            (1+z.trial+looking_condition.c|Subject), family=binomial, data=first_look_data, control=glmerControl(optimizer="bobyqa",optCtrl=list(maxfun=2e5)))
+AIC(mm1_fl)
+AIC(mm1_fl_red)
 ```
+
+
 
 ```{R echo=FALSE, error=FALSE, warning=FALSE}
 library(car)
@@ -633,6 +645,9 @@ as.data.frame(round(m.stab.fl$summary[1:6, -1], 2))
 m.stab.plot(round(m.stab.fl$summary[, -1], 2))
 ```
 
+
+
+
 ####Model output
   + Coefficients
 ```{r}
@@ -644,6 +659,10 @@ Drop1: P values for the individual effects were based on likelihood ratio tests 
 ```{r}
 drop1.mm1_fl=drop1(mm1_fl, test="Chisq")
 round(drop1.mm1_fl,3)
+mm1_fl_aic<-drop1.mm1_fl[1, "AIC"]
+mm1_fl_aic_drop1<-drop1.mm1_fl[, "AIC"][-1]
+mm1_fl_aic_drop1_delta<- c(NA, round(mm1_fl_aic - mm1_fl_aic_drop1, 2))
+mm1_fl_aic_drop1_delta_df <- data.frame(delta_aic = mm1_fl_aic_drop1_delta)
 ```
 
 confidence intervals
@@ -665,8 +684,9 @@ save.image(file="goggles_workspace.RData")
 model_table_fl<- bind_cols(as.data.frame(summary(mm1_fl)$coefficients),
                              drop1.mm1_fl,
                              boot.res.mm1_fl$ci.estimates[1:6,],
-                             m.stab.fl$summary[1:6, -1]) %>% 
-  select(Estimate, SE = `Std. Error`, Chi2 = LRT, df = npar, p = `Pr(Chi)`, LowerCI = X2.5., UpperCI = X97.5., min, max) %>%  
+                             m.stab.fl$summary[1:6, -1], 
+                            mm1_fl_aic_drop1_delta_df) %>% 
+  select(Estimate, SE = `Std. Error`, Chi2 = LRT, df = npar, p = `Pr(Chi)`, LowerCI = X2.5., UpperCI = X97.5., min, max, delta_aic) %>%  
   mutate(across(.cols = c(p), ~ format(round(.x, 3), nsmall=3))) %>% 
   mutate(across(.cols = c(Estimate:Chi2), ~ format(round(.x, 2), nsmall=2))) %>% 
   mutate(across(.cols = c(LowerCI:max), ~ format(round(.x, 2), nsmall=2))) 
@@ -734,6 +754,11 @@ Drop1: P values for the individual effects were based on likelihood ratio tests 
 ```{r}
 drop1.mm1_fc=drop1(mm1_fc, test="Chisq")
 round(drop1.mm1_fc,3)
+
+mm1_fc_aic<-drop1.mm1_fc[1, "AIC"]
+mm1_fc_aic_drop1<-drop1.mm1_fc[, "AIC"][-1]
+mm1_fc_aic_drop1_delta<- c(NA, round(mm1_fc_aic - mm1_fc_aic_drop1, 2))
+c <- data.frame(delta_aic = mm1_fc_aic_drop1_delta)
 ```
 
  + confidence intervals
@@ -756,9 +781,9 @@ save.image(file="goggles_workspace.RData")
 model_table_fc<- bind_cols(as.data.frame(summary(mm1_fc)$coefficients),
                              drop1.mm1_fc,
                              m.stab.fc$summary[1:6, -1],
-                             boot.res.mm1_fc$ci.estimates)%>%
-                          
-  select(Estimate, SE = `Std. Error`, Chi2 = LRT, df = npar, p = `Pr(Chi)`, LowerCI = X2.5., UpperCI = X97.5., min, max) %>%
+                             boot.res.mm1_fc$ci.estimates,
+                           mm1_fc_aic_drop1_delta_df)%>%
+  select(Estimate, SE = `Std. Error`, Chi2 = LRT, df = npar, p = `Pr(Chi)`, LowerCI = X2.5., UpperCI = X97.5., min, max, delta_aic) %>%
   mutate(across(.cols = c(p), ~ format(round(.x, 3), nsmall=3))) %>% 
   mutate(across(.cols = c(Estimate:Chi2), ~ format(round(.x, 2), nsmall=2))) %>% 
   mutate(across(.cols = c(LowerCI:max), ~ format(round(.x, 2), nsmall=2))) 
